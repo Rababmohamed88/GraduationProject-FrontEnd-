@@ -1,0 +1,95 @@
+.main-slider {
+    position: relative;
+}
+.main-slider .carousel-inner .carousel-item img {
+    background-size: cover;
+}
+.main-slider .carousel-caption{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    left: 50%;
+    top: 85%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+.main-slider .carousel-caption h1{
+    text-transform: uppercase;
+    font-size: 70px;
+    font-family: changa one;
+}
+.main-slider .carousel-caption span{
+    color: #FFB400;
+    font-size: 100px;
+}
+.main-slider .btn{
+    background-color: #FFB400;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family:changa one;
+    border-style: none;
+    transition: transform .7s;
+}
+.main-slider .btn:hover{
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+.main-slider .carousel-indicators li {
+    height: 8px;
+}
+@media (max-width:992px) {
+    .main-slider .carousel-caption h1, .main-slider .carousel-caption span{
+        font-size: 50px;
+    }
+}
+@media (max-width:992px) {
+    .main-slider .carousel-caption button{
+        font-size: 20px;
+    }
+}
+@media (max-width:992px) {
+    .main-slider .carousel-indicators li{
+        height: 7px;
+    }
+}
+@media (max-width:768px) {
+    .main-slider .carousel-caption h1, .main-slider .carousel-caption span{
+        font-size: 40px;
+    }
+}
+@media (max-width:768px) {
+    .main-slider .carousel-caption button{
+        font-size: 15px;
+    }
+}
+@media (max-width:768px) {
+    .main-slider .carousel-indicators li{
+        height: 6px;
+    }
+}
+@media (max-width:576px) {
+    .main-slider .carousel-caption h1, .main-slider .carousel-caption span{
+        font-size: 30px;
+    }
+}
+@media (max-width:576px) {
+    .main-slider .carousel-indicators li{
+        display: none;
+    }
+}
+@media (max-width:350px) {
+    .main-slider .carousel-caption h1, .main-slider .carousel-caption span{
+        font-size: 20px;
+    }
+}
+@media (max-width:350px) {
+    .main-slider .carousel-caption button{
+        font-size: 5px;
+    }
+}
+@media (max-width:350px) {
+    .main-slider .carousel-indicators li{
+        display: none;
+    }
+}
