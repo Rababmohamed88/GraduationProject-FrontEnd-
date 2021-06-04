@@ -24,17 +24,17 @@
                         <a routerLink="/register" class="link-btn btn-2 ">Register</a>
                     </div>
                     <div class="clearfix"></div>
-				<form action="#" method="GET" #loginForm=ngForm>
+				<form action="#" method="GET" >
                         
                         <div class="form-group form-box">
-                            <input type="email" name="email" class="input-text" placeholder="Email Address" ngModel>
+                            <input type="email" name="email" class="input-text" placeholder="Email Address" [(ngModel)]="user.email">
                         </div>
                     
 						<div class="form-group form-box clearfix">
-                            <input type="password" name="Password" class="input-text" placeholder="Password" ngModel>
+                            <input type="password" name="Password" class="input-text" placeholder="Password" [(ngModel)]="user.password">
                         </div>
                         <div class="form-group clearfix">
-                            <button type="submit" class="btn-md btn-theme float-left">Login</button>
+                            <button type="submit" class="btn-md btn-theme float-left" (click)="login()">Login</button>
                         </div>
                     </form>
 			</div>
