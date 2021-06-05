@@ -17,6 +17,7 @@ span{
     font-size: 30px;
 }
 #sec-2{
+    background: linear-gradient(RGBA(0,0,0,0.50), RGBA(0,0,0,0.50)), url(../../assets/8.png);
     background-size: cover;
 }
 #sec-2 section {

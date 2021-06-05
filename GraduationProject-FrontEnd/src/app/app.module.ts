@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './register/register/register.component';
 import { RouterModule } from '@angular/router';
+import { SliderComponent } from './slider/slider.component';
+import { LatestOffersComponent } from './latest-offers/latest-offers.component';
+import { FeaturedCarsComponent } from './featured-cars/featured-cars.component';
+import { TotalCarsComponent } from './total-cars/total-cars.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +19,10 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     RegisterComponent,
     
+    SliderComponent,
+    LatestOffersComponent,
+    FeaturedCarsComponent,
+    TotalCarsComponent
   ],
   imports: [
     BrowserModule,
