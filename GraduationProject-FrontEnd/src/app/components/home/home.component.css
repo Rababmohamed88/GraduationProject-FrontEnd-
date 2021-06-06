@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "changa_one";
+    src: url("/assets/fonts/ChangaOne-Regular.ttf");
+}
 /*Start Slider*/
 .main-slider {
     position: relative;
@@ -17,7 +21,7 @@
 .main-slider .carousel-caption h1{
     text-transform: uppercase;
     font-size: 70px;
-    font-family: changa one;
+    font-family: changa_one;
 }
 .main-slider .carousel-caption span{
     color: #FFB400;
@@ -28,7 +32,7 @@
     color: white;
     font-size: 30px;
     text-transform: uppercase;
-    font-family:changa one;
+    font-family:changa_one;
     border-style: none;
     transition: transform .7s;
 }
@@ -102,7 +106,7 @@
 .text-center{
     text-transform: uppercase;
     font-size: 40px;
-    font-family:changa one;
+    font-family:changa_one;
     color: #383737;
 }
 .card{
@@ -144,7 +148,7 @@
 .total-cars p{
     text-transform: uppercase;
     font-size: 40px;
-    font-family: changa one;
+    font-family: changa_one;
     color: #383737;
 }
 #sec-2 h5{
@@ -219,7 +223,7 @@
 .latest-offers p{
     text-transform: uppercase;
     font-size: 40px;
-    font-family:changa one;
+    font-family:changa_one;
     color: #383737;
 }
 .latest-offers span{
