@@ -8,12 +8,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RouterModule } from '@angular/router';
-import { SliderComponent } from './slider/slider.component';
-import { LatestOffersComponent } from './latest-offers/latest-offers.component';
-import { FeaturedCarsComponent } from './featured-cars/featured-cars.component';
-import { TotalCarsComponent } from './total-cars/total-cars.component';
 import{FooterComponent} from './components/footer/footer.component'
-import {NavbarComponent} from './components/navbar/navbar.component'
+import {NavbarComponent} from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component'
 
 @NgModule({
   declarations: [
@@ -21,12 +18,9 @@ import {NavbarComponent} from './components/navbar/navbar.component'
     LoginComponent,
     RegisterComponent,
     
-    SliderComponent,
-    LatestOffersComponent,
-    FeaturedCarsComponent,
-    TotalCarsComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
