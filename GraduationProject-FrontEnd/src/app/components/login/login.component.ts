@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
-import { Login } from 'src/app/_models/login';
+import { AuthServiceService } from '../../services/auth-service.service';
+import { Login } from '../../_models/login';
 
 @Component({
   selector: 'app-login',

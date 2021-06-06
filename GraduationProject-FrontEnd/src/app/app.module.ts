@@ -5,13 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login/login.component';
-import { RegisterComponent } from './register/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { RouterModule } from '@angular/router';
 import { SliderComponent } from './slider/slider.component';
 import { LatestOffersComponent } from './latest-offers/latest-offers.component';
 import { FeaturedCarsComponent } from './featured-cars/featured-cars.component';
 import { TotalCarsComponent } from './total-cars/total-cars.component';
+import{FooterComponent} from './components/footer/footer.component'
+import {NavbarComponent} from './components/navbar/navbar.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TotalCarsComponent } from './total-cars/total-cars.component';
     SliderComponent,
     LatestOffersComponent,
     FeaturedCarsComponent,
-    TotalCarsComponent
+    TotalCarsComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

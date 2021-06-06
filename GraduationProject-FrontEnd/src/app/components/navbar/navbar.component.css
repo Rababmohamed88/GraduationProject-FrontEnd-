@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.navbar-brand {
+    font-size: 2rem;
+    margin: .1rem;
+}
+
+:host ::ng-deep .navbar {
+    font-family: "Montserrat", sans-serif;
+    background-color: #24252A;
+    color: #edf0f1;
+}
+
+.nav-item {
+    margin: .2rem;
+}
+
+.right-item {
+    margin-right: auto;
+    margin: .1rem;
+    color: #edf0f1;
+}
