@@ -1,0 +1,271 @@
+@font-face {
+    font-family: "changa_one";
+    src: url("/assets/fonts/ChangaOne-Regular.ttf");
+}
+/*Start Slider*/
+.main-slider {
+    position: relative;
+}
+.main-slider .carousel-inner .carousel-item img {
+    background-size: cover;
+}
+.main-slider .carousel-caption{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    left: 50%;
+    top: 85%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+.main-slider .carousel-caption h1{
+    text-transform: uppercase;
+    font-size: 70px;
+    font-family: changa_one;
+}
+.main-slider .carousel-caption span{
+    color: #FFB400;
+    font-size: 100px;
+}
+.main-slider .btn{
+    background-color: #FFB400;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family:changa_one;
+    border-style: none;
+    transition: transform .7s;
+}
+.main-slider .btn:hover{
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+.main-slider .carousel-indicators li {
+    height: 8px;
+}
+@media (max-width:992px) {
+    .main-slider .carousel-caption h1, .main-slider .carousel-caption span{
+        font-size: 50px;
+    }
+}
+@media (max-width:992px) {
+    .main-slider .carousel-caption button{
+        font-size: 20px;
+    }
+}
+@media (max-width:992px) {
+    .main-slider .carousel-indicators li{
+        height: 7px;
+    }
+}
+@media (max-width:768px) {
+    .main-slider .carousel-caption h1, .main-slider .carousel-caption span{
+        font-size: 40px;
+    }
+}
+@media (max-width:768px) {
+    .main-slider .carousel-caption button{
+        font-size: 15px;
+    }
+}
+@media (max-width:768px) {
+    .main-slider .carousel-indicators li{
+        height: 6px;
+    }
+}
+@media (max-width:576px) {
+    .main-slider .carousel-caption h1, .main-slider .carousel-caption span{
+        font-size: 30px;
+    }
+}
+@media (max-width:576px) {
+    .main-slider .carousel-indicators li{
+        display: none;
+    }
+}
+@media (max-width:350px) {
+    .main-slider .carousel-caption h1, .main-slider .carousel-caption span{
+        font-size: 20px;
+    }
+}
+@media (max-width:350px) {
+    .main-slider .carousel-caption button{
+        font-size: 5px;
+    }
+}
+@media (max-width:350px) {
+    .main-slider .carousel-indicators li{
+        display: none;
+    }
+}
+/*End Slider*/
+
+/*------------------------------------------------------------------------------------------*/
+
+/*Start Featured Cars*/
+.text-center{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family:changa_one;
+    color: #383737;
+}
+.card{
+    border: 2px solid #858383 !important;
+    border-radius: 10px !important;
+}
+.card-text{
+    display: inline !important;
+}
+.card-group i, .c1, .card-group a{
+    color:#FFB400;
+}
+.card-group p, .c2{
+    color: #464343;
+}
+.card-group img{
+    border-radius: 10px !important;
+}
+.card-img-top{
+    position: relative;
+}
+.card-group button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.featured-cars img:hover{
+    opacity: 80%;
+}
+.featured-cars a:hover{
+    text-decoration: underline solid #FFB400;
+}
+/*End Featured Cars*/
+
+/*------------------------------------------------------------------------------------------*/
+
+/*Start Total Cars*/
+.total-cars p{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: changa_one;
+    color: #383737;
+}
+#sec-2 h5{
+    font-size: 30px;
+    color: white;
+}
+#sec-2 h2{
+    font-size: 50px;
+    color: white;
+}
+#sec-2 span{
+    color: #FFB400;
+    font-size: 30px;
+}
+#sec-2{
+    background: linear-gradient(RGBA(0,0,0,0.50), RGBA(0,0,0,0.50)), url(/assets/8.png);
+    background-size: cover;
+}
+#sec-2 section {
+    text-align: center;
+    padding: 35px 0;
+}
+#sec-2 section h2 {
+    color: #FFCB0F;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1.4rem;
+}
+#sec-2 section p {
+    color :#F5F5F5; 
+    font-size: 0.9rem;   
+}
+#sec-2 .container .row article {
+    width: 77%;
+    margin: 80px auto 40px auto;
+    text-align: center;
+}
+#sec-2 .container .row article aside {
+    background-color: rgba(248, 247, 247, 0.2);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#sec-2 .container .row article aside div {
+    position: relative;
+    top: -80px;
+    text-align: center
+}
+#sec-2 .container .row article aside div i{
+    background-color: #FFCB0F;
+    padding: 40px;
+    border-radius: 50%;
+    font-size: 2.5rem
+}
+#sec-2 .container .row article aside div i .details{
+    text-align: center;
+}
+/*End Total Cars*/
+
+/*------------------------------------------------------------------------------------------*/
+
+/*Start Latest offers*/
+.latest-offers img{
+    border-radius: 15px;
+}
+.latest-offers .hover{
+    transition: transform .5s;
+}
+
+.latest-offers .hover:hover{
+    transform: scale(1.1);
+}
+.latest-offers p{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family:changa_one;
+    color: #383737;
+}
+.latest-offers span{
+    color: #FFB400;
+    font-size: 30px;
+}
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+    position: relative;
+}
+  /* Style the button and place it in the middle of the container/image */
+  .container .btn {
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    background-color: rgba(82, 80, 80, 0.5);
+    cursor: text;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  /* Bottom right text */
+  .latest-offers .text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.8;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+@media (max-width:992px) {
+    .latest-offers .text-block h6, .latest-offers .text-block span, .latest-offers .text-block h4{
+        font-size: 20px;
+    }
+}
+@media (max-width:768px) {
+    .latest-offers .text-block h6, .latest-offers .text-block span, .latest-offers .text-block h4{
+        font-size: 15px;
+    }
+}
+/*End Latest offers*/

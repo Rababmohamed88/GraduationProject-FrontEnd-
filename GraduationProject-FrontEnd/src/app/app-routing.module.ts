@@ -2,18 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent},
-  {path:"register",component:RegisterComponent},
-  {path:'explore',loadChildren:()=>import('./explore/explore.module').then(m=>m.ExploreModule)}
-
-
-
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  {
+    path: 'explore',
+    loadChildren: () =>
+      import('./explore/explore.module').then((m) => m.ExploreModule),
+  },
+  {path: '' , component: HomeComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
