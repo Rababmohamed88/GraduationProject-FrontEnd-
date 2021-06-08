@@ -1,1 +1,53 @@
-<p>allcar works!</p>
+.
+<div class="container">
+    <ul ngbNav #nav="ngbNav" class="nav-pills">
+        <li ngbNavItem>
+            <a btn-outline-primary ngbNavLink>Price</a>
+            <ng-template ngbNavContent>
+                <div class="form-inline m-2 mt-5">
+                    <input class="form-control m-2" type="number" name="startprice" placeholder="From" id="">
+                    <input class="form-control m-2" type="number" name="startprice" placeholder="To" id="">
+                </div>
+                <div class=" m-3">
+                    <button class="btn btn-warning ">Search</button>
+                </div>
+
+            </ng-template>
+        </li>
+
+        <li ngbNavItem>
+            <a btn-outline-primary ngbNavLink>Body Style</a>
+            <ng-template ngbNavContent>
+                <div class="row m-3 mb-3 mt-5">
+                    <div class="col-3 cardbody">
+                        <p class="text-center">Van</p>
+                    </div>
+                    <div class="col-3 cardbody">
+                        <p class="text-center">Hatchback</p>
+                    </div>
+                    <div class="col-3 cardbody">
+                        <p class="text-center">Cabriolet</p>
+                    </div>
+                    <div class="col-3 cardbody">
+                        <p class="text-center">Sedan</p>
+                    </div>
+
+                    <div class="col-3 cardbody">
+                        <p class="text-center">Coupe</p>
+                    </div>
+                    <div class="col-3 cardbody">
+                        <p class="text-center">SUV</p>
+                    </div>
+                    <div class="col-3 cardbody">
+                        <p class="text-center">Station</p>
+                    </div>
+                </div>
+
+            </ng-template>
+        </li>
+    </ul>
+    <div class="row">
+        <div class="m-2" [ngbNavOutlet]="nav"></div>
+
+    </div>
+</div>

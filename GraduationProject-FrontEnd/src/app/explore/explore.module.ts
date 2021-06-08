@@ -7,6 +7,9 @@ import { ExploreLayoutComponent } from './explore-layout/explore-layout.componen
 import { UsedcarComponent } from './usedcar/usedcar.component';
 import { AllcarComponent } from './allcar/allcar.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { AllcarComponent } from './allcar/allcar.component';
   ],
   imports: [
     CommonModule,
-    ExploreRoutingModule
+    ExploreRoutingModule,
+    NgbModule,
+    
+    
   ]
 })
 export class ExploreModule { }

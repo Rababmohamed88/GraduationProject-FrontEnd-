@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-allcar',
   templateUrl: './allcar.component.html',
@@ -11,5 +12,7 @@ export class AllcarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+    active = 1;
+  
 }

@@ -3,13 +3,24 @@
 
         <div class="px-5" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Pricing</a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link " routerLinkActive="active" routerLink="/explore/all">All Cars</a>
+                <a class="nav-link" routerLinkActive="active" routerLink="/explore/new">New Cars</a>
+                <a class="nav-link" routerLinkActive="active" routerLink="/explore/used">Uesd Cars</a>
             </div>
         </div>
     </div>
 </nav>
-<router-outlet>
-</router-outlet>
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <router-outlet>
+            </router-outlet>
+        </div>
+
+        <div class="m-2 col-4 float-right headtext">
+            <p class="my-5">Find The Car You’re Looking For </p>
+            <p class="text my-4">New or used? Choose make, price range or body style.</p>
+            <p class="text my-5">Undecided? Choose the price range and leave the rest to us. </p>
+        </div>
+    </div>
+</div>
