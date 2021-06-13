@@ -1,0 +1,22 @@
+h2{
+    font-family: changa one;
+    text-transform: uppercase;
+}
+.card-header{
+    background-color: white;
+}
+.card-header:hover{
+    background-color: #E9ECEF;
+}
+.card-header button{
+    font-weight: bold;
+    font-size: 20px;
+}
+.card-body th{
+    font-size: 13px;
+    font-weight: normal;
+}
+.card-header button:hover{
+    color: #FFB400;
+    text-decoration: underline;
+}

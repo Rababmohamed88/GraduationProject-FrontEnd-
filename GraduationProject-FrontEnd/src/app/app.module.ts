@@ -13,7 +13,8 @@ import { RouterModule } from '@angular/router';
 import{FooterComponent} from './components/footer/footer.component'
 import {NavbarComponent} from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import {HomeComponent} from './components/home/home.component'
+import {HomeComponent} from './components/home/home.component';
+import { CarDetailsComponent } from './components/car-details/car-details.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import {HomeComponent} from './components/home/home.component'
     
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    CarDetailsComponent
   ],
   imports: [
     BrowserModule,
