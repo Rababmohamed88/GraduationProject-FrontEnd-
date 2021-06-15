@@ -1,5 +1,16 @@
 <div class="container">
-    <h2 class="my-4">{{cd.car_name}}</h2>
+  <div class="row">
+    <div class="col-4">
+      <h2 class="mt-4">{{cd.carName}}</h2>
+      <h4>{{cd.ClassName}}</h4>
+    </div>
+    <div class="col-4">
+      <h2 class="mt-4">{{cd.Price | currency : 'EGP'}}</h2>
+      <i class="fa fa-car mr-1"></i>
+      <h4 class="d-inline">{{cd.CarType}}</h4>
+    </div>
+  </div>
+
     <div class="row">
       <div class="col-3">
         <img src="../../assets/14.jpeg" class="w-100">
@@ -23,35 +34,35 @@
                           <tbody>
                             <tr>
                               <th scope="row">Electric Handbrake</th>
-                              <td>{{cd.electric_handbrake}}</td>
+                              <td>{{cd.ElectricHandbrake}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Power Assisted Steering</th>
-                              <td>{{cd.power_assisted_steering}}</td>
+                              <td>{{cd.PowerAssistedSteering}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Active Park Assist</th>
-                              <td>{{cd.active_park_assist}}</td>
+                              <td>{{cd.ActiveParkAssist}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Traction Control</th>
-                              <td>{{cd.traction_control}}</td>
+                              <td>{{cd.TractionControl}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Tire Pressure Monitoring (TPMS)</th>
-                              <td>{{cd.tire_pressure_monitoring}}</td>
+                              <td>{{cd.TirePressureMonitoring}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Anti-Lock Braking System (ABS)</th>
-                              <td>{{cd.anti_Lock_braking_system}}</td>
+                              <td>{{cd.AntiLockBrakingSystem}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Electronic Stability Program (ESP)</th>
-                              <td>{{cd.electronic_stability_program}}</td>
+                              <td>{{cd.ElectroncStabilityControl}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Airbags</th>
-                              <td>{{cd.airbags}}</td>
+                              <td>{{cd.Airbags}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -61,31 +72,31 @@
                           <tbody>
                             <tr>
                               <th scope="row">Hill Assist (HLA)</th>
-                              <td>{{cd.hill_assist}}</td>
+                              <td>{{cd.HillAssist}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Speed Limiter</th>
-                              <td>{{cd.speed_limiter}}</td>
+                              <td>{{cd.SpeedLimiter}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Automatic Start/Stop Function</th>
-                              <td>{{cd.automatic_start_stop_function}}</td>
+                              <td>{{cd.AutoStartStopFunctions}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Immobilizer</th>
-                              <td>{{cd.immobilizer}}</td>
+                              <td>{{cd.Immobilizer}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Child Seats (ISOFIX)</th>
-                              <td>{{cd.child_seats}}</td>
+                              <td>{{cd.ChildSeats}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Electronic Brake Force Distribution (EBD)</th>
-                              <td>{{cd.electronic_brake_force_distribution}}</td>
+                              <td>{{cd.ElectronicBrakeForceDistribution}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Cruise Control</th>
-                              <td>{{cd.cruise_control}}</td>
+                              <td>{{cd.CruiseControl}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -111,23 +122,23 @@
                           <tbody>
                             <tr>
                               <th scope="row">Cylinders</th>
-                              <td>{{cd.cylinders}}</td>
+                              <td>{{cd.Cylinders}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Maximum torque (N.m@RPM)</th>
-                              <td>{{cd.maximum_torque}}</td>
+                              <td>{{cd.MaxToruqe}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Fuel Consumption (Liter/100 KM)</th>
-                              <td>{{cd.fuel_consumption}}</td>
+                              <td>{{cd.FuelConsumption}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Fuel Type</th>
-                              <td>{{cd.fuel_type}}</td>
+                              <td>{{cd.FuelType}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Maximum power (HP @ RPM)</th>
-                              <td>{{cd.maximum_power}}</td>
+                              <td>{{cd.MaxPower}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -137,19 +148,19 @@
                           <tbody>
                             <tr>
                               <th scope="row">Acceleration From 0-100 (Km/hr.)</th>
-                              <td>{{cd.acceleration}}</td>
+                              <td>{{cd.Acceleration}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Maximum Speed</th>
-                              <td>{{cd.maximum_speed}}</td>
+                              <td>{{cd.MaxSpeed}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Fuel Tank Capacity</th>
-                              <td>{{cd.fuel_tank_capacity}}</td>
+                              <td>{{cd.FuelTankCapacity}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Gear Shifts</th>
-                              <td>{{cd.gear_shifts}}</td>
+                              <td>{{cd.GearShifts}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -175,59 +186,59 @@
                           <tbody>
                             <tr>
                               <th scope="row">Multi function steering wheel</th>
-                              <td>{{cd.multi_function_steering_wheel}}</td>
+                              <td>{{cd.MultifunctionSteeringWheel}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Paddle shifters</th>
-                              <td>{{cd.paddle_shifters}}</td>
+                              <td>{{cd.PaddleShifters}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Leather Steering Wheel</th>
-                              <td>{{cd.leather_steering_Wheel}}</td>
+                              <td>{{cd.LeatherSteeringWheel}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Variable heated driver & passenger seat</th>
-                              <td>{{cd.variable_heated_driver_passenger_seat}}</td>
+                              <td>{{cd.VariableHeatedDriverPassengerSeat}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Power Tailgate</th>
-                              <td>{{cd.power_tailgate}}</td>
+                              <td>{{cd.PowerTailgate}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Ambient Lighting</th>
-                              <td>{{cd.ambient_lighting}}</td>
+                              <td>{{cd.AmbientLighting}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Number of Seats</th>
-                              <td>{{cd.number_of_seats}}</td>
+                              <td>{{cd.NumberOfSeats}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Keyless Start/Stop</th>
-                              <td>{{cd.keyless_start_stop}}</td>
+                              <td>{{cd.KeylessStartStop}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Rear parking sensors</th>
-                              <td>{{cd.rear_parking_sensors}}</td>
+                              <td>{{cd.RearParkingSensors}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Rear View Camera</th>
-                              <td>{{cd.rear_view_camera}}</td>
+                              <td>{{cd.RearViewCamera}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Passenger Seat</th>
-                              <td>{{cd.passenger_seat}}</td>
+                              <td>{{cd.PassengerSeat}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Center Lock</th>
-                              <td>{{cd.center_lock}}</td>
+                              <td>{{cd.CenterLock}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Dashboard</th>
-                              <td>{{cd.dashboard}}</td>
+                              <td>{{cd.Dashboard}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Drive Mode Select</th>
-                              <td>{{cd.drive_mode_select}}</td>
+                              <td>{{cd.DriveModeSelect}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -237,51 +248,51 @@
                           <tbody>
                             <tr>
                               <th scope="row">A/C for back seats</th>
-                              <td>{{cd.ac_for_back_seats}}</td>
+                              <td>{{cd.AcBackSeats}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Leather Transmission</th>
-                              <td>{{cd.leather_transmission}}</td>
+                              <td>{{cd.LeatherTransmission}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Back Holder</th>
-                              <td>{{cd.back_holder}}</td>
+                              <td>{{cd.BackHolder}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Keyless Entry</th>
-                              <td>{{cd.keyless_entry}}</td>
+                              <td>{{cd.KeylessEntry}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Auto dimming mirror</th>
-                              <td>{{cd.auto_dimming_mirror}}</td>
+                              <td>{{cd.AutoDimmingMirror}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Air Condition</th>
-                              <td>{{cd.air_condition}}</td>
+                              <td>{{cd.Ac}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Auto folding for back seats</th>
-                              <td>{{cd.auto_folding_for_back_seats}}</td>
+                              <td>{{cd.AutoFoldingBackSeats}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Front parking sensors</th>
-                              <td>{{cd.front_parking_sensors}}</td>
+                              <td>{{cd.FrontParkingSensors}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Front Camera</th>
-                              <td>{{cd.front_camera}}</td>
+                              <td>{{cd.FrontCamera}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Driver Seat</th>
-                              <td>{{cd.driver_seat}}</td>
+                              <td>{{cd.DriverSeat}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Leather Seats</th>
-                              <td>{{cd.leather_seats}}</td>
+                              <td>{{cd.LeatherSeats}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Electronic Window</th>
-                              <td>{{cd.electronic_window}}</td>
+                              <td>{{cd.ElectronicWindow}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -307,31 +318,31 @@
                           <tbody>
                             <tr>
                               <th scope="row">Rain Sensor</th>
-                              <td>{{cd.rain_sensor}}</td>
+                              <td>{{cd.RainSensor}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Fog lamps</th>
-                              <td>{{cd.fog_lamps}}</td>
+                              <td>{{cd.FogLambs}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Rear Lamps</th>
-                              <td>{{cd.rear_lamps}}</td>
+                              <td>{{cd.RearLambs}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Auto-lighting (Auto On-Off Headlamp)</th>
-                              <td>{{cd.auto_lighting}}</td>
+                              <td>{{cd.AutoLighting}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Wheels with tire size</th>
-                              <td>{{cd.wheels_with_tire_size}}</td>
+                              <td>{{cd.WheelsWithTireSize}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Panorama Roof</th>
-                              <td>{{cd.panorama_roof}}</td>
+                              <td>{{cd.PanoramaRoof}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Auto Folding Mirrors</th>
-                              <td>{{cd.auto_folding_mirrors}}</td>
+                              <td>{{cd.AutoFoldingMirror}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -341,31 +352,31 @@
                           <tbody>
                             <tr>
                               <th scope="row">Privacy glass</th>
-                              <td>{{cd.privacy_glass}}</td>
+                              <td>{{cd.PrivacyGlass}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Headlamps</th>
-                              <td>{{cd.headlamps}}</td>
+                              <td>{{cd.Headlamps}}</td>
                             </tr>
                             <tr>
                               <th scope="row">LED Daytime running lamps</th>
-                              <td>{{cd.led_daytime_running_lamps}}</td>
+                              <td>{{cd.LedDaytimeRunningLamps}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Light Sensors</th>
-                              <td>{{cd.light_sensors}}</td>
+                              <td>{{cd.LightSensors}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Sun Roof</th>
-                              <td>{{cd.sun_roof}}</td>
+                              <td>{{cd.SunRoof}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Power mirrors</th>
-                              <td>{{cd.power_mirrors}}</td>
+                              <td>{{cd.PowerMirrors}}</td>
                             </tr>
                             <tr>
-                              <th scope="row">Rim Size</th>
-                              <td>{{cd.rim_size}}</td>
+                              <th scope="row">Trim Size</th>
+                              <td>{{cd.TrimSize}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -391,23 +402,27 @@
                           <tbody>
                             <tr>
                               <th scope="row">AUX</th>
-                              <td>{{cd.aux}}</td>
+                              <td>{{cd.Aux}}</td>
                             </tr>
                             <tr>
                               <th scope="row">USB</th>
-                              <td>{{cd.usb}}</td>
+                              <td>{{cd.Usb}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Multifunction Steering Wheel</th>
-                              <td>{{cd.multifunction_steering_wheel}}</td>
+                              <td>{{cd.MultifunctionSteeringWheel}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Touch screen</th>
-                              <td>{{cd.touch_screen}}</td>
+                              <td>{{cd.Touchscreen}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Wireless Charger</th>
-                              <td>{{cd.wireless_charger}}</td>
+                              <td>{{cd.WirlessCharger}}</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">CD Player</th>
+                              <td>{{cd.CdPlayer}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -417,23 +432,23 @@
                           <tbody>
                             <tr>
                               <th scope="row">Bluetooth</th>
-                              <td>{{cd.bluetooth}}</td>
+                              <td>{{cd.Bluetooth}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Head Up Display</th>
-                              <td>{{cd.head_up_display}}</td>
+                              <td>{{cd.HeadUpDisplay}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Smartphone Link Systems</th>
-                              <td>{{cd.smartphone_link_system}}</td>
+                              <td>{{cd.SmartphoneLinkSystem}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Navigation System</th>
-                              <td>{{cd.navigation_system}}</td>
+                              <td>{{cd.NavigationSystem}}</td>
                             </tr>
                             <tr>
                               <th scope="row">Speakers</th>
-                              <td>{{cd.speakers}}</td>
+                              <td>{{cd.Speakers}}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -459,15 +474,15 @@
                               <tbody>
                                 <tr>
                                   <th scope="row">Luggage Box Capacity</th>
-                                  <td>{{cd.luggage_box_capacity}}</td>
+                                  <td>{{cd.LuggageBoxCapacity}}</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">Clearance</th>
-                                  <td>{{cd.clearance}}</td>
+                                  <td>{{cd.Clearance}}</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">Width</th>
-                                  <td>{{cd.width}}</td>
+                                  <td>{{cd.Width}}</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -477,15 +492,15 @@
                               <tbody>
                                 <tr>
                                   <th scope="row">Wheelbase</th>
-                                  <td>{{cd.wheelbase}}</td>
+                                  <td>{{cd.Wheelbase}}</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">Length</th>
-                                  <td>{{cd.length}}</td>
+                                  <td>{{cd.Length}}</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">Height</th>
-                                  <td>{{cd.height}}</td>
+                                  <td>{{cd.Height}}</td>
                                 </tr>
                               </tbody>
                             </table>
