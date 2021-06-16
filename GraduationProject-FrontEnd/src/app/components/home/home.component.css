@@ -106,7 +106,7 @@
 .text-center{
     text-transform: uppercase;
     font-size: 40px;
-    font-family:changa_one;
+    font-family:changa one;
     color: #383737;
 }
 .card{
@@ -125,20 +125,22 @@
 .card-group img{
     border-radius: 10px !important;
 }
-.card-img-top{
-    position: relative;
-}
-.card-group button{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 .featured-cars img:hover{
     opacity: 80%;
 }
-.featured-cars a:hover{
-    text-decoration: underline solid #FFB400;
+.featured-cars a{
+    color: #464343;
+    font-size: 20px;
+    padding: 3px;
+}
+.featured-cars button{
+    background-color: #FFB400;
+    color: #464343;
+    border: none;
+    border-radius: 5px;
+}
+.featured-cars button:hover{
+    text-decoration: underline solid;
 }
 /*End Featured Cars*/
 
