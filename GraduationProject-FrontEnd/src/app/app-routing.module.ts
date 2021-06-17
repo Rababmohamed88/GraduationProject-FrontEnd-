@@ -8,7 +8,7 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  {path: 'car-details', component: CarDetailsComponent},
+  {path: 'car-details/:id', component: CarDetailsComponent},
   {
     path: 'explore',
     loadChildren: () =>
