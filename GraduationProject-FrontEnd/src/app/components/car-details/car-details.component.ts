@@ -34,12 +34,11 @@ export class CarDetailsComponent implements OnInit {
         }
       }
 
-      if(typeof obj[key] === 'number'){
-        if(obj[key] == -1){
+      if (typeof obj[key] === 'number') {
+        if (obj[key] == -1) {
           obj[key] = '<i class="fa fa-times"></i>';
         }
       }
-
     });
 
     console.log(obj);
