@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CarDetailsComponent implements OnInit {
   cd: CarDetails = new CarDetails();
+  detailsid: number = 5;
 
   constructor(
     private detailsServ: GetCarDetailsService,
@@ -18,6 +19,9 @@ export class CarDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.ac.params.subscribe((p) => {
+      console.log("p.id=>"+p.id)
+      this.detailsid = p.id;
+      console.log("detailsid=>"+this.detailsid)
       this.detailsServ.getCarDetails(p.id).subscribe((a) => {
         this.cd = this.settingData(a);
       });
@@ -41,7 +45,6 @@ export class CarDetailsComponent implements OnInit {
       }
     });
 
-    console.log(obj);
     return obj;
   }
 }
