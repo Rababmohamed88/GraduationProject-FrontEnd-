@@ -1,0 +1,88 @@
+.search{
+    width:15%; 
+    height: 300px; 
+    border: 2px solid #ddd;
+    text-align: center;
+ 
+ 
+ }
+ .tabs{
+    height: fit-content;
+    border-bottom:1px solid #ddd;
+ 
+ }
+ .tabs span{
+    display: inline-block;
+    text-align: center;
+    width:50%;
+    font-size: large;
+    color: #80939e;
+    font-weight: bold;
+ 
+ }
+ .tabs span:hover{
+    border-bottom:2px solid #80939e  ;
+ }
+ 
+ .tabs span a{
+    color: #80939e;
+    text-decoration:none;
+ }
+ .tabs span a:focus{
+    color: #80939e;
+    text-decoration:none;
+ }
+ .brand button,select {
+    border:1px solid #ddd;
+    border-radius: 5px;
+    width: 90%;
+    text-align: left;
+    padding: 5px;
+    color: #80939e;
+    position: relative;
+ }
+ .toggle{
+    display: inline-block;
+    
+    position:absolute;
+    right: 3px;
+   
+ }
+ 
+ .scroll{
+ max-height: 300px;
+ margin-bottom: 10px;
+ overflow:scroll;
+ -webkit-overflow-scrolling: touch;
+ }
+ button {
+    border-radius: 5px;
+    border: 1px solid #ffb400;
+    background-color: #ffb400;
+    width: 60%;
+    height: 35px;
+    display: inline-block;
+    margin: auto;
+ 
+ }
+ .btn-theme {
+   
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+ }
+ .clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+ }
+ .clearfix{
+    display: flex;
+    justify-content: center;
+ }
+ .cards{
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+ }

@@ -14,7 +14,8 @@ import{FooterComponent} from './components/footer/footer.component'
 import {NavbarComponent} from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import {HomeComponent} from './components/home/home.component';
-import { CarDetailsComponent } from './components/car-details/car-details.component'
+import { CarDetailsComponent } from './components/car-details/car-details.component';
+import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,9 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    SearchComponent,
+    
   ],
   imports: [
     BrowserModule,
