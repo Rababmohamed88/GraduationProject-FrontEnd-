@@ -1,22 +1,53 @@
 h2, h4{
-    font-family: changa one;
-    text-transform: uppercase;
+  font-family: changa one;
+}
+.left i{
+  color: #FFB400;
+  font-size: 25px;
 }
 .card-header{
-    background-color: white;
+  background-color: #c9cfca;
 }
 .card-header:hover{
-    background-color: #E9ECEF;
+  background-color: #E9ECEF;
 }
 .card-header button{
-    font-weight: bold;
-    font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.card-body{
+  background-color: #E9ECEF;
 }
 .card-body th{
-    font-size: 13px;
-    font-weight: normal;
+  font-size: 13px;
+  font-weight: normal;
 }
 .card-header button:hover{
-    color: #FFB400;
-    text-decoration: underline;
+  color: #FFB400;
+  text-decoration: underline;
+}
+@media (max-width: 992px) {
+  .left h2, .left h4 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .left h2, .left h4 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .left i {
+    font-size: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .left h2, .left h4 {
+    font-size: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .left i {
+    font-size: 10px;
+  }
 }

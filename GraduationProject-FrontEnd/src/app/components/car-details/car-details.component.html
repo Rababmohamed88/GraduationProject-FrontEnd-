@@ -1,21 +1,19 @@
 <div class="container">
-  <div class="row">
+  <div class="row my-4">
     <div class="col-4">
-      <h2 class="mt-4">{{ cd.carName }}</h2>
-      <h4>{{ cd.className }}</h4>
-    </div>
-    <div class="col-4">
-      <h2 class="mt-4">{{ cd.price | currency: '':'' }} EGP</h2>
-      <i class="fa fa-car mr-1"></i>
-      <h4 class="d-inline">{{ cd.carType }}</h4>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-3">
       <img src="../../assets/14.jpeg" class="w-100" />
+      <div class="left">
+        <h2 class="mt-3">{{ cd.carName }}</h2>
+        <h4 class="mt-3">{{ cd.className }}</h4>
+        <i class="fa fa-cc-visa mr-1 mt-3"></i>
+        <h2 class="mt-3 d-inline">{{ cd.price | currency: "":"" }} EGP</h2>
+        <br />
+        <i class="fa fa-car mr-1 mt-3"></i>
+        <h4 class="d-inline mt-3">{{ cd.carType }}</h4>
+      </div>
     </div>
-    <div class="col-9">
+
+    <div class="col-8">
       <div id="accordion">
         <div class="card">
           <div class="card-header" id="headingOne">
@@ -222,25 +220,27 @@
                     <tbody>
                       <tr>
                         <th scope="row">Multi function steering wheel</th>
-                        <td [innerHTML] = "cd.multifunctionSteeringWheel" ></td>
+                        <td [innerHTML]="cd.multifunctionSteeringWheel"></td>
                       </tr>
                       <tr>
                         <th scope="row">Paddle shifters</th>
-                        <td [innerHTML] = "cd.paddleShifters" ></td>
+                        <td [innerHTML]="cd.paddleShifters"></td>
                       </tr>
                       <tr>
                         <th scope="row">Leather Steering Wheel</th>
-                        <td [innerHTML] = "cd.leatherSteeringWheel" ></td>
+                        <td [innerHTML]="cd.leatherSteeringWheel"></td>
                       </tr>
                       <tr>
                         <th scope="row">
                           Variable heated driver & passenger seat
                         </th>
-                        <td [innerHTML] = "cd.variableHeatedDriverPassengerSeat" ></td>
+                        <td
+                          [innerHTML]="cd.variableHeatedDriverPassengerSeat"
+                        ></td>
                       </tr>
                       <tr>
                         <th scope="row">Power Tailgate</th>
-                        <td [innerHTML] = "cd.powerTailgate" ></td>
+                        <td [innerHTML]="cd.powerTailgate"></td>
                       </tr>
                       <tr>
                         <th scope="row">Ambient Lighting</th>
@@ -252,15 +252,15 @@
                       </tr>
                       <tr>
                         <th scope="row">Keyless Start/Stop</th>
-                        <td [innerHTML] = "cd.keylessStartStop" ></td>
+                        <td [innerHTML]="cd.keylessStartStop"></td>
                       </tr>
                       <tr>
                         <th scope="row">Rear parking sensors</th>
-                        <td [innerHTML] = "cd.rearParkingSensors" ></td>
+                        <td [innerHTML]="cd.rearParkingSensors"></td>
                       </tr>
                       <tr>
                         <th scope="row">Rear View Camera</th>
-                        <td [innerHTML] = "cd.rearViewCamera" ></td>
+                        <td [innerHTML]="cd.rearViewCamera"></td>
                       </tr>
                       <tr>
                         <th scope="row">Passenger Seat</th>
@@ -268,7 +268,7 @@
                       </tr>
                       <tr>
                         <th scope="row">Center Lock</th>
-                        <td [innerHTML] = "cd.centerLock" ></td>
+                        <td [innerHTML]="cd.centerLock"></td>
                       </tr>
                       <tr>
                         <th scope="row">Dashboard</th>
@@ -276,7 +276,7 @@
                       </tr>
                       <tr>
                         <th scope="row">Drive Mode Select</th>
-                        <td [innerHTML] = "cd.driveModeSelect" ></td>
+                        <td [innerHTML]="cd.driveModeSelect"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -286,23 +286,23 @@
                     <tbody>
                       <tr>
                         <th scope="row">A/C for back seats</th>
-                        <td [innerHTML] = "cd.acBackSeats" ></td>
+                        <td [innerHTML]="cd.acBackSeats"></td>
                       </tr>
                       <tr>
                         <th scope="row">Leather Transmission</th>
-                        <td [innerHTML] = "cd.leatherTransmission" ></td>
+                        <td [innerHTML]="cd.leatherTransmission"></td>
                       </tr>
                       <tr>
                         <th scope="row">Back Holder</th>
-                        <td [innerHTML] = "cd.backHolder" ></td>
+                        <td [innerHTML]="cd.backHolder"></td>
                       </tr>
                       <tr>
                         <th scope="row">Keyless Entry</th>
-                        <td [innerHTML] = "cd.keylessEntry" ></td>
+                        <td [innerHTML]="cd.keylessEntry"></td>
                       </tr>
                       <tr>
                         <th scope="row">Auto dimming mirror</th>
-                        <td [innerHTML] = "cd.autoDimmingMirror" ></td>
+                        <td [innerHTML]="cd.autoDimmingMirror"></td>
                       </tr>
                       <tr>
                         <th scope="row">Air Condition</th>
@@ -310,15 +310,15 @@
                       </tr>
                       <tr>
                         <th scope="row">Auto folding for back seats</th>
-                        <td [innerHTML] = "cd.autoFoldingBackSeats" ></td>
+                        <td [innerHTML]="cd.autoFoldingBackSeats"></td>
                       </tr>
                       <tr>
                         <th scope="row">Front parking sensors</th>
-                        <td [innerHTML] = "cd.frontParkingSensors" ></td>
+                        <td [innerHTML]="cd.frontParkingSensors"></td>
                       </tr>
                       <tr>
                         <th scope="row">Front Camera</th>
-                        <td [innerHTML] = "cd.frontCamera" ></td>
+                        <td [innerHTML]="cd.frontCamera"></td>
                       </tr>
                       <tr>
                         <th scope="row">Driver Seat</th>
@@ -326,11 +326,11 @@
                       </tr>
                       <tr>
                         <th scope="row">Leather Seats</th>
-                        <td [innerHTML] = "cd.leatherSeats"></td>
+                        <td [innerHTML]="cd.leatherSeats"></td>
                       </tr>
                       <tr>
                         <th scope="row">Electronic Window</th>
-                        <td [innerHTML] = "cd.electronicWindow"></td>
+                        <td [innerHTML]="cd.electronicWindow"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -367,11 +367,11 @@
                     <tbody>
                       <tr>
                         <th scope="row">Rain Sensor</th>
-                        <td [innerHTML] = "cd.rainSensor"></td>
+                        <td [innerHTML]="cd.rainSensor"></td>
                       </tr>
                       <tr>
                         <th scope="row">Fog lamps</th>
-                        <td [innerHTML] = "cd.fogLambs"></td>
+                        <td [innerHTML]="cd.fogLambs"></td>
                       </tr>
                       <tr>
                         <th scope="row">Rear Lamps</th>
@@ -381,7 +381,7 @@
                         <th scope="row">
                           Auto-lighting (Auto On-Off Headlamp)
                         </th>
-                        <td [innerHTML] = "cd.autoLighting" ></td>
+                        <td [innerHTML]="cd.autoLighting"></td>
                       </tr>
                       <tr>
                         <th scope="row">Wheels with tire size</th>
@@ -389,11 +389,11 @@
                       </tr>
                       <tr>
                         <th scope="row">Panorama Roof</th>
-                        <td [innerHTML] = "cd.panoramaRoof"></td>
+                        <td [innerHTML]="cd.panoramaRoof"></td>
                       </tr>
                       <tr>
                         <th scope="row">Auto Folding Mirrors</th>
-                        <td [innerHTML] = "cd.autoFoldingMirror"></td>
+                        <td [innerHTML]="cd.autoFoldingMirror"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -403,7 +403,7 @@
                     <tbody>
                       <tr>
                         <th scope="row">Privacy glass</th>
-                        <td [innerHTML] = "cd.privacyGlass" ></td>
+                        <td [innerHTML]="cd.privacyGlass"></td>
                       </tr>
                       <tr>
                         <th scope="row">Headlamps</th>
@@ -411,19 +411,19 @@
                       </tr>
                       <tr>
                         <th scope="row">LED Daytime running lamps</th>
-                        <td [innerHTML] = "cd.ledDaytimeRunningLamps" ></td>
+                        <td [innerHTML]="cd.ledDaytimeRunningLamps"></td>
                       </tr>
                       <tr>
                         <th scope="row">Light Sensors</th>
-                        <td [innerHTML] = "cd.lightSensors" ></td>
+                        <td [innerHTML]="cd.lightSensors"></td>
                       </tr>
                       <tr>
                         <th scope="row">Sun Roof</th>
-                        <td [innerHTML] = "cd.sunRoof" ></td>
+                        <td [innerHTML]="cd.sunRoof"></td>
                       </tr>
                       <tr>
                         <th scope="row">Power mirrors</th>
-                        <td [innerHTML] = "cd.powerMirrors" ></td>
+                        <td [innerHTML]="cd.powerMirrors"></td>
                       </tr>
                       <tr>
                         <th scope="row">Trim Size</th>
@@ -464,27 +464,27 @@
                     <tbody>
                       <tr>
                         <th scope="row">AUX</th>
-                        <td [innerHTML] = "cd.aux" ></td>
+                        <td [innerHTML]="cd.aux"></td>
                       </tr>
                       <tr>
                         <th scope="row">USB</th>
-                        <td [innerHTML] = "cd.usb" ></td>
+                        <td [innerHTML]="cd.usb"></td>
                       </tr>
                       <tr>
                         <th scope="row">Multifunction Steering Wheel</th>
-                        <td [innerHTML] = "cd.multifunctionSteeringWheel" ></td>
+                        <td [innerHTML]="cd.multifunctionSteeringWheel"></td>
                       </tr>
                       <tr>
                         <th scope="row">Touch screen</th>
-                        <td [innerHTML] = "cd.touchscreen" ></td>
+                        <td [innerHTML]="cd.touchscreen"></td>
                       </tr>
                       <tr>
                         <th scope="row">Wireless Charger</th>
-                        <td [innerHTML] = "cd.wirlessCharger" ></td>
+                        <td [innerHTML]="cd.wirlessCharger"></td>
                       </tr>
                       <tr>
                         <th scope="row">CD Player</th>
-                        <td [innerHTML] = "cd.cdPlayer" ></td>
+                        <td [innerHTML]="cd.cdPlayer"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -494,11 +494,11 @@
                     <tbody>
                       <tr>
                         <th scope="row">Bluetooth</th>
-                        <td [innerHTML] = "cd.bluetooth" ></td>
+                        <td [innerHTML]="cd.bluetooth"></td>
                       </tr>
                       <tr>
                         <th scope="row">Head Up Display</th>
-                        <td [innerHTML] = "cd.headUpDisplay" ></td>
+                        <td [innerHTML]="cd.headUpDisplay"></td>
                       </tr>
                       <tr>
                         <th scope="row">Smartphone Link Systems</th>
@@ -506,11 +506,11 @@
                       </tr>
                       <tr>
                         <th scope="row">Navigation System</th>
-                        <td [innerHTML] = "cd.navigationSystem" ></td>
+                        <td [innerHTML]="cd.navigationSystem"></td>
                       </tr>
                       <tr>
                         <th scope="row">Speakers</th>
-                        <td [innerHTML] = "cd.speakers" ></td>
+                        <td [innerHTML]="cd.speakers"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -547,15 +547,15 @@
                     <tbody>
                       <tr>
                         <th scope="row">Luggage Box Capacity</th>
-                        <td [innerHTML] = "cd.luggageBoxCapacity" ></td>
+                        <td [innerHTML]="cd.luggageBoxCapacity"></td>
                       </tr>
                       <tr>
                         <th scope="row">Clearance</th>
-                        <td [innerHTML] = "cd.clearance" ></td>
+                        <td [innerHTML]="cd.clearance"></td>
                       </tr>
                       <tr>
                         <th scope="row">Width</th>
-                        <td [innerHTML] = "cd.width" ></td>
+                        <td [innerHTML]="cd.width"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -565,15 +565,15 @@
                     <tbody>
                       <tr>
                         <th scope="row">Wheelbase</th>
-                        <td [innerHTML] = "cd.wheelbase" ></td>
+                        <td [innerHTML]="cd.wheelbase"></td>
                       </tr>
                       <tr>
                         <th scope="row">Length</th>
-                        <td [innerHTML] = "cd.length" ></td>
+                        <td [innerHTML]="cd.length"></td>
                       </tr>
                       <tr>
                         <th scope="row">Height</th>
-                        <td [innerHTML] = "cd.height" ></td>
+                        <td [innerHTML]="cd.height"></td>
                       </tr>
                     </tbody>
                   </table>
