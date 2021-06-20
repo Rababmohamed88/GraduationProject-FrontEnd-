@@ -8,20 +8,20 @@
                     <div class="brand pt-4 pl-2">
                             
                             <select  (change)="updateModel($event.target.value);" [(ngModel)]="selectedBrand" >
-                                    <option disabled selected> Make</option>
+                                    <option [value]="0" disabled selected> Make</option>
                                     <option *ngFor="let brand of brands; let i=index" [value]="i+1" >{{brand}}</option>
                             </select>
                                    
                     </div>
                     <div class="brand pt-4 pl-2">
                             <select [(ngModel)]="selectedModel">
-                                    <option disabled selected> Model</option>
-                                    <option *ngFor="let model of models ; modelsValue let i=index" [value]="modelsValue[i]">{{model}}</option>
+                                <option [value]="0" disabled selected> Model</option>
+                                <option *ngFor="let model of models ; modelsValue let i=index" [value]="modelsValue[i]">{{model}}</option>
                             </select>
                     </div>
                     <div class="brand pt-4 pl-2">
                             <select [(ngModel)]="selectedBody">
-                                <option hidden [value]=""  selected>Select one category </option>
+                                <option [value]="0" disabled selected> BodyStyle</option>
                                 <option *ngFor="let body of bodystyle; let i=index" [value]="i+1">{{body}}</option>
                             </select>
                     </div>

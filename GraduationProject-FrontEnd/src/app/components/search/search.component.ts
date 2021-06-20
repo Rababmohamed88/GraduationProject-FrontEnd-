@@ -68,6 +68,10 @@ export class SearchComponent implements OnInit {
       });     
      })
 
+  
+
+
+
   }
   updateModel(brand:number){
 
@@ -75,12 +79,13 @@ export class SearchComponent implements OnInit {
     this.modelsValue=[];
     this.searchService.getModels(brand).subscribe(a=>
       {
+        console.log(a);
         a.forEach(element => {
           this.models.push(element.model);
           this.models=[... new Set(this.models)];
           this.modelsValue.push(element.modelId);
           this.modelsValue=[... new Set(this.modelsValue)];
-          
+          console.log(this.modelsValue)
         });
           
       })
@@ -89,77 +94,91 @@ export class SearchComponent implements OnInit {
 
   search(){
     
-    if(this.selectedBrand!=0&&this.selectedModel!=0&&this.selectedBody!=0){
+    this.searchService.getAll(this.selectedBrand,this.selectedModel,this.selectedBody,this.startPrice,this.endPrice,this.year).subscribe(
+      a=>{
+        //this.addPathToImage(a);
+        console.log(a);
+        this.car=a;
+      }
+    )
+  //   if(this.selectedBrand!=0&&this.selectedModel!=0&&this.selectedBody!=0){
      
-      this.searchService.searchByAll(this.selectedBrand,this.selectedModel,this.selectedBody).subscribe(
-        a=>{
-          this.addPathToImage(a);
-          console.log(a);
-          this.car=a;
-        }
-      )
-    }
+  //     this.searchService.searchByAll(this.selectedBrand,this.selectedModel,this.selectedBody).subscribe(
+  //       a=>{
+  //         this.addPathToImage(a);
+  //         console.log(a);
+  //         this.car=a;
+  //       }
+  //     )
+  //   }
     
-    else if(this.selectedBrand!=0&&this.selectedModel!=0){
-      this.searchService.searchByBrandModel(this.selectedBrand,this.selectedModel).subscribe(
-        a=>{
-          this.addPathToImage(a);
-          console.log(a);
-          this.car=a;
-        }
-      )
-    }
-    else if(this.selectedBrand!=0){
-      this.searchService.getModels(this.selectedBrand).subscribe(a=>
-        {
-          this.addPathToImage(a);
-          this.car=a;
-          this.carsWithBrand=a;
-        })
-      console.log("brand ")
-    }
-    else if(this.selectedBody!=0){
+  //   else if(this.selectedBrand!=0&&this.selectedModel!=0){
+  //     this.searchService.searchByBrandModel(this.selectedBrand,this.selectedModel).subscribe(
+  //       a=>{
+  //         this.addPathToImage(a);
+  //         console.log(a);
+  //         this.car=a;
+  //       }
+  //     )
+  //   }
+  //   else if(this.selectedBrand!=0){
+  //     this.searchService.getModels(this.selectedBrand).subscribe(a=>
+  //       {
+  //         this.addPathToImage(a);
+  //         this.car=a;
+  //         this.carsWithBrand=a;
+  //       })
+  //     console.log("brand ")
+  //   }
+  //   else if(this.selectedBody!=0){
       
-      this.searchService.searchByBody(this.selectedBody).subscribe(a=>
-        {
+  //     this.searchService.searchByBody(this.selectedBody).subscribe(a=>
+  //       {
           
-          this.addPathToImage(a);
-          this.car=a;
-          console.log(a);
-        })
-    }
+  //         this.addPathToImage(a);
+  //         this.car=a;
+  //         console.log(a);
+  //       })
+  //   }
 
-    this.setValueZero();
+  //   this.setValueZero();
 
-   if(this.year!=0){
-    this.searchService.searchByYear(this.year).subscribe(a=>
-      { 
-        this.carsWithYear=a;
-        this.car=a;
-        console.log(a);
-      })
-    }
-    if(this.startPrice!=0 && this.endPrice!=0){
-     this.searchService.searchByprice(this.startPrice,this.endPrice).subscribe(a=>
-      { 
-        this.carsWithinPrice=a;
-        this.car=a;
-        console.log(a);
-      }) 
-    }
-     var intersection = this.carsWithYear.filter(item1 => this.carsWithinPrice.some(item2 => item1.img === item2.img))
-    // this.car=intersection
-     console.log(this.car)
+  //  if(this.year!=0){
+  //   this.searchService.searchByYear(this.year).subscribe(a=>
+  //     { 
+  //       this.carsWithYear=a;
+  //       this.car=a;
+  //       console.log(a);
+  //     })
+  //   }
+  //   if(this.startPrice!=0 && this.endPrice!=0){
+  //    this.searchService.searchByprice(this.startPrice,this.endPrice).subscribe(a=>
+  //     { 
+  //       this.carsWithinPrice=a;
+  //       this.car=a;
+  //       console.log(a);
+  //     }) 
+  //   }
+  //    var intersection = this.carsWithYear.filter(item1 => this.carsWithinPrice.some(item2 => item1.img === item2.img))
+  //   // this.car=intersection
+  //    console.log(this.car)
 
-      // this.year=this.startPrice=this.endPrice=null;
+  //     // this.year=this.startPrice=this.endPrice=null;
      
-  }
+  //}
 
-  addPathToImage(a){
-    for(var i=0;i<a.length;i++){
-      a[i].img=`../../../assets/readyImgs/readyImgs/${a[i].img}`
-    }
+  // addPathToImage(a){
+  //   for(var i=0;i<a.length;i++){
+  //     a[i].img=`../../../assets/readyImgs/readyImgs/${a[i].img}`
+  //   }
 
-  }
+  // }
+ 
+     
+
+
 
 }
+
+  }
+
