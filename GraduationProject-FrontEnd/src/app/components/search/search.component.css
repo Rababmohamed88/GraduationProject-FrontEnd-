@@ -1,6 +1,6 @@
 .search{
     width:15%; 
-    height: 300px; 
+    height: auto; 
     border: 2px solid #ddd;
     text-align: center;
  
@@ -32,7 +32,7 @@
     color: #80939e;
     text-decoration:none;
  }
- .brand button,select {
+ .brand button,select,input {
     border:1px solid #ddd;
     border-radius: 5px;
     width: 90%;
@@ -41,9 +41,20 @@
     color: #80939e;
     position: relative;
  }
+  .price{
+   width: 100%;
+   text-align: left;
+   color: #80939e;
+   position: relative;
+   display: flex; /* 2. display flex to the rescue */
+   flex-direction: row;
+}
+.from,.to{
+   display:block;
+   margin-left:5px;
+}
  .toggle{
     display: inline-block;
-    
     position:absolute;
     right: 3px;
    

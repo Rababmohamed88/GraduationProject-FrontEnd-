@@ -7,7 +7,7 @@
                     </div>
                     <div class="brand pt-4 pl-2">
                             
-                            <select  (change)="updateModel($event.target.value)" [(ngModel)]="selectedBrand" >
+                            <select  (change)="updateModel($event.target.value);" [(ngModel)]="selectedBrand" >
                                     <option disabled selected> Make</option>
                                     <option *ngFor="let brand of brands; let i=index" [value]="i+1" >{{brand}}</option>
                             </select>
@@ -21,10 +21,20 @@
                     </div>
                     <div class="brand pt-4 pl-2">
                             <select [(ngModel)]="selectedBody">
-                                    <option disabled selected> Body Style</option>
-                                    <option *ngFor="let body of bodystyle; let i=index" [value]="i+1">{{body}}</option>
+                                <option hidden [value]=""  selected>Select one category </option>
+                                <option *ngFor="let body of bodystyle; let i=index" [value]="i+1">{{body}}</option>
                             </select>
                     </div>
+                    <div class="brand pt-4 pl-2">
+                        <input type="text" [(ngModel)]="year"  placeholder="Year"/>
+                     </div>
+                     <div class="brand pt-4 pl-2 price">
+                        <input type="text" class="from" placeholder="From" [(ngModel)]="startPrice"/>
+                        <input type="text" class="to"placeholder="To" [(ngModel)]="endPrice"/>
+
+                     </div>
+
+
                     <div class="form-group clearfix mt-4">
                             <button type="submit" class="btn-md btn-theme float-left" (click)="search()">search</button>
                     </div>

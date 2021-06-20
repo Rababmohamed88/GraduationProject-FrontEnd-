@@ -10,16 +10,13 @@ export class SearchComponent implements OnInit {
 
   
   brands:any[]=[
-
   ]
   models:any[]=[
-
   ]
   modelsValue:any=[
 
   ]
-  bodystyle:any[]=[
-    
+  bodystyle:any[]=[  
     "Sedan",
     "Van",
     "Hatchback",
@@ -27,10 +24,14 @@ export class SearchComponent implements OnInit {
     "SUV",
     "Station",
     "Cabriolet"
-]
-selectedBrand:number;
-selectedModel:number;
-selectedBody:number;
+  ]
+  selectedBrand:number;
+  selectedModel:number;
+  selectedBody:number;
+  carsWithBrand=[];
+  carsWithYear=[];
+  carsWithinPrice=[];
+
   car=[
     {img:"../../../assets/9.jpg",brand:"BMW",model:"118i",price:200000},
     {img:"../../../assets/1.png",brand:"Audi",model:"118i",price:500000},
@@ -38,6 +39,9 @@ selectedBody:number;
 
   ]
    
+  year:number=0;
+  startPrice:number=0;
+  endPrice:number=0;
 
 
   alt="car"
@@ -110,6 +114,7 @@ selectedBody:number;
         {
           this.addPathToImage(a);
           this.car=a;
+          this.carsWithBrand=a;
         })
       console.log("brand ")
     }
@@ -125,6 +130,29 @@ selectedBody:number;
     }
 
     this.setValueZero();
+
+   if(this.year!=0){
+    this.searchService.searchByYear(this.year).subscribe(a=>
+      { 
+        this.carsWithYear=a;
+        this.car=a;
+        console.log(a);
+      })
+    }
+    if(this.startPrice!=0 && this.endPrice!=0){
+     this.searchService.searchByprice(this.startPrice,this.endPrice).subscribe(a=>
+      { 
+        this.carsWithinPrice=a;
+        this.car=a;
+        console.log(a);
+      }) 
+    }
+     var intersection = this.carsWithYear.filter(item1 => this.carsWithinPrice.some(item2 => item1.img === item2.img))
+    // this.car=intersection
+     console.log(this.car)
+
+      // this.year=this.startPrice=this.endPrice=null;
+     
   }
 
   addPathToImage(a){

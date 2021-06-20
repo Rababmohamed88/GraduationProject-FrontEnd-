@@ -26,4 +26,10 @@ export class SearchService {
    getAllBrands(){
     return this.http.get<any>(this._Url+"Brand/All")
    } 
+   searchByYear(year:number){
+    return this.http.get<any>(this._Url+"Search/SearchByYear?year="+year)
+   } 
+   searchByprice(price1:number,price2:number){
+    return this.http.get<any>(this._Url+"Search/SearchByPrice?price1="+price1+"&price2="+price2)
+   } 
 }
