@@ -17,6 +17,8 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
 import { ButtonModule } from 'primeng/button';
 import { GalleriaModule } from 'primeng/galleria';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { ChooseCarComponent } from './components/choose-car/choose-car.component';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     HomeComponent,
     CarDetailsComponent,
     SearchComponent,
-    
     GalleryComponent,
+    ChooseCarComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     NgbModule,
     ButtonModule,
     GalleriaModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
