@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RouterModule } from '@angular/router';
+
 import { SearchComponent } from './components/search/search.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -32,7 +33,7 @@ import {DropdownModule} from 'primeng/dropdown';
     CarDetailsComponent,
     SearchComponent,
     GalleryComponent,
-    ChooseCarComponent,
+    ChooseCarComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +46,7 @@ import {DropdownModule} from 'primeng/dropdown';
     GalleriaModule,
     DropdownModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
