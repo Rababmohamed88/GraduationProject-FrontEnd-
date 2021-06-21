@@ -8,6 +8,7 @@ import { UsedcarComponent } from './usedcar/usedcar.component';
 import { AllcarComponent } from './allcar/allcar.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { ShardService } from '../shard.service';
 
 
 
@@ -25,5 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     
     
   ]
+  ,
+  providers: [ShardService]
 })
 export class ExploreModule { }

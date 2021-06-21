@@ -15,6 +15,8 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import {HomeComponent} from './components/home/home.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component'
+import { ShardService } from './shard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,7 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
     RouterModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [ShardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
