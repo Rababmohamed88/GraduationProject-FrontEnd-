@@ -1,48 +1,62 @@
 <div class="container">
-    <p class=" text-center my-3">Choose Your Car Now !</p>
-    <div class="row">
-        <div class="col-lg-6 col-sm-12">
-            <div class="my-3">                  
-                <select>
-                    <option selected>Brand</option>
-                    <option *ngFor="let brand of brands"></option>
-                </select>   
-            </div>
-        
-            <div class="my-5">                  
-                <select>
-                    <option selected>Model</option>
-                    <option *ngFor="let model of models"></option>
-                </select>   
-            </div>
+  <p class="text-center my-3">Choose Your Car Now !</p>
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 my-3">
+      <div class="my-3">
+        <select #brandSelect (change)="brandSelectChanged(brandSelect.value)">
+          <option value="0" selected>Brand</option>
+          <option *ngFor="let brand of brands" [value]="brand.id">
+            {{ brand.name }}
+          </option>
+        </select>
+      </div>
 
-            <div class="my-3">                  
-                <select>
-                    <option selected>Year</option>
-                    <option *ngFor="let brand of brands"></option>
-                </select>   
-            </div>
-        
-            <div class="my-5">                  
-                <select>
-                    <option selected>Class</option>
-                    <option *ngFor="let class of classes"></option>
-                </select>   
-            </div>
-            <button type="submit" class="btn btn-warning">Search</button>
-        </div>
-        <div class="col-lg-6 col-sm-12">
-            <div class="card my-3" style="width: 18rem;">
-                <img src="../../../assets/13.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title c1">Car Name</h5>
-                    <h5 class="card-title c2">Class Name</h5>
-                  </div>
-                  <div class="card-footer">
-                    <a href="#" class="btn">Choose</a>
-                </div>
-              </div>
+      <div class="my-5">
+        <select #modelSelect (change)="modelSelectChanged(modelSelect.value)">
+          <option value="0" selected>Model</option>
+          <option *ngFor="let model of models" [value]="model.id">
+            {{ model.name }}
+          </option>
+        </select>
+      </div>
 
-        </div>
+      <div class="my-5">
+        <select #classSelect (change)="classSelectChanged(classSelect.value)">
+          <option value="0" selected>Class</option>
+          <option *ngFor="let class of classes" [value]="class.classId">
+            {{ class.className }}
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-warning" (click)="searchClicked()">
+        Search
+      </button>
     </div>
+    <div class="col-lg-6 col-sm-12" *ngIf="carCard">
+      <div class="card my-3" style="width: 18rem">
+        <img
+          src="assets/CarsImages/{{ carCard.imgName }}"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h5 class="card-title c1">{{ carCard.carName }}</h5>
+          <h5 class="card-title c2">{{ carCard.className }}</h5>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col-md-5">
+              <a href="#" class="btn">Choose</a>
+            </div>
+            <div class="col-md-6">
+              <a
+                [routerLink]="['/car-details', carCard.carDetailsId]"
+                class="btn"
+                >Car Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

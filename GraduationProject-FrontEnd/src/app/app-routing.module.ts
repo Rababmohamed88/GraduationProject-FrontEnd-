@@ -13,13 +13,13 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'choose-car', component: ChooseCarComponent },
 
-  {path: 'car-details/:id', component: CarDetailsComponent},
+  { path: 'car-details/:id', component: CarDetailsComponent },
   {
     path: 'explore',
     loadChildren: () =>
       import('./explore/explore.module').then((m) => m.ExploreModule),
   },
-  {path: '' , component: HomeComponent},
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
