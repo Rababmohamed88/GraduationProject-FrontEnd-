@@ -1,0 +1,59 @@
+<div class="container ">
+    <div class="row mb-3 mt-3">
+            <div class="search  col-md-2">
+
+                    <div class="tabs">
+                            <span><a href="#">New</a> </span><span><a href="#">Used</a></span>
+                    </div>
+                    <div class="brand pt-4 pl-2">
+                            
+                            <select  (change)="updateModel($event.target.value);" [(ngModel)]="selectedBrand" >
+                                    <option [value]="0" disabled selected> Make</option>
+                                    <option *ngFor="let brand of brands; let i=index" [value]="i+1" >{{brand}}</option>
+                            </select>
+                                   
+                    </div>
+                    <div class="brand pt-4 pl-2">
+                            <select [(ngModel)]="selectedModel">
+                                <option [value]="0" disabled selected> Model</option>
+                                <option *ngFor="let model of models ; modelsValue let i=index" [value]="modelsValue[i]">{{model}}</option>
+                            </select>
+                    </div>
+                    <div class="brand pt-4 pl-2">
+                            <select [(ngModel)]="selectedBody">
+                                <option [value]="0" disabled selected> BodyStyle</option>
+                                <option *ngFor="let body of bodystyle; let i=index" [value]="i+1">{{body}}</option>
+                            </select>
+                    </div>
+                    <div class="brand pt-4 pl-2">
+                        <input type="text" [(ngModel)]="year"  placeholder="Year"/>
+                     </div>
+                     <div class="brand pt-4 pl-2 price">
+                        <input type="text" class="from" placeholder="From" [(ngModel)]="startPrice"/>
+                        <input type="text" class="to"placeholder="To" [(ngModel)]="endPrice"/>
+
+                     </div>
+
+
+                    <div class="form-group clearfix mt-4">
+                            <button type="submit" class="btn-md btn-theme float-left" (click)="search()">search</button>
+                    </div>
+            </div>
+            <div class=" col-md-10">
+                    <div class="card  cards" style="width: 16rem;" *ngFor="let i of car; index">
+                            <img class="card-img-top" style="height: 8rem;" src="{{i.img}}" alt="car">
+                            <div class="card-body">
+                                    <h5 class="card-title">{{i.brand}}</h5>
+                                    <p class="card-text">{{i.model}}</p>
+                                    <p class="card-text">{{i.price}}</p>
+
+                                    <a href="#" class="btn btn-primary">Details</a>
+                            </div>
+                    </div>
+                  
+            </div>
+    </div>
+
+
+</div>
+

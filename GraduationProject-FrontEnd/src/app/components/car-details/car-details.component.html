@@ -1,511 +1,583 @@
 <div class="container">
-  <div class="row">
+  <div class="row my-4">
     <div class="col-4">
-      <h2 class="mt-4">{{cd.carName}}</h2>
-      <h4>{{cd.ClassName}}</h4>
-    </div>
-    <div class="col-4">
-      <h2 class="mt-4">{{cd.Price | currency : 'EGP'}}</h2>
-      <i class="fa fa-car mr-1"></i>
-      <h4 class="d-inline">{{cd.CarType}}</h4>
-    </div>
-  </div>
-
-    <div class="row">
-      <div class="col-3">
-        <img src="../../assets/14.jpeg" class="w-100">
+      <app-gallery [carid]="detailsid" ></app-gallery>
+      <div class="left">
+        <h2 class="mt-3">{{ cd.carName }}</h2>
+        <h4 class="mt-3">{{ cd.className }}</h4>
+        <i class="fa fa-cc-visa mr-1 mt-3"></i>
+        <h2 class="mt-3 d-inline">{{ cd.price | currency: "":"" }} EGP</h2>
+        <br />
+        <i class="fa fa-car mr-1 mt-3"></i>
+        <h4 class="d-inline mt-3">{{ cd.carType }}</h4>
       </div>
-      <div class="col-9">
-        <div id="accordion">
-  
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Safety and Security Features
-                </button>
-              </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">Electric Handbrake</th>
-                              <td>{{cd.ElectricHandbrake}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Power Assisted Steering</th>
-                              <td>{{cd.PowerAssistedSteering}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Active Park Assist</th>
-                              <td>{{cd.ActiveParkAssist}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Traction Control</th>
-                              <td>{{cd.TractionControl}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Tire Pressure Monitoring (TPMS)</th>
-                              <td>{{cd.TirePressureMonitoring}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Anti-Lock Braking System (ABS)</th>
-                              <td>{{cd.AntiLockBrakingSystem}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Electronic Stability Program (ESP)</th>
-                              <td>{{cd.ElectroncStabilityControl}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Airbags</th>
-                              <td>{{cd.Airbags}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">Hill Assist (HLA)</th>
-                              <td>{{cd.HillAssist}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Speed Limiter</th>
-                              <td>{{cd.SpeedLimiter}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Automatic Start/Stop Function</th>
-                              <td>{{cd.AutoStartStopFunctions}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Immobilizer</th>
-                              <td>{{cd.Immobilizer}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Child Seats (ISOFIX)</th>
-                              <td>{{cd.ChildSeats}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Electronic Brake Force Distribution (EBD)</th>
-                              <td>{{cd.ElectronicBrakeForceDistribution}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Cruise Control</th>
-                              <td>{{cd.CruiseControl}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-              </div>
+    </div>
+
+    <div class="col-8">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button
+                class="btn collapsed"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Safety and Security Features
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Electric Handbrake</th>
+                        <td [innerHTML]="cd.electricHandbrake"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Power Assisted Steering</th>
+                        <td>{{ cd.powerAssistedSteering }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Active Park Assist</th>
+                        <td [innerHTML]="cd.activeParkAssist"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Traction Control</th>
+                        <td [innerHTML]="cd.tractionControl"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Tire Pressure Monitoring (TPMS)</th>
+                        <td [innerHTML]="cd.tirePressureMonitoring"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Anti-Lock Braking System (ABS)</th>
+                        <td [innerHTML]="cd.antiLockBrakingSystem"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Electronic Stability Program (ESP)</th>
+                        <td [innerHTML]="cd.electroncStabilityControl"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Airbags</th>
+                        <td>{{ cd.airbags }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Hill Assist (HLA)</th>
+                        <td [innerHTML]="cd.hillAssist"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Speed Limiter</th>
+                        <td [innerHTML]="cd.speedLimiter"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Automatic Start/Stop Function</th>
+                        <td [innerHTML]="cd.autoStartStopFunctions"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Immobilizer</th>
+                        <td [innerHTML]="cd.immobilizer"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Child Seats (ISOFIX)</th>
+                        <td [innerHTML]="cd.childSeats"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Electronic Brake Force Distribution (EBD)
+                        </th>
+                        <td
+                          [innerHTML]="cd.electronicBrakeForceDistribution"
+                        ></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Cruise Control</th>
+                        <td [innerHTML]="cd.cruiseControl"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-  
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h5 class="mb-0">
-                <button class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Performance Features
-                </button>
-              </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">Cylinders</th>
-                              <td>{{cd.Cylinders}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Maximum torque (N.m@RPM)</th>
-                              <td>{{cd.MaxToruqe}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Fuel Consumption (Liter/100 KM)</th>
-                              <td>{{cd.FuelConsumption}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Fuel Type</th>
-                              <td>{{cd.FuelType}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Maximum power (HP @ RPM)</th>
-                              <td>{{cd.MaxPower}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">Acceleration From 0-100 (Km/hr.)</th>
-                              <td>{{cd.Acceleration}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Maximum Speed</th>
-                              <td>{{cd.MaxSpeed}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Fuel Tank Capacity</th>
-                              <td>{{cd.FuelTankCapacity}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Gear Shifts</th>
-                              <td>{{cd.GearShifts}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-              </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button
+                class="btn collapsed"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Performance Features
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Cylinders</th>
+                        <td>{{ cd.cylinders }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Maximum torque (N.m@RPM)</th>
+                        <td>{{ cd.maxToruqe }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Fuel Consumption (Liter/100 KM)</th>
+                        <td>{{ cd.fuelConsumption }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Fuel Type</th>
+                        <td>{{ cd.fuelType }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Maximum power (HP @ RPM)</th>
+                        <td>{{ cd.maxPower }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Acceleration From 0-100 (Km/hr.)</th>
+                        <td>{{ cd.acceleration }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Maximum Speed</th>
+                        <td>{{ cd.maxSpeed }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Fuel Tank Capacity</th>
+                        <td>{{ cd.fuelTankCapacity }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Gear Shifts</th>
+                        <td>{{ cd.gearShifts }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-  
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h5 class="mb-0">
-                <button class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Interior Features
-                </button>
-              </h5>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">Multi function steering wheel</th>
-                              <td>{{cd.MultifunctionSteeringWheel}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Paddle shifters</th>
-                              <td>{{cd.PaddleShifters}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Leather Steering Wheel</th>
-                              <td>{{cd.LeatherSteeringWheel}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Variable heated driver & passenger seat</th>
-                              <td>{{cd.VariableHeatedDriverPassengerSeat}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Power Tailgate</th>
-                              <td>{{cd.PowerTailgate}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Ambient Lighting</th>
-                              <td>{{cd.AmbientLighting}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Number of Seats</th>
-                              <td>{{cd.NumberOfSeats}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Keyless Start/Stop</th>
-                              <td>{{cd.KeylessStartStop}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Rear parking sensors</th>
-                              <td>{{cd.RearParkingSensors}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Rear View Camera</th>
-                              <td>{{cd.RearViewCamera}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Passenger Seat</th>
-                              <td>{{cd.PassengerSeat}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Center Lock</th>
-                              <td>{{cd.CenterLock}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Dashboard</th>
-                              <td>{{cd.Dashboard}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Drive Mode Select</th>
-                              <td>{{cd.DriveModeSelect}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">A/C for back seats</th>
-                              <td>{{cd.AcBackSeats}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Leather Transmission</th>
-                              <td>{{cd.LeatherTransmission}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Back Holder</th>
-                              <td>{{cd.BackHolder}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Keyless Entry</th>
-                              <td>{{cd.KeylessEntry}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Auto dimming mirror</th>
-                              <td>{{cd.AutoDimmingMirror}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Air Condition</th>
-                              <td>{{cd.Ac}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Auto folding for back seats</th>
-                              <td>{{cd.AutoFoldingBackSeats}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Front parking sensors</th>
-                              <td>{{cd.FrontParkingSensors}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Front Camera</th>
-                              <td>{{cd.FrontCamera}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Driver Seat</th>
-                              <td>{{cd.DriverSeat}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Leather Seats</th>
-                              <td>{{cd.LeatherSeats}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Electronic Window</th>
-                              <td>{{cd.ElectronicWindow}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-              </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button
+                class="btn collapsed"
+                data-toggle="collapse"
+                data-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Interior Features
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseThree"
+            class="collapse"
+            aria-labelledby="headingThree"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Multi function steering wheel</th>
+                        <td [innerHTML]="cd.multifunctionSteeringWheel"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Paddle shifters</th>
+                        <td [innerHTML]="cd.paddleShifters"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Leather Steering Wheel</th>
+                        <td [innerHTML]="cd.leatherSteeringWheel"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Variable heated driver & passenger seat
+                        </th>
+                        <td
+                          [innerHTML]="cd.variableHeatedDriverPassengerSeat"
+                        ></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Power Tailgate</th>
+                        <td [innerHTML]="cd.powerTailgate"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Ambient Lighting</th>
+                        <td>{{ cd.ambientLighting }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Number of Seats</th>
+                        <td>{{ cd.numberOfSeats }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Keyless Start/Stop</th>
+                        <td [innerHTML]="cd.keylessStartStop"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Rear parking sensors</th>
+                        <td [innerHTML]="cd.rearParkingSensors"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Rear View Camera</th>
+                        <td [innerHTML]="cd.rearViewCamera"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Passenger Seat</th>
+                        <td>{{ cd.passengerSeat }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Center Lock</th>
+                        <td [innerHTML]="cd.centerLock"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Dashboard</th>
+                        <td>{{ cd.dashboard }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Drive Mode Select</th>
+                        <td [innerHTML]="cd.driveModeSelect"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">A/C for back seats</th>
+                        <td [innerHTML]="cd.acBackSeats"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Leather Transmission</th>
+                        <td [innerHTML]="cd.leatherTransmission"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Back Holder</th>
+                        <td [innerHTML]="cd.backHolder"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Keyless Entry</th>
+                        <td [innerHTML]="cd.keylessEntry"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Auto dimming mirror</th>
+                        <td [innerHTML]="cd.autoDimmingMirror"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Air Condition</th>
+                        <td>{{ cd.ac }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Auto folding for back seats</th>
+                        <td [innerHTML]="cd.autoFoldingBackSeats"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Front parking sensors</th>
+                        <td [innerHTML]="cd.frontParkingSensors"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Front Camera</th>
+                        <td [innerHTML]="cd.frontCamera"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Driver Seat</th>
+                        <td>{{ cd.driverSeat }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Leather Seats</th>
+                        <td [innerHTML]="cd.leatherSeats"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Electronic Window</th>
+                        <td [innerHTML]="cd.electronicWindow"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-  
-          <div class="card">
-            <div class="card-header" id="headingFour">
-              <h5 class="mb-0">
-                <button class="btn collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Exterior Features
-                </button>
-              </h5>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">Rain Sensor</th>
-                              <td>{{cd.RainSensor}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Fog lamps</th>
-                              <td>{{cd.FogLambs}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Rear Lamps</th>
-                              <td>{{cd.RearLambs}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Auto-lighting (Auto On-Off Headlamp)</th>
-                              <td>{{cd.AutoLighting}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Wheels with tire size</th>
-                              <td>{{cd.WheelsWithTireSize}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Panorama Roof</th>
-                              <td>{{cd.PanoramaRoof}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Auto Folding Mirrors</th>
-                              <td>{{cd.AutoFoldingMirror}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">Privacy glass</th>
-                              <td>{{cd.PrivacyGlass}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Headlamps</th>
-                              <td>{{cd.Headlamps}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">LED Daytime running lamps</th>
-                              <td>{{cd.LedDaytimeRunningLamps}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Light Sensors</th>
-                              <td>{{cd.LightSensors}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Sun Roof</th>
-                              <td>{{cd.SunRoof}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Power mirrors</th>
-                              <td>{{cd.PowerMirrors}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Trim Size</th>
-                              <td>{{cd.TrimSize}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-              </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button
+                class="btn collapsed"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Exterior Features
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseFour"
+            class="collapse"
+            aria-labelledby="headingFour"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Rain Sensor</th>
+                        <td [innerHTML]="cd.rainSensor"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Fog lamps</th>
+                        <td [innerHTML]="cd.fogLambs"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Rear Lamps</th>
+                        <td>{{ cd.rearLambs }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Auto-lighting (Auto On-Off Headlamp)
+                        </th>
+                        <td [innerHTML]="cd.autoLighting"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Wheels with tire size</th>
+                        <td>{{ cd.wheelsWithTireSize }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Panorama Roof</th>
+                        <td [innerHTML]="cd.panoramaRoof"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Auto Folding Mirrors</th>
+                        <td [innerHTML]="cd.autoFoldingMirror"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Privacy glass</th>
+                        <td [innerHTML]="cd.privacyGlass"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Headlamps</th>
+                        <td>{{ cd.headlamps }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">LED Daytime running lamps</th>
+                        <td [innerHTML]="cd.ledDaytimeRunningLamps"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Light Sensors</th>
+                        <td [innerHTML]="cd.lightSensors"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Sun Roof</th>
+                        <td [innerHTML]="cd.sunRoof"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Power mirrors</th>
+                        <td [innerHTML]="cd.powerMirrors"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Trim Size</th>
+                        <td>{{ cd.trimSize }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-  
-          <div class="card">
-            <div class="card-header" id="headingFive">
-              <h5 class="mb-0">
-                <button class="btn collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Multimedia System
-                </button>
-              </h5>
-            </div>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">AUX</th>
-                              <td>{{cd.Aux}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">USB</th>
-                              <td>{{cd.Usb}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Multifunction Steering Wheel</th>
-                              <td>{{cd.MultifunctionSteeringWheel}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Touch screen</th>
-                              <td>{{cd.Touchscreen}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Wireless Charger</th>
-                              <td>{{cd.WirlessCharger}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">CD Player</th>
-                              <td>{{cd.CdPlayer}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                      <table class="table w-100">
-                          <tbody>
-                            <tr>
-                              <th scope="row">Bluetooth</th>
-                              <td>{{cd.Bluetooth}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Head Up Display</th>
-                              <td>{{cd.HeadUpDisplay}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Smartphone Link Systems</th>
-                              <td>{{cd.SmartphoneLinkSystem}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Navigation System</th>
-                              <td>{{cd.NavigationSystem}}</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">Speakers</th>
-                              <td>{{cd.Speakers}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                  </div>
-              </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingFive">
+            <h5 class="mb-0">
+              <button
+                class="btn collapsed"
+                data-toggle="collapse"
+                data-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                Multimedia System
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseFive"
+            class="collapse"
+            aria-labelledby="headingFive"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">AUX</th>
+                        <td [innerHTML]="cd.aux"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">USB</th>
+                        <td [innerHTML]="cd.usb"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Multifunction Steering Wheel</th>
+                        <td [innerHTML]="cd.multifunctionSteeringWheel"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Touch screen</th>
+                        <td [innerHTML]="cd.touchscreen"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Wireless Charger</th>
+                        <td [innerHTML]="cd.wirlessCharger"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">CD Player</th>
+                        <td [innerHTML]="cd.cdPlayer"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Bluetooth</th>
+                        <td [innerHTML]="cd.bluetooth"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Head Up Display</th>
+                        <td [innerHTML]="cd.headUpDisplay"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Smartphone Link Systems</th>
+                        <td>{{ cd.smartphoneLinkSystem }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Navigation System</th>
+                        <td [innerHTML]="cd.navigationSystem"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Speakers</th>
+                        <td [innerHTML]="cd.speakers"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-  
-          <div class="card">
-            <div class="card-header" id="headingSix">
-              <h5 class="mb-0">
-                <button class="btn collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                  Dimensions
-                </button>
-              </h5>
-            </div>
-            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-lg-6 col-md-12">
-                          <table class="table w-100">
-                              <tbody>
-                                <tr>
-                                  <th scope="row">Luggage Box Capacity</th>
-                                  <td>{{cd.LuggageBoxCapacity}}</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Clearance</th>
-                                  <td>{{cd.Clearance}}</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Width</th>
-                                  <td>{{cd.Width}}</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                      </div>
-                      <div class="col-lg-6 col-md-12">
-                          <table class="table w-100">
-                              <tbody>
-                                <tr>
-                                  <th scope="row">Wheelbase</th>
-                                  <td>{{cd.Wheelbase}}</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Length</th>
-                                  <td>{{cd.Length}}</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Height</th>
-                                  <td>{{cd.Height}}</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                      </div>
-                  </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingSix">
+            <h5 class="mb-0">
+              <button
+                class="btn collapsed"
+                data-toggle="collapse"
+                data-target="#collapseSix"
+                aria-expanded="false"
+                aria-controls="collapseSix"
+              >
+                Dimensions
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseSix"
+            class="collapse"
+            aria-labelledby="headingSix"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Luggage Box Capacity</th>
+                        <td [innerHTML]="cd.luggageBoxCapacity"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Clearance</th>
+                        <td [innerHTML]="cd.clearance"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Width</th>
+                        <td [innerHTML]="cd.width"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <table class="table w-100">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Wheelbase</th>
+                        <td [innerHTML]="cd.wheelbase"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Length</th>
+                        <td [innerHTML]="cd.length"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Height</th>
+                        <td [innerHTML]="cd.height"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -513,3 +585,4 @@
       </div>
     </div>
   </div>
+</div>

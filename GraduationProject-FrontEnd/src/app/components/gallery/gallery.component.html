@@ -1,0 +1,68 @@
+<p-galleria
+  [value]="photos"
+  [(visible)]="displayCustom"
+  [(activeIndex)]="activeIndex"
+  [responsiveOptions]="responsiveOptions"
+  [containerStyle]="{ 'max-width': '850px' }"
+  [numVisible]="7"
+  [circular]="true"
+  [fullScreen]="true"
+  [showItemNavigators]="true"
+  [showThumbnails]="false"
+  [baseZIndex]="100000"
+>
+  <ng-template pTemplate="item" let-item>
+    <img src="assets/CarsImages/{{item.previewImageSrc}}" style="width: 100%; display: block" />
+  </ng-template>
+  <ng-template pTemplate="thumbnail" let-item>
+    <div class="p-grid p-nogutter p-justify-center">
+      <img src="assets/CarsImages/{{item.thumbnailImageSrc}}" style="display: block" />
+    </div>
+  </ng-template>
+</p-galleria>
+<p-galleria
+  [value]="photos"
+  [(visible)]="displayBasic2"
+  [responsiveOptions]="responsiveOptions"
+  [containerStyle]="{ 'max-width': '850px' }"
+  [numVisible]="7"
+  [circular]="true"
+  [fullScreen]="true"
+  [showItemNavigators]="true"
+  [showThumbnails]="false"
+  [baseZIndex]="100000"
+>
+  <ng-template pTemplate="item" let-item>
+    <img src="assets/CarsImages/{{item.previewImageSrc}}" style="width: 100%; display: block" />
+  </ng-template>
+  <ng-template pTemplate="thumbnail" let-item>
+    <div class="p-grid p-nogutter p-justify-center">
+      <img src="assets/CarsImages/{{item.thumbnailImageSrc}}" style="display: block" />
+    </div>
+  </ng-template>
+</p-galleria>
+<div *ngIf="photos">
+  <div class="row">
+    <div
+      *ngFor="let image of photos; let index = index"
+      key="index"
+      class="col-4"
+    >
+      <img
+        src="assets/CarsImages/{{image.thumbnailImageSrc}}"
+        [alt]="image.alt"
+        style="cursor: pointer"
+        (click)="imageClick(index)"
+        class="w-100 mt-4 img"
+      />
+    </div>
+  </div>
+</div>
+<button
+  pButton
+  type="button"
+  icon="pi pi-external-link"
+  label="Show"
+  (click)="displayBasic2 = true"
+  class="mt-4"
+></button>
