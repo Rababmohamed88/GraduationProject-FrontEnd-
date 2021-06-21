@@ -1,0 +1,48 @@
+<div class="container">
+    <p class=" text-center my-3">Choose Your Car Now !</p>
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <div class="my-3">                  
+                <select>
+                    <option selected>Brand</option>
+                    <option *ngFor="let brand of brands"></option>
+                </select>   
+            </div>
+        
+            <div class="my-5">                  
+                <select>
+                    <option selected>Model</option>
+                    <option *ngFor="let model of models"></option>
+                </select>   
+            </div>
+
+            <div class="my-3">                  
+                <select>
+                    <option selected>Year</option>
+                    <option *ngFor="let brand of brands"></option>
+                </select>   
+            </div>
+        
+            <div class="my-5">                  
+                <select>
+                    <option selected>Class</option>
+                    <option *ngFor="let class of classes"></option>
+                </select>   
+            </div>
+            <button type="submit" class="btn btn-warning">Search</button>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <div class="card my-3" style="width: 18rem;">
+                <img src="../../../assets/13.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title c1">Car Name</h5>
+                    <h5 class="card-title c2">Class Name</h5>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn">Choose</a>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>
