@@ -1,3 +1,4 @@
+import { Year } from './../../_models/chooseCar/year';
 import { ChooseCar } from './../../_models/chooseCar/choose-car';
 import { Class } from './../../_models/chooseCar/class';
 import { Model } from './../../_models/chooseCar/model';
@@ -14,10 +15,13 @@ export class ChooseCarComponent implements OnInit {
   brands: Brand[] = [];
   models: Model[] = [];
   classes: Class[] = [];
+  years: Year[] = [];
   carCard: ChooseCar;
 
+  brandId: number;
   modelId: number;
   classId: number;
+  year: string;
 
   constructor(private chooseServ: ChooseCarService) {}
 
@@ -28,7 +32,15 @@ export class ChooseCarComponent implements OnInit {
   }
 
   brandSelectChanged(brandId: number) {
-    this.chooseServ.getAllModels(brandId).subscribe((a) => {
+    this.brandId = brandId;
+    this.chooseServ.getYearsInBrand(brandId).subscribe((a) => {
+      this.years = a;
+    });
+  }
+
+  yearSelectChanged(year: string) {
+    this.year = year;
+    this.chooseServ.getAllModels(this.brandId, year).subscribe((a) => {
       this.models = a;
     });
   }
