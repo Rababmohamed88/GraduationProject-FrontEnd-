@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@600&display=swap');
+* {
+    font-family: 'Markazi Text', serif;
+}
+
+.im {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.labe {
+    display: block;
+    text-align: right;
+}

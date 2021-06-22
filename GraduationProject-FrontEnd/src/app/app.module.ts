@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RouterModule } from '@angular/router';
+
 import { SearchComponent } from './components/search/search.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -37,6 +38,8 @@ import { MatRippleModule } from '@angular/material/core';
 //   MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule, 
 //   MatSlideToggleModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { SuggestionComponent } from './components/suggestion/suggestion.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ChooseCarComponent,
     RentComponent,
     RentMyCarComponent,
+    SuggestionComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +91,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   }
   ],
   
+
+ 
   bootstrap: [AppComponent],
 })
 

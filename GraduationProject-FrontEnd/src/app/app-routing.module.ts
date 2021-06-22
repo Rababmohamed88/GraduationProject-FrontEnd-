@@ -9,6 +9,10 @@ import { SearchComponent } from './components/search/search.component';
 import { RentComponent } from './components/rent/rent.component';
 import { RentMyCarComponent } from './components/rent-my-car/rent-my-car.component';
 
+import { SuggestionComponent } from './components/suggestion/suggestion.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -18,14 +22,17 @@ const routes: Routes = [
   { path: 'rentmycar', component: RentMyCarComponent },
 
 
+=======
+  { path: 'profile', component: ProfileComponent },
 
-  {path: 'car-details/:id', component: CarDetailsComponent},
+  { path: 'car-details/:id', component: CarDetailsComponent },
   {
     path: 'explore',
     loadChildren: () =>
       import('./explore/explore.module').then((m) => m.ExploreModule),
   },
-  {path: '' , component: HomeComponent},
+  { path: '', component: HomeComponent },
+  {path:'Suggestion',component:SuggestionComponent}
 ];
 
 @NgModule({
