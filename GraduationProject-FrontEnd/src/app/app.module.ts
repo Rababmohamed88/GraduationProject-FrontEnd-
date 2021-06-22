@@ -20,6 +20,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ChooseCarComponent } from './components/choose-car/choose-car.component';
 import {DropdownModule} from 'primeng/dropdown';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {DropdownModule} from 'primeng/dropdown';
     CarDetailsComponent,
     SearchComponent,
     GalleryComponent,
-    ChooseCarComponent
+    ChooseCarComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

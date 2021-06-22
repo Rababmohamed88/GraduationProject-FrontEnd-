@@ -1,0 +1,31 @@
+i, .c1{
+    color: #FFB400;
+    font-size: 25px;
+}
+button{
+    color: #464343;
+    border: none;
+    border-radius: 5px;
+}
+.card {
+    border: 2px solid #858383 !important;
+    border-radius: 10px !important;
+}
+p, .c2 {
+  color: #464343;
+}
+.notFound p{
+    font-size: 40px;
+}
+.notFound img{
+    height: 300px;
+}
+.card img{
+    border-radius: 10px !important;
+  }
+.dropdown button:focus{
+    box-shadow: none !important;
+}
+.dropdown .dropdown-item:focus{
+    background-color: #FFB400;
+}
