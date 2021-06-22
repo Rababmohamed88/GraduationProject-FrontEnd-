@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { SearchComponent } from './components/search/search.component';
+import { SuggestionComponent } from './components/suggestion/suggestion.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
       import('./explore/explore.module').then((m) => m.ExploreModule),
   },
   { path: '', component: HomeComponent },
+  {path:'Suggestion',component:SuggestionComponent}
 ];
 
 @NgModule({
