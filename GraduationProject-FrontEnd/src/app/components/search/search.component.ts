@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   modelsValue:any=[
 
   ]
+  brandsValue=[]
   bodystyle:any[]=[  
     "Sedan",
     "Van",
@@ -63,8 +64,12 @@ export class SearchComponent implements OnInit {
     
     this.setValueZero();
     this.searchService.getAllBrands().subscribe(a=>{
+      console.log(a);
      a.forEach(element => {
-        this.brands.push(element.name);        
+       
+        this.brands.push(element.name);
+        this.brandsValue.push(element.id);
+                
       });     
      })
 

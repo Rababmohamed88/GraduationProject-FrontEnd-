@@ -9,7 +9,7 @@
                             
                             <select  (change)="updateModel($event.target.value);" [(ngModel)]="selectedBrand" >
                                     <option [value]="0" disabled > Make</option>
-                                    <option *ngFor="let brand of brands; let i=index" [value]="i+1" >{{brand}}</option>
+                                    <option *ngFor="let brand of brands;  brandsValue let i=index" [value]="brandsValue[i]" >{{brand}}</option>
                             </select>
                                    
                     </div>

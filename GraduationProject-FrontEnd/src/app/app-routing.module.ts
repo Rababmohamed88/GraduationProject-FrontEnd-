@@ -21,8 +21,9 @@ const routes: Routes = [
   { path: 'rent', component: RentComponent },
   { path: 'rentmycar', component: RentMyCarComponent },
 
+  
 
-=======
+
   { path: 'profile', component: ProfileComponent },
 
   { path: 'car-details/:id', component: CarDetailsComponent },
