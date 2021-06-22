@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class RentMyCarComponent implements OnInit {
  
 
-  title = 'newMat';
+  title = 'rent';
      
   isLinear = true;
   firstFormGroup: FormGroup;
