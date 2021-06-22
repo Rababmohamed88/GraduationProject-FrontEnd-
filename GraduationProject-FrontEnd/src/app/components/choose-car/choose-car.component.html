@@ -12,6 +12,15 @@
       </div>
 
       <div class="my-5">
+        <select #yearSelect (change)="yearSelectChanged(yearSelect.value)">
+          <option value="All" selected>Model Years</option>
+          <option *ngFor="let oneYear of years" [value]="oneYear">
+            {{ oneYear }}
+          </option>
+        </select>
+      </div>
+
+      <div class="my-5">
         <select #modelSelect (change)="modelSelectChanged(modelSelect.value)">
           <option value="0" selected>Model</option>
           <option *ngFor="let model of models" [value]="model.id">
@@ -45,7 +54,9 @@
         <div class="card-footer">
           <div class="row">
             <div class="col-md-5">
-              <a href="#" class="btn">Choose</a>
+              <a 
+              [routerLink] = "['/profile']"
+              class="btn">Choose</a>
             </div>
             <div class="col-md-6">
               <a

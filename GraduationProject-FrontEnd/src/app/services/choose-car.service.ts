@@ -1,3 +1,4 @@
+import { Year } from './../_models/chooseCar/year';
 import { ChooseCar } from './../_models/chooseCar/choose-car';
 import { Class } from './../_models/chooseCar/class';
 import { Model } from './../_models/chooseCar/model';
@@ -14,15 +15,22 @@ export class ChooseCarService {
   getAllBrands() {
     return this.http.get<Brand[]>('https://localhost:44301/api/brand/all');
   }
-  getAllModels(brandId: number) {
+  getAllModels(brandId: number, year: string) {
     return this.http.get<Model[]>(
-      'https://localhost:44301/api/model/getinbrand/' + brandId
+      'https://localhost:44301/api/model/getinbrand?id=' +
+        brandId +
+        '&year=' +
+        year
     );
   }
   getAllClasses(modelId: number) {
     return this.http.get<Class[]>(
       'https://localhost:44301/api/class/classesinmodel/' + modelId
     );
+  }
+
+  getYearsInBrand(brandId: number) {
+    return this.http.get<Year[]>('https://localhost:44301/api/year/' + brandId);
   }
 
   getCarDataCard(modelId: number, classId: number) {

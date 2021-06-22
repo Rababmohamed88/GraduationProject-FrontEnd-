@@ -6,13 +6,17 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { SearchComponent } from './components/search/search.component';
+
 import { SuggestionComponent } from './components/suggestion/suggestion.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'search', component: SearchComponent },
   { path: 'choose-car', component: ChooseCarComponent },
+  { path: 'profile', component: ProfileComponent },
 
   { path: 'car-details/:id', component: CarDetailsComponent },
   {

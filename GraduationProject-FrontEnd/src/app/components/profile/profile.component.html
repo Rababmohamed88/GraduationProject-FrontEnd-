@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 col-sm-12">
+            <i class="fa fa-user mr-1 my-3"></i>
+            <h3 class="d-inline my-3">{{prof.userName}}</h3><br>
+            <i class="fa fa-mobile mr-1 my-3"></i>
+            <h5 class="d-inline my-3">{{prof.phoneNumber}}</h5><br>
+            <i class="fa fa-envelope mr-1 my-3"></i>
+            <h5 class="d-inline my-3">{{prof.email}}</h5><br>
+            <button type="submit" class="btn btn-warning my-3 d-block">Change Information</button>
+        </div>
+        <div class="col-lg-7 col-sm-12">
+          <div class = "notFound" *ngIf = "!owncar.imageName">
+            <p class="my-2">You don't have any car !</p>
+            <img src="../../../assets/sad.png" class="w-100"/>
+          </div>
+
+            <div class="card my-3" style="max-width: 450px;" *ngFor="let ownCar of owncar">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="../../../assets/{{ownCar.imageName}}" alt="..." class="w-100 h-100">
+                  </div>
+                  <div class="col-md-8">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10">
+                                <h5 class="card-title c1">{{ownCar.carName}}</h5>
+                                <h5 class="card-title c2">{{ownCar.className}}</h5>
+                            </div>
+                            <div class="col-2">
+                                <div class="dropdown">
+                                    <button class="btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                      <button class="dropdown-item" type="button" [routerLink] = "['/car-details/id']">Main details</button>
+                                      <button class="dropdown-item" type="button">User's details</button>
+                                      <button class="dropdown-item" type="button">Remove</button>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <button type="submit" class="btn btn-warning my-3" [routerLink] = "['/choose-car']">Choose My Car Now</button>          
+        </div>
+    </div>
+</div>
