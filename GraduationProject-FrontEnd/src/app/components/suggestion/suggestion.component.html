@@ -7,105 +7,99 @@
             <div class="m-5">
                 <h3>نقترح عليك السيارة المناسبة لإحتاجك</h3>
             </div>
-            <form class="my-5" action="">
-                <div class="form-group m-4">
-                    <label class="m-1 labe" for="">الفئة السعرية</label>
-                    <select class="m-1 form-control" name="" id="">
-                        <option disabled selected value>  </option>
+            <form class="my-5" action="" [formGroup]="f">
+                <div class=" form-group m-4 ">
+                    <label class="m-1 labe " for=" ">الفئة السعرية</label>
+                    <select class="m-1 form-control " name=" " id=" " formControlName="q1" [class.is-invalid]="q1.invalid && q1.touched ">
+                        <option disabled selected value="">  </option>
 
-                    <option value="">تحت 100 ألف</option>
-                    <option value="">من 100 ألف الي 200 ألف</option>
-                    <option value="">من 200 ألف الي 300 ألف</option>
-                    <option value="">من 300 ألف الي 400 ألف</option>
-                    <option value="">من 400 ألف الي 500 ألف</option>
-                    <option value="">من 500 ألف الي 600 ألف</option>
-                    <option value="">من 600 ألف الي 700 ألف</option>
-                    <option value="">من 700 ألف الي 1 مليون</option>
-
-                </select>
-                </div>
-                <div class="form-group m-4">
-                    <label class="m-1 labe" for="">حالة السيارة</label>
-                    <select class="m-1 form-control" name="" id="">
-                        <option disabled selected value>  </option>
-
-                    <option value="">جديدة</option>
-                    <option value="">مستعملة</option>
-                  
+                    <option value=" ">تحت 100 ألف</option>
+                    <option value=" ">من 100 ألف الي 200 ألف</option>
+                    <option value=" ">من 200 ألف الي 300 ألف</option>
+                    <option value=" ">من 300 ألف الي 400 ألف</option>
+                    <option value=" ">من 400 ألف الي 500 ألف</option>
+                    <option value=" ">من 500 ألف الي 600 ألف</option>
+                    <option value=" ">من 600 ألف الي 700 ألف</option>
+                    <option value=" ">من 700 ألف الي 1 مليون</option>
 
                 </select>
+                    <small class="text-danger labe" *ngIf="q1.invalid && q1.touched">إختر الفئة السعرية</small>
                 </div>
-                <div class="form-group m-4">
-                    <label class="m-1 labe" for="">إستخدام السيارة                    </label>
-                    <select class="m-1 form-control" name="" id="">
+                <div class="form-group m-4 ">
+                    <label class="m-1 labe " for=" ">حالة السيارة</label>
+                    <select class="m-1 form-control " name=" " id=" " formControlName="q2" [class.is-invalid]="q2.invalid && q2.touched ">
+                        <option disabled selected value=" ">  </option>
+
+                    <option value=" ">جديدة</option>
+                    <option value=" ">مستعملة</option>
+                </select>
+                    <small class="text-danger labe " *ngIf="q2.invalid && q2.touched">إختر حالة السيارة</small>
+                </div>
+                <div class="form-group m-4 ">
+                    <label class="m-1 labe " for=" ">إستخدام السيارة                    </label>
+                    <select class="m-1 form-control " name=" " id=" " formControlName="q3" [class.is-invalid]="q3.invalid && q3.touched ">
                         <option disabled selected value>  </option>
 
-                    <option value="">إستخدام في العمل (أوبر - كريم - مكاتب تأجير)</option>
-                    <option value=""> إستخدام عائلة</option>
-                    <option value=""> إستخدام شباب (فرد)</option>
-
-                  
-
+                    <option value=" ">إستخدام في العمل (أوبر - كريم - مكاتب تأجير)</option>
+                    <option value=" "> إستخدام عائلة</option>
+                    <option value=" "> إستخدام شباب (فرد)</option>
                 </select>
+                    <small class="text-danger labe " *ngIf="q3.invalid && q3.touched">إختر إستخدام السيارة</small>
                 </div>
-                <div class="form-group m-4">
-                    <label class="m-1 labe" for="">مميزات الأساسية للسيارة </label>
-                    <select class="m-1 form-control" name="" id="">
+                <div class="form-group m-4 ">
+                    <label class="m-1 labe " for=" ">مميزات الأساسية للسيارة </label>
+                    <select class="m-1 form-control " name=" " id=" " formControlName="q4" [class.is-invalid]="q4.invalid && q4.touched ">
                         <option disabled selected value>  </option>
 
-                    <option value="">سيارة اقتصادية (قليلة في استهلاك البنزين و أرخص قطع غيار)</option>
-                    <option value="">  سيارة رياضية ( أعلى سرعة و معدل تسارع )</option>
-                    <option value=""> سيارة حديثة (مدموج بها سنسورات حديثة ووسائل راحة متقدمة )</option>
-                    <option value=""> سيارة متزنة (تجمع بين متوسط كل المميزات )</option>
-
-                  
-
+                    <option value=" ">سيارة اقتصادية (قليلة في استهلاك البنزين و أرخص قطع غيار)</option>
+                    <option value=" ">  سيارة رياضية ( أعلى سرعة و معدل تسارع )</option>
+                    <option value=" "> سيارة حديثة (مدموج بها سنسورات حديثة ووسائل راحة متقدمة )</option>
+                    <option value=" "> سيارة متزنة (تجمع بين متوسط كل المميزات )</option>
                 </select>
+                    <small class="text-danger labe " *ngIf="q4.invalid && q4.touched">إختر مميزات الأساسية للسيارة</small>
+
                 </div>
-                <div class="form-group m-4">
-                    <label class="m-1 labe" for="">أنواع الطرق الأكثر إستخدام 
+                <div class="form-group m-4 ">
+                    <label class="m-1 labe " for=" ">أنواع الطرق الأكثر إستخدام 
                     </label>
-                    <select class="m-1 form-control" name="" id="">
+                    <select class="m-1 form-control " name=" " id=" " formControlName="q5" [class.is-invalid]="q5.invalid && q5.touched ">
                         <option disabled selected value>  </option>
 
-                    <option value="">طرق مسفلتة</option>
-                    <option value="">  طرق رملية</option>
-                    <option value=""> طرق طينية</option>
-                    <option value=""> طرق مسفلتة غير ممهدة جيدا  </option>
-
-                  
-
+                    <option value=" ">طرق مسفلتة</option>
+                    <option value=" ">  طرق رملية</option>
+                    <option value=" "> طرق طينية</option>
+                    <option value=" "> طرق مسفلتة غير ممهدة جيدا  </option>
                 </select>
+                    <small class="text-danger labe " *ngIf="q5.invalid && q5.touched">إختر نوع الطرق </small>
                 </div>
-                <div class="form-group m-4">
-                    <label class="m-1 labe" for="">نوع السيارة
+                <div class="form-group m-4 ">
+                    <label class="m-1 labe " for=" ">نوع السيارة
 
                     </label>
-                    <select class="m-1 form-control" name="" id="">
+                    <select class="m-1 form-control " name=" " id=" " formControlName="q6" [class.is-invalid]="q6.invalid && q6.touched ">
                     <option disabled selected value>  </option>
-                    <option value="">بنزين</option>
-                    <option value="">  كهرباء</option>
-                    <option value=""> هجين</option>
-                    <option value=""> غاز
+                    <option value=" ">بنزين</option>
+                    <option value=" ">  كهرباء</option>
+                    <option value=" "> هجين</option>
+                    <option value=" "> غاز
                     </option>
-
-                  
-
                 </select>
+                    <small class="text-danger labe " *ngIf="q6.invalid && q6.touched">إختر نوع السيارة</small>
 
                 </div>
-                <div class="form-group m-4">
-                    <label class="m-1 labe" for="">نوع الجير (الفتيس)
+                <div class="form-group m-4 ">
+                    <label class="m-1 labe " for=" ">نوع الجير (الفتيس)
                     </label>
-                    <select class="m-1 form-control" name="" id="">
+                    <select class="m-1 form-control " name=" " id=" " formControlName="q7" [class.is-invalid]="q7.invalid && q7.touched ">
                         <option disabled selected value>  </option>
-                        <option value="">مانيوال</option>
-                         <option value="">أوتوماتيك</option>
+                        <option value=" ">مانيوال</option>
+                         <option value=" ">أوتوماتيك</option>
 
                       </select>
+                    <small class="text-danger labe " *ngIf="q7.invalid && q7.touched">إختر نوع الجير (الفتيس) </small>
                 </div>
-                <div class="mb-5">
-                    <input class="btn btn-success mx-auto" type="submit" value="إقتراح">
+                <div class="mb-5 ">
+                    <input class=" m-1 btn btn-success button-control" [disabled]=" f.invalid " type="submit " value="إقتراح ">
                 </div>
             </form>
         </div>
