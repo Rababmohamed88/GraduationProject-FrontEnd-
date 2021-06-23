@@ -11,6 +11,7 @@ import { RentMyCarComponent } from './components/rent-my-car/rent-my-car.compone
 
 import { SuggestionComponent } from './components/suggestion/suggestion.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SellMyCarComponent } from './components/sell-my-car/sell-my-car.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'choose-car', component: ChooseCarComponent },
   { path: 'rent', component: RentComponent },
   { path: 'rentmycar', component: RentMyCarComponent },
+  { path: 'sell-my-car', component: SellMyCarComponent },
 
   
 

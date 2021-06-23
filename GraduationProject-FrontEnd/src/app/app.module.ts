@@ -39,12 +39,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatRippleModule } from '@angular/material/core';
 
+
 // import { MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule, 
 //   MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule, 
 //   MatSlideToggleModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SuggestionComponent } from './components/suggestion/suggestion.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SellMyCarComponent } from './components/sell-my-car/sell-my-car.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     RentComponent,
     RentMyCarComponent,
     SuggestionComponent,
-    ProfileComponent
+    ProfileComponent,
+    SellMyCarComponent
   ],
   imports: [
     BrowserModule,
