@@ -8,8 +8,10 @@ import { HttpClient } from '@angular/common/http';
 export class GalleryService {
   constructor(private http: HttpClient) {}
 
-getImages(carDetailsId: number){
-  console.log("carDetailsId => "+carDetailsId);
-  return this.http.get<Photo[]>("https://localhost:44301/api/Cars/photos/"+carDetailsId);
-}
+  getImages(carDetailsId: number) {
+    console.log('carDetailsId => ' + carDetailsId);
+    return this.http.get<Photo[]>(
+      'https://localhost:44301/api/Cars/photos/' + carDetailsId
+    );
+  }
 }

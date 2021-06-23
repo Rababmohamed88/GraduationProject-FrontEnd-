@@ -1,184 +1,93 @@
+import { Type } from './../../_models/type';
+import { Year } from './../../_models/chooseCar/year';
+import { Class } from './../../_models/chooseCar/class';
+import { Model } from './../../_models/chooseCar/model';
+import { Brand } from './../../_models/chooseCar/brand';
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
+  brands: Brand[] = [];
+  brandId: number;
 
-  
-  brands:any[]=[
-  ]
-  models:any[]=[
-  ]
-  modelsValue:any=[
+  models: Model[] = [];
+  modelId: number;
 
-  ]
-  bodystyle:any[]=[  
-    "Sedan",
-    "Van",
-    "Hatchback",
-    "Coupe",
-    "SUV",
-    "Station",
-    "Cabriolet"
-  ]
-  selectedBrand:number;
-  selectedModel:number;
-  selectedBody:number;
-  carsWithBrand=[];
-  carsWithYear=[];
-  carsWithinPrice=[];
+  classes: Class[] = [];
 
-  car=[
-    {img:"../../../assets/9.jpg",brand:"BMW",model:"118i",price:200000},
-    {img:"../../../assets/1.png",brand:"Audi",model:"118i",price:500000},
-    {img:"../../../assets/4.jpg",brand:"Audi",model:"118i",price:320000},
+  years: Year[] = [];
+  year: string;
 
-  ]
-   
-  year:number=0;
-  startPrice:number=0;
-  endPrice:number=0;
+  types: Type[] = [];
 
-
-  alt="car"
-
-  image:string;    
- 
-  setValueZero(){
-    this.selectedBrand=0;
-    this.selectedModel=0;
-    this.selectedBody=0;
-  }
-
-
-  constructor(private searchService:SearchService) { 
-   
-  }
+  constructor(private searchServ: SearchService) {}
 
   ngOnInit(): void {
-    
-    this.setValueZero();
-    this.searchService.getAllBrands().subscribe(a=>{
-     a.forEach(element => {
-        this.brands.push(element.name);        
-      });     
-     })
-
-  
-
-
-
-  }
-  updateModel(brand:number){
-
-    this.models=[];
-    this.modelsValue=[];
-    this.searchService.getModels(brand).subscribe(a=>
-      {
-        console.log(a);
-        a.forEach(element => {
-          this.models.push(element.model);
-          this.models=[... new Set(this.models)];
-          this.modelsValue.push(element.modelId);
-          this.modelsValue=[... new Set(this.modelsValue)];
-          console.log(this.modelsValue)
-        });
-          
-      })
-    
+    this.intializeSelects();
   }
 
-  search(){
-    
-    this.searchService.getAll(this.selectedBrand,this.selectedModel,this.selectedBody,this.startPrice,this.endPrice,this.year).subscribe(
-      a=>{
-        //this.addPathToImage(a);
-        console.log(a);
-        this.car=a;
-      }
-    )
-  //   if(this.selectedBrand!=0&&this.selectedModel!=0&&this.selectedBody!=0){
-     
-  //     this.searchService.searchByAll(this.selectedBrand,this.selectedModel,this.selectedBody).subscribe(
-  //       a=>{
-  //         this.addPathToImage(a);
-  //         console.log(a);
-  //         this.car=a;
-  //       }
-  //     )
-  //   }
-    
-  //   else if(this.selectedBrand!=0&&this.selectedModel!=0){
-  //     this.searchService.searchByBrandModel(this.selectedBrand,this.selectedModel).subscribe(
-  //       a=>{
-  //         this.addPathToImage(a);
-  //         console.log(a);
-  //         this.car=a;
-  //       }
-  //     )
-  //   }
-  //   else if(this.selectedBrand!=0){
-  //     this.searchService.getModels(this.selectedBrand).subscribe(a=>
-  //       {
-  //         this.addPathToImage(a);
-  //         this.car=a;
-  //         this.carsWithBrand=a;
-  //       })
-  //     console.log("brand ")
-  //   }
-  //   else if(this.selectedBody!=0){
-      
-  //     this.searchService.searchByBody(this.selectedBody).subscribe(a=>
-  //       {
-          
-  //         this.addPathToImage(a);
-  //         this.car=a;
-  //         console.log(a);
-  //       })
-  //   }
+  brandSelectChanged(brandId: number) {
+    this.brandId = brandId;
+    this.changeAfterBrand();
+  }
 
-  //   this.setValueZero();
+  yearSelectChanged(year: string) {
+    this.year = year;
+    this.searchServ.getAllModelsInBrand(this.brandId, year).subscribe((a) => {
+      this.models = a;
+    });
+    this.searchServ
+      .getTypesInBrand(this.brandId, this.year, this.modelId)
+      .subscribe((a) => {
+        this.types = a;
+      });
+  }
 
-  //  if(this.year!=0){
-  //   this.searchService.searchByYear(this.year).subscribe(a=>
-  //     { 
-  //       this.carsWithYear=a;
-  //       this.car=a;
-  //       console.log(a);
-  //     })
-  //   }
-  //   if(this.startPrice!=0 && this.endPrice!=0){
-  //    this.searchService.searchByprice(this.startPrice,this.endPrice).subscribe(a=>
-  //     { 
-  //       this.carsWithinPrice=a;
-  //       this.car=a;
-  //       console.log(a);
-  //     }) 
-  //   }
-  //    var intersection = this.carsWithYear.filter(item1 => this.carsWithinPrice.some(item2 => item1.img === item2.img))
-  //   // this.car=intersection
-  //    console.log(this.car)
+  modelSelectChanged(modelId: number) {
+    this.modelId = modelId;
+    this.searchServ
+      .getTypesInBrand(this.brandId, this.year, this.modelId)
+      .subscribe((a) => {
+        this.types = a;
+      });
+  }
 
-  //     // this.year=this.startPrice=this.endPrice=null;
-     
-  //}
+  intializeSelects() {
+    this.searchServ.getAllBrand().subscribe((a) => {
+      this.brands = a;
+    });
 
-  // addPathToImage(a){
-  //   for(var i=0;i<a.length;i++){
-  //     a[i].img=`../../../assets/readyImgs/readyImgs/${a[i].img}`
-  //   }
+    this.searchServ.getAllModels().subscribe((a) => {
+      this.models = a;
+    });
 
-  // }
- 
-     
+    this.searchServ.getAllTypes().subscribe((a) => {
+      this.types = a;
+    });
 
+    this.searchServ.getAllYears().subscribe((a) => {
+      this.years = a;
+    });
+  }
 
+  changeAfterBrand() {
+    this.searchServ.getYearsInBrand(this.brandId).subscribe((a) => {
+      this.years = a;
+    });
 
+    this.searchServ.getAllModelsInBrand(this.brandId, 'All').subscribe((a) => {
+      this.models = a;
+    });
+
+    this.searchServ
+      .getTypesInBrand(this.brandId, this.year, this.modelId)
+      .subscribe((a) => {
+        this.types = a;
+      });
+  }
 }
-
-  }
-
