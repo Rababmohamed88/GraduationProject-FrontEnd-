@@ -1,3 +1,5 @@
+import { SearchFilters } from './../_models/search-filters';
+import { CarSearchResult } from './../_models/car-search-result';
 import { Class } from './../_models/chooseCar/class';
 import { Model } from './../_models/chooseCar/model';
 import { Type } from './../_models/type';
@@ -50,11 +52,11 @@ export class SearchService {
   }
 
   getTypesInBrand(brandId: number, year: string, modelId: number) {
-    if(typeof(year) == 'undefined'){
-      year ="All";
+    if (typeof year == 'undefined') {
+      year = 'All';
     }
 
-    if(typeof(modelId) == 'undefined'){
+    if (typeof modelId == 'undefined') {
       modelId = 0;
     }
 
@@ -65,6 +67,26 @@ export class SearchService {
         year +
         '&modelId=' +
         modelId
+    );
+  }
+
+  search(filters: SearchFilters) {
+    if(filters.year == "All"){
+      filters.year = 0;
+    }
+    return this.http.get<CarSearchResult[]>(
+      'https://localhost:44301/api/search/searchbyall?minprice=' +
+        filters.minprice +
+        '&maxprice=' +
+        filters.maxprice +
+        '&brand=' +
+        filters.brand +
+        '&model=' +
+        filters.model +
+        '&body=' +
+        filters.body +
+        '&year=' +
+        filters.year
     );
   }
 }

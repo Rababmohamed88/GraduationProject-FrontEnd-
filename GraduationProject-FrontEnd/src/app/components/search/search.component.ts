@@ -1,3 +1,5 @@
+import { SearchFilters } from './../../_models/search-filters';
+import { CarSearchResult } from './../../_models/car-search-result';
 import { Type } from './../../_models/type';
 import { Year } from './../../_models/chooseCar/year';
 import { Class } from './../../_models/chooseCar/class';
@@ -13,17 +15,12 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class SearchComponent implements OnInit {
   brands: Brand[] = [];
-  brandId: number;
-
   models: Model[] = [];
-  modelId: number;
-
   classes: Class[] = [];
-
   years: Year[] = [];
-  year: string;
-
   types: Type[] = [];
+  cars: CarSearchResult[];
+  filters: SearchFilters = new SearchFilters(0, 0, 0, 0, 0, 'All');
 
   constructor(private searchServ: SearchService) {}
 
@@ -32,26 +29,38 @@ export class SearchComponent implements OnInit {
   }
 
   brandSelectChanged(brandId: number) {
-    this.brandId = brandId;
+    console.log(brandId);
+    this.filters.brand = brandId;
+    console.log(this.filters);
     this.changeAfterBrand();
   }
 
   yearSelectChanged(year: string) {
-    this.year = year;
-    this.searchServ.getAllModelsInBrand(this.brandId, year).subscribe((a) => {
-      this.models = a;
-    });
+    this.filters.year = year;
     this.searchServ
-      .getTypesInBrand(this.brandId, this.year, this.modelId)
+      .getAllModelsInBrand(this.filters.brand, year)
+      .subscribe((a) => {
+        this.models = a;
+      });
+    this.searchServ
+      .getTypesInBrand(
+        this.filters.brand,
+        this.filters.year,
+        this.filters.model
+      )
       .subscribe((a) => {
         this.types = a;
       });
   }
 
   modelSelectChanged(modelId: number) {
-    this.modelId = modelId;
+    this.filters.model = modelId;
     this.searchServ
-      .getTypesInBrand(this.brandId, this.year, this.modelId)
+      .getTypesInBrand(
+        this.filters.brand,
+        this.filters.year,
+        this.filters.model
+      )
       .subscribe((a) => {
         this.types = a;
       });
@@ -76,18 +85,31 @@ export class SearchComponent implements OnInit {
   }
 
   changeAfterBrand() {
-    this.searchServ.getYearsInBrand(this.brandId).subscribe((a) => {
+    this.searchServ.getYearsInBrand(this.filters.brand).subscribe((a) => {
       this.years = a;
     });
 
-    this.searchServ.getAllModelsInBrand(this.brandId, 'All').subscribe((a) => {
-      this.models = a;
-    });
+    this.searchServ
+      .getAllModelsInBrand(this.filters.brand, 'All')
+      .subscribe((a) => {
+        this.models = a;
+      });
 
     this.searchServ
-      .getTypesInBrand(this.brandId, this.year, this.modelId)
+      .getTypesInBrand(
+        this.filters.brand,
+        this.filters.year,
+        this.filters.model
+      )
       .subscribe((a) => {
         this.types = a;
       });
+  }
+
+  sendFilters() {
+    this.searchServ.search(this.filters).subscribe((a) => {
+      console.log(a);
+      this.cars = a;
+    });
   }
 }

@@ -22,7 +22,7 @@
       </div>
 
       <div class="brand pt-4 pl-2">
-        <select #modelSelect (change)="modelSelectChanged(modelSelect.value)" >
+        <select #modelSelect (change)="modelSelectChanged(modelSelect.value)">
           <option value="0" disabled selected>Model</option>
           <option *ngFor="let model of models" [value]="model.id">
             {{ model.name }}
@@ -40,23 +40,27 @@
       </div>
 
       <div class="brand pt-4 pl-2 price">
-        <input type="text" class="from" placeholder="From" />
-        <input type="text" class="to" placeholder="To" />
+        <input [(ngModel)]="filters.minprice" type="number" class="from" placeholder="From" />
+        <input [(ngModel)]="filters.maxprice" type="number" class="to" placeholder="To" />
       </div>
 
       <div class="form-group clearfix mt-4">
-        <button type="submit" class="btn-md btn-theme float-left">
+        <button
+          (click)="sendFilters()"
+          type="submit"
+          class="btn-md btn-theme float-left"
+        >
           search
         </button>
       </div>
     </div>
     <div class="col-md-10">
-      <div class="card cards" style="width: 16rem">
-        <img class="card-img-top" style="height: 8rem" src="#" alt="car" />
+      <div *ngFor="let car of cars" class="card cards" style="width: 16rem">
+        <img class="card-img-top" style="height: 8rem" src="assets/CarsImages/{{ car.img}}" alt="car" />
         <div class="card-body">
-          <h5 class="card-title">Brand</h5>
-          <p class="card-text">Model</p>
-          <p class="card-text">Price</p>
+          <h5 class="card-title">{{car.brand}}</h5>
+          <p class="card-text">{{car.model}}</p>
+          <p class="card-text">{{car.price}}</p>
 
           <a href="#" class="btn btn-primary">Details</a>
         </div>
