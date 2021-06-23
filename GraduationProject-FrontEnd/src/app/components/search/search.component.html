@@ -4,7 +4,6 @@
       <div class="tabs">
         <span><a href="#">New</a> </span><span><a href="#">Used</a></span>
       </div>
-
       <div class="brand pt-4 pl-2">
         <select #brandSelect (change)="brandSelectChanged(brandSelect.value)">
           <option value="0" disabled selected>Make</option>
@@ -40,8 +39,18 @@
       </div>
 
       <div class="brand pt-4 pl-2 price">
-        <input [(ngModel)]="filters.minprice" type="number" class="from" placeholder="From" />
-        <input [(ngModel)]="filters.maxprice" type="number" class="to" placeholder="To" />
+        <input
+          [(ngModel)]="filters.minprice"
+          type="number"
+          class="from"
+          placeholder="From"
+        />
+        <input
+          [(ngModel)]="filters.maxprice"
+          type="number"
+          class="to"
+          placeholder="To"
+        />
       </div>
 
       <div class="form-group clearfix mt-4">
@@ -56,11 +65,16 @@
     </div>
     <div class="col-md-10">
       <div *ngFor="let car of cars" class="card cards" style="width: 16rem">
-        <img class="card-img-top" style="height: 8rem" src="assets/CarsImages/{{ car.img}}" alt="car" />
+        <img
+          class="card-img-top"
+          style="height: 8rem"
+          src="assets/CarsImages/{{ car.img }}"
+          alt="car"
+        />
         <div class="card-body">
-          <h5 class="card-title">{{car.brand}}</h5>
-          <p class="card-text">{{car.model}}</p>
-          <p class="card-text">{{car.price}}</p>
+          <h5 class="card-title">{{ car.brand }}</h5>
+          <p class="card-text">{{ car.model }}</p>
+          <p class="card-text">{{ car.price }}</p>
 
           <a href="#" class="btn btn-primary">Details</a>
         </div>

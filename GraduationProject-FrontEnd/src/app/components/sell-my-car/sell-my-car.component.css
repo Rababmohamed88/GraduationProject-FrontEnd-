@@ -1,0 +1,18 @@
+h2{
+    font-family: changa one;
+}
+input:focus, textarea:focus{
+    box-shadow: none !important;
+    transition: transform 0.5s;
+    border: 3px solid #FFB400;
+    transform: scale(1.1);
+}
+input, textarea{
+    border: 1px solid #FFB400;
+}
+label{
+    color: #495057;
+}
+.custom-control-input{
+    border: 10px solid #FFB400 !important;
+}
