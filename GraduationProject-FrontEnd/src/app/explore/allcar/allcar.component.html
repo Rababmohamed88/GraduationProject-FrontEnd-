@@ -1,79 +1,62 @@
 .
 <div class="container">
-    <ul ngbNav #nav="ngbNav" class="nav-pills">
-        <li ngbNavItem>
-            <a btn-outline-primary ngbNavLink>Price</a>
-            <ng-template ngbNavContent>
-                <div class="form-inline m-2 mt-5">
-                    <input class="form-control m-2" type="number" name="startprice" placeholder="From" id="">
-                    <input class="form-control m-2" type="number" name="startprice" placeholder="To" id="">
+  <ul ngbNav #nav="ngbNav" class="nav-pills">
+    <li ngbNavItem>
+      <a btn-outline-primary ngbNavLink>Price</a>
+      <ng-template ngbNavContent>
+        <div class="form-inline m-2 mt-5">
+          <input
+            #minPrice
+            class="form-control m-2"
+            type="number"
+            name="startprice"
+            placeholder="From"
+            id=""
+          />
+          <input
+            #maxPrice
+            class="form-control m-2"
+            type="number"
+            name="startprice"
+            placeholder="To"
+            id=""
+          />
+        </div>
+        <div class="m-3">
+          <button
+            (click)="search(minPrice.value, maxPrice.value)"
+            class="btn btn-warning"
+          >
+            Search
+          </button>
+        </div>
+      </ng-template>
+    </li>
+
+    <li ngbNavItem>
+      <a btn-outline-primary ngbNavLink>Body Style</a>
+      <ng-template ngbNavContent>
+        <div class="row my-3">
+          <div *ngFor="let type of types">
+            <div class="col my-2">
+              <a [routerLink]="['/search']" [queryParams]="{ body: type.id }">
+                <div class="bodycard">
+                  <h5 class="titleCard">{{ type.name }}</h5>
+                  <img
+                    class="imgCard"
+                    src="/assets/carbody/{{ type.icon }}"
+                    alt=""
+                  />
                 </div>
-                <div class=" m-3">
-                    <button class="btn btn-warning ">Search</button>
-                </div>
+              </a>
+            </div>
+          </div>
 
-            </ng-template>
-        </li>
-
-        <li ngbNavItem>
-            <a btn-outline-primary ngbNavLink>Body Style</a>
-            <ng-template ngbNavContent>
-                <div class="row my-5">
-                    <div class="col">
-                        <div class="bodycard">
-                            <h5 class="titleCard">Van</h5>
-                            <img class="imgCard" src="../../../assets/carbody/van.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="bodycard">
-                            <h5 class="titleCard">Sedan</h5>
-                            <img class="imgCard" src="../../../assets/carbody/sedan.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="bodycard">
-                            <h5 class="titleCard">Hatchback</h5>
-                            <img class="imgCard" src="../../../assets/carbody/hatchback.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="bodycard">
-                            <h5 class="titleCard">Coupe</h5>
-                            <img class="imgCard" src="../../../assets/carbody/coupe.png" alt="">
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row my-5">
-                    <div class="col">
-                        <div class="bodycard">
-                            <h5 class="titleCard">Cabriolet</h5>
-                            <img class="imgCard" src="../../../assets/carbody/cabriolet.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="bodycard">
-                            <h5 class="titleCard">SUV</h5>
-                            <img class="imgCard" src="../../../assets/carbody/SUV.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="bodycard">
-                            <h5 class="titleCard">Station</h5>
-                            <img class="imgCard" src="../../../assets/carbody/station.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col">
-                    </div>
-
-                </div>
-
-            </ng-template>
-        </li>
-    </ul>
-    <div class="row">
-        <div class="m-2" [ngbNavOutlet]="nav"></div>
-
-    </div>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="m-2" [ngbNavOutlet]="nav"></div>
+  </div>
 </div>

@@ -41,6 +41,4 @@ export class ChooseCarService {
         classId
     );
   }
-
-
 }

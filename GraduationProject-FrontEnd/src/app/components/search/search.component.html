@@ -16,7 +16,7 @@
 
       <div class="brand pt-4 pl-2">
         <select #yearSelect (change)="yearSelectChanged(yearSelect.value)">
-          <option value="All" selected>All Years</option>
+          <option value="0" selected>All Years</option>
           <option *ngFor="let year of years" [value]="year">{{ year }}</option>
         </select>
       </div>

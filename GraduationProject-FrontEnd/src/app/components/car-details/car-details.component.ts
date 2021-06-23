@@ -19,9 +19,7 @@ export class CarDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.ac.params.subscribe((p) => {
-      console.log("p.id=>"+p.id)
       this.detailsid = p.id;
-      console.log("detailsid=>"+this.detailsid)
       this.detailsServ.getCarDetails(p.id).subscribe((a) => {
         this.cd = this.settingData(a);
       });

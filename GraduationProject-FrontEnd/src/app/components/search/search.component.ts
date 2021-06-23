@@ -6,6 +6,7 @@ import { Class } from './../../_models/chooseCar/class';
 import { Model } from './../../_models/chooseCar/model';
 import { Brand } from './../../_models/chooseCar/brand';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SearchService } from 'src/app/services/search.service';
 
 @Component({
@@ -20,22 +21,33 @@ export class SearchComponent implements OnInit {
   years: Year[] = [];
   types: Type[] = [];
   cars: CarSearchResult[];
-  filters: SearchFilters = new SearchFilters(0, 0, 0, 0, 0, 'All');
+  filters: SearchFilters = new SearchFilters(0, 0, 0, 0, 0, 0);
 
-  constructor(private searchServ: SearchService) {}
+  constructor(private searchServ: SearchService, private ac: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.intializeSelects();
+    this.readQueryParams();
+  }
+
+  readQueryParams() {
+    this.ac.queryParams.subscribe((p) => {
+      if (p.minprice !== undefined) this.filters.minprice = p.minprice;
+      if (p.maxprice !== undefined) this.filters.maxprice = p.maxprice;
+      if (p.body !== undefined) this.filters.body = p.body;
+      if (p.brand !== undefined) this.filters.brand = p.brand;
+      if (p.year !== undefined) this.filters.year = p.year;
+
+      this.sendFilters();
+    });
   }
 
   brandSelectChanged(brandId: number) {
-    console.log(brandId);
     this.filters.brand = brandId;
-    console.log(this.filters);
     this.changeAfterBrand();
   }
 
-  yearSelectChanged(year: string) {
+  yearSelectChanged(year: number) {
     this.filters.year = year;
     this.searchServ
       .getAllModelsInBrand(this.filters.brand, year)
@@ -90,7 +102,7 @@ export class SearchComponent implements OnInit {
     });
 
     this.searchServ
-      .getAllModelsInBrand(this.filters.brand, 'All')
+      .getAllModelsInBrand(this.filters.brand, this.filters.year)
       .subscribe((a) => {
         this.models = a;
       });
@@ -108,7 +120,6 @@ export class SearchComponent implements OnInit {
 
   sendFilters() {
     this.searchServ.search(this.filters).subscribe((a) => {
-      console.log(a);
       this.cars = a;
     });
   }

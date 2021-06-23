@@ -32,7 +32,11 @@ export class SearchService {
     return this.http.get<Type[]>('https://localhost:44301/api/Type/All');
   }
 
-  getAllModelsInBrand(brandId: number, year: string) {
+  getAllTypesForPre(){
+    return this.http.get<Type[]>('https://localhost:44301/api/Type/forpresearch');
+  }
+
+  getAllModelsInBrand(brandId: number, year: number) {
     return this.http.get<Model[]>(
       'https://localhost:44301/api/model/getinbrand?id=' +
         brandId +
@@ -51,9 +55,9 @@ export class SearchService {
     return this.http.get<Year[]>('https://localhost:44301/api/year/' + brandId);
   }
 
-  getTypesInBrand(brandId: number, year: string, modelId: number) {
+  getTypesInBrand(brandId: number, year: number, modelId: number) {
     if (typeof year == 'undefined') {
-      year = 'All';
+      year = 0;
     }
 
     if (typeof modelId == 'undefined') {
@@ -71,9 +75,6 @@ export class SearchService {
   }
 
   search(filters: SearchFilters) {
-    if(filters.year == "All"){
-      filters.year = 0;
-    }
     return this.http.get<CarSearchResult[]>(
       'https://localhost:44301/api/search/searchbyall?minprice=' +
         filters.minprice +

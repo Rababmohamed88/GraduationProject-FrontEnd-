@@ -5,6 +5,6 @@ export class SearchFilters {
     public brand?: number,
     public model?: number,
     public body?: number,
-    public year?: any
+    public year?: number
   ) {}
 }
