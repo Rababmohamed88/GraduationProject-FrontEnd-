@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
-import { FormsModule , FormControl, FormGroup, Validators ,ReactiveFormsModule} from '@angular/forms';
-=======
+
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
->>>>>>> 5bf3ca49ff481a04bdabd770eb3c10048d777898
+
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -74,10 +73,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     NgbModule,
     ButtonModule,
     GalleriaModule,
-<<<<<<< HEAD
-    DropdownModule
-   ,ReactiveFormsModule
-=======
+
     DropdownModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
@@ -93,7 +89,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     MatInputModule,
     MatButtonModule,
     MatListModule
->>>>>>> 5bf3ca49ff481a04bdabd770eb3c10048d777898
   ],
   providers: [
     {
