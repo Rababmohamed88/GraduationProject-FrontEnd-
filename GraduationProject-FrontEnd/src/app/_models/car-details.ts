@@ -97,6 +97,13 @@ export class CarDetails {
     public width?: number,
     public wheelbase?: number,
     public length?: number,
-    public height?: number
+    public height?: number,
+
+    //Addetional for sell
+    public km?: number,
+    public agencyMaintainance?: boolean,
+    public guarntee?: boolean,
+    public fabrique?: boolean,
+    public notes?: string,
   ) {}
 }
