@@ -2,7 +2,16 @@
   <div class="row mb-3 mt-3">
     <div class="search col-md-2">
       <div class="tabs">
-        <span><a href="#">New</a> </span><span><a href="#">Used</a></span>
+       <!-- <span><a href="#">New</a> </span><span><a href="#">Used</a></span>-->
+        <div class="btn-section clearfix">
+          <a
+          
+            routerLink="/search"
+            class="link-btn active btn-1 default-bg active-bg"
+            >New</a
+          >
+          <a routerLink="/used-cars" class="link-btn btn-2">Used</a>
+        </div>
       </div>
       <div class="brand pt-4 pl-2">
         <select #brandSelect (change)="brandSelectChanged(brandSelect.value)">

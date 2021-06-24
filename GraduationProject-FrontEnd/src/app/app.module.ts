@@ -46,6 +46,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SuggestionComponent } from './components/suggestion/suggestion.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SellMyCarComponent } from './components/sell-my-car/sell-my-car.component';
+import { UsedCarsComponent } from './components/used-cars/used-cars.component';
 
 export function TokenGetter() {
   return localStorage.getItem('token');
@@ -69,6 +70,7 @@ export function TokenGetter() {
     SuggestionComponent,
     ProfileComponent,
     SellMyCarComponent,
+    UsedCarsComponent,
   ],
   imports: [
     BrowserModule,
