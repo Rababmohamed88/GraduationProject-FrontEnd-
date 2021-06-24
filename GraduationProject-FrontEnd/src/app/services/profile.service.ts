@@ -14,5 +14,9 @@ export class ProfileService {
     return this.http.get<ProfileInfo>('https://localhost:44301/api/user/profile');
   }
 
+  getUserCars(){
+    return this.http.get<OwnCar[]>('https://localhost:44301/api/user/UserCars');
+  }
+
 
 }

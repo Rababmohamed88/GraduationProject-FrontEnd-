@@ -1,8 +1,8 @@
 export class OwnCar {
     constructor(
-        public imageName?: string,
+        public imgName?: string,
         public carName?: string,
         public className?: string,
-        public userCarId?: number,
+        public carDetailsId?: number,
     ){}
 }

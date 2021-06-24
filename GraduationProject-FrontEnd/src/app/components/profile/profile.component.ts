@@ -7,31 +7,31 @@ import { OwnCar } from '../../_models/Profile/own-car';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
   prof: ProfileInfo = new ProfileInfo();
-  owncar: OwnCar = new OwnCar();
+  cars: OwnCar[] = [];
 
   constructor(
     private ac: ActivatedRoute,
     private profileServ: ProfileService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    // this.ac.params.subscribe((p) => {
-    //   this.profileServ.getUserInfo(p.id).subscribe((a) => {
-    //     this.prof = a;
-    //   });
-    // });
-
     this.getUserData();
+    this.getUserCars();
   }
 
-  getUserData(){
-    this.profileServ.getUserInfo().subscribe((a)=>{
+  getUserData() {
+    this.profileServ.getUserInfo().subscribe((a) => {
       this.prof = a;
+    });
+  }
+
+  getUserCars(){
+    this.profileServ.getUserCars().subscribe((a)=>{
+      this.cars = a;
     })
   }
-
 }
