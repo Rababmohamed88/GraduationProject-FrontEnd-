@@ -41,4 +41,11 @@ export class ChooseCarService {
         classId
     );
   }
+
+  owingUserCar(carDetailsId: number) {
+    return this.http.post(
+      'https://localhost:44301/api/user/owingcar',
+      carDetailsId
+    );
+  }
 }

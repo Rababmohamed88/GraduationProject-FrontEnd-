@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Year } from './../../_models/chooseCar/year';
 import { ChooseCar } from './../../_models/chooseCar/choose-car';
 import { Class } from './../../_models/chooseCar/class';
@@ -23,7 +24,7 @@ export class ChooseCarComponent implements OnInit {
   classId: number;
   year: string;
 
-  constructor(private chooseServ: ChooseCarService) {}
+  constructor(private chooseServ: ChooseCarService, private router: Router) {}
 
   ngOnInit(): void {
     this.chooseServ.getAllBrands().subscribe((a) => {
@@ -62,5 +63,14 @@ export class ChooseCarComponent implements OnInit {
       .subscribe((a) => {
         this.carCard = a;
       });
+  }
+
+  getThisCar(carDetailsId: number) {
+    this.chooseServ.owingUserCar(carDetailsId).subscribe(
+      (a) => {
+        console.log(a);
+        this.router.navigate(['/profile']);
+      }
+    );
   }
 }
