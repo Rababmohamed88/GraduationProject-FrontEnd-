@@ -1,41 +1,68 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand  me-5" routerLink=""><span class="letter-brand">C</span>ar  <span class="letter-brand ">C</span>ity</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/explore/all">Search</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/buy">Buy</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/sell">Sell</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/rent">Rent</a>
-                </li>
-                <li class="nav-item d-flex">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/rentmycar">Rent My Car
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/Suggestion">Suggestion</a>
-                </li>
-            </ul>
-        </div>
-        <div class="ml-auto  right-item">
-            <ul class="navbar-nav">
-
-                <li class="nav-item d-flex">
-                    <a class="nav-link" routerLink="/login">Login
-                </a>
-                </li>
-            </ul>
-        </div>
+  <div class="container">
+    <a class="navbar-brand me-5" routerLink=""
+      ><span class="letter-brand">C</span>ar
+      <span class="letter-brand">C</span>ity</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/explore/all"
+            >Search</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/buy"
+            >Buy</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/sell"
+            >Sell</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/rent"
+            >Rent</a
+          >
+        </li>
+        <li class="nav-item d-flex">
+          <a class="nav-link" routerLinkActive="active" routerLink="/rentmycar"
+            >Rent My Car
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/Suggestion"
+            >Suggestion</a
+          >
+        </li>
+      </ul>
     </div>
-
+    <div class="ml-auto right-item">
+      <ul class="navbar-nav">
+        <li class="nav-item d-flex">
+          <a *ngIf="!auth.IsUserAuth(); else elseBlock" class="nav-link" routerLink="/login"
+            >Login
+          </a>
+          <ng-template #elseBlock>
+            <a [routerLink]="" class="nav-link" (click)="logout()">Logout</a>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>

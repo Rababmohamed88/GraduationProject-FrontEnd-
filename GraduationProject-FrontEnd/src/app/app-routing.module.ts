@@ -1,3 +1,4 @@
+import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { ChooseCarComponent } from './components/choose-car/choose-car.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,9 +23,6 @@ const routes: Routes = [
   { path: 'rentmycar', component: RentMyCarComponent },
   { path: 'sell-my-car', component: SellMyCarComponent },
 
-  
-
-
   { path: 'profile', component: ProfileComponent },
 
   { path: 'car-details/:id', component: CarDetailsComponent },
@@ -34,7 +32,11 @@ const routes: Routes = [
       import('./explore/explore.module').then((m) => m.ExploreModule),
   },
   { path: '', component: HomeComponent },
-  { path: 'Suggestion', component: SuggestionComponent },
+  {
+    path: 'Suggestion',
+    component: SuggestionComponent,
+    canActivate: [AuthGuardGuard],
+  },
 ];
 
 @NgModule({
