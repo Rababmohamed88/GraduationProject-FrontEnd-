@@ -1,7 +1,7 @@
 export class ProfileInfo {
     constructor(
-        public userName?: string,
+        public fullname?: string,
         public email?: string,
-        public phoneNumber?: string,
+        public phones?: string[],
     ){}
 }

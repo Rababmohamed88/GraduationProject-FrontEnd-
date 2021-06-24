@@ -23,7 +23,11 @@ const routes: Routes = [
   { path: 'rentmycar', component: RentMyCarComponent },
   { path: 'sell-my-car', component: SellMyCarComponent },
 
-  { path: 'profile', component: ProfileComponent },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuardGuard],
+  },
 
   { path: 'car-details/:id', component: CarDetailsComponent },
   {

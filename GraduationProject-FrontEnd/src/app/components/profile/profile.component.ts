@@ -19,17 +19,19 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.ac.params.subscribe((p) => {
-      this.profileServ.getUserInfo(p.id).subscribe((a) => {
-        this.prof = a;
-      });
-    });
+    // this.ac.params.subscribe((p) => {
+    //   this.profileServ.getUserInfo(p.id).subscribe((a) => {
+    //     this.prof = a;
+    //   });
+    // });
 
-    this.ac.params.subscribe((p) => {
-      this.profileServ.getUserCarInfo(p.id).subscribe((a) => {
-        this.owncar = a;
-      });
-    });
+    this.getUserData();
+  }
+
+  getUserData(){
+    this.profileServ.getUserInfo().subscribe((a)=>{
+      this.prof = a;
+    })
   }
 
 }

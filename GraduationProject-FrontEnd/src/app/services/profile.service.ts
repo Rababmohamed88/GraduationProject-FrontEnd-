@@ -10,11 +10,9 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  getUserInfo(userId: number) {
-    return this.http.get<ProfileInfo>('https://localhost:44301/api/cars/'+ userId)
+  getUserInfo() {
+    return this.http.get<ProfileInfo>('https://localhost:44301/api/user/profile');
   }
 
-  getUserCarInfo(carId: number) {
-    return this.http.get<OwnCar>('https://localhost:44301/api/cars/'+ carId)
-  }
+
 }
