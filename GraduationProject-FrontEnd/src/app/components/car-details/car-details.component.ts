@@ -1,3 +1,5 @@
+import { GeneralInfoService } from './../../services/general-info.service';
+import { GeneralWebInfo } from './../../_models/general-web-info';
 import { GetCarDetailsService } from './../../services/car-details.service';
 import { Component, OnInit } from '@angular/core';
 import { CarDetails } from '../../_models/car-details';
@@ -10,23 +12,58 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CarDetailsComponent implements OnInit {
   cd: CarDetails = new CarDetails();
-  detailsid: number = 5;
+  info: GeneralWebInfo = new GeneralWebInfo();
+  detailsid: number;
+  sentDetailsId: number;
+  userData: boolean;
 
   constructor(
     private detailsServ: GetCarDetailsService,
-    private ac: ActivatedRoute
+    private ac: ActivatedRoute,
+    private generalServ: GeneralInfoService
   ) {}
 
-  ngOnInit(): void {
-    this.ac.params.subscribe((p) => {
+  async ngOnInit() {
+    await this.getGeneralInfo();
+    await this.ac.queryParams.subscribe((p) => {
       this.detailsid = p.id;
-      this.detailsServ.getCarDetails(p.id).subscribe((a) => {
-        this.cd = this.settingData(a);
-      });
+      if (p.user == 'from') this.userData = true;
+
+      if (this.detailsid > this.info.carsNo) {
+        this.getCarInfo(false);
+      } else {
+        this.sentDetailsId = this.detailsid;
+        this.getCarInfo(true);
+      }
     });
   }
 
-  settingData(obj: CarDetails) {
+  async getCarInfo(newCar: boolean) {
+    if (newCar) {
+      this.cd = await this.detailsServ
+        .getCarDetails(this.detailsid)
+        .toPromise();
+    } else {
+      if (this.userData) {
+        this.cd = await this.detailsServ
+          .getCarDetails(this.detailsid)
+          .toPromise();
+      } else {
+        this.cd = await this.detailsServ
+          .getOriginalCarDetails(this.detailsid)
+          .toPromise();
+      }
+
+      this.sentDetailsId = this.cd.carDetailsId;
+    }
+    await this.settingData(this.cd);
+  }
+
+  async getGeneralInfo() {
+    this.info = await this.generalServ.getGeneralInfo().toPromise();
+  }
+
+  async settingData(obj: CarDetails) {
     Object.keys(obj).forEach(function (key) {
       if (typeof obj[key] === 'boolean') {
         if (obj[key]) {
@@ -42,7 +79,6 @@ export class CarDetailsComponent implements OnInit {
         }
       }
     });
-
     return obj;
   }
 }

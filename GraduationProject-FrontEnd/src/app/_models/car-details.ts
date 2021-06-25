@@ -1,6 +1,7 @@
 export class CarDetails {
   constructor(
     public carName?: string,
+    public carDetailsId?:number,
     public className?: string,
     public carType?: string,
     public price?: number,

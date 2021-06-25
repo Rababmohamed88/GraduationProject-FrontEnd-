@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./gallery.component.css'],
 })
 export class GalleryComponent implements OnInit {
-  @Input() carid: number = 3;
+  @Input() carid: number;
   photos: Photo[] = [];
 
   responsiveOptions: any[] = [
@@ -65,9 +65,9 @@ export class GalleryComponent implements OnInit {
     this.displayCustom = true;
   }
 
-  ngOnInit(): void {
-    console.log("carid=>"+this.carid);
-    this.galleryServ.getImages(this.carid).subscribe((a)=>{
+  async ngOnInit(){
+    console.log(this.carid);
+    await this.galleryServ.getImages(this.carid).subscribe((a)=>{
       this.photos = a;
     })
   }

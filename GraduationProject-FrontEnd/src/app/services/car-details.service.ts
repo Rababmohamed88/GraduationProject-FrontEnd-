@@ -9,6 +9,14 @@ export class GetCarDetailsService {
   constructor(private http: HttpClient) {}
 
   getCarDetails(carDetailsId: number) {
-    return this.http.get<CarDetails>('https://localhost:44301/api/cars/'+carDetailsId)
+    return this.http.get<CarDetails>(
+      'https://localhost:44301/api/cars/' + carDetailsId
+    );
+  }
+
+  getOriginalCarDetails(carDetailsId: number) {
+    return this.http.get<CarDetails>(
+      'https://localhost:44301/api/rent/rentinfo/' + carDetailsId
+    );
   }
 }

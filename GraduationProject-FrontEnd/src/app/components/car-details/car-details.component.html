@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row my-4">
     <div class="col-4">
-      <app-gallery [carid]="detailsid" ></app-gallery>
+      <app-gallery *ngIf="sentDetailsId" [carid]="sentDetailsId"></app-gallery>
       <div class="left">
         <h2 class="mt-3">{{ cd.carName }}</h2>
         <h4 class="mt-3">{{ cd.className }}</h4>
@@ -153,7 +153,7 @@
                       </tr>
                       <tr>
                         <th scope="row">Fuel Consumption (Liter/100 KM)</th>
-                        <td>{{ cd.fuelConsumption }}</td>
+                        <td [innerHTML]="cd.fuelConsumption"></td>
                       </tr>
                       <tr>
                         <th scope="row">Fuel Type</th>
@@ -583,7 +583,7 @@
           </div>
         </div>
 
-        <div class="card" *ngIf = "cd.km">
+        <div class="card" *ngIf="cd.km">
           <div class="card-header" id="headingSeven">
             <h5 class="mb-0">
               <button
