@@ -22,7 +22,7 @@ export class SuggestionComponent implements OnInit {
   }
  
   open(content) {
-    this.modalService.open(content);
+    this.modalService.open(content, { centered: true });
     this.ngOnInit()
   }
 
