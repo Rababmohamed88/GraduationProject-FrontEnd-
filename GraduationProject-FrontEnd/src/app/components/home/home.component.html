@@ -51,7 +51,7 @@
       <div class="card">
         <img
           class="card-img-top w-100"
-          src = "assets/CarsImages/{{car.imageName}}"
+          src="assets/CarsImages/{{ car.imageName }}"
           alt="Card image cap"
         />
 
@@ -77,7 +77,7 @@
             <div class="col-lg-6 col-md-12">
               <div class="card-text">
                 <i class="fa fa-cc-visa mr-1"></i>
-                <p class="d-inline">{{ car.price | currency: '':''}}</p>
+                <p class="d-inline">{{ car.price | currency: "":"" }}</p>
               </div>
             </div>
             <div class="col-lg-6 col-md-12">
@@ -118,415 +118,6 @@
   </div>
 </div>
 
-<!--<div class="card mr-4">
-
-            <img class="card-img-top w-100 h-50" [src]="c.PhotoName" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title c1">{{c.CarName}}</h5>
-                <h5 class="card-title c2">{{c.ClassName}}</h5>
-                <div class="row my-2">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-tint mr-1"></i>
-                            <p class="d-inline">{{c.FuelType}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-car mr-1"></i>
-                            <p class="d-inline">{{c.Manual_Automatic}}</p>
-                        </div>
-                    </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-database mr-1"></i>
-                                <p class="d-inline">{{c.Cylinders}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row my-2">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-cc-visa mr-1"></i>
-                                <p class="d-inline">{{c.Price}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-calendar mr-1"></i>
-                                <p class="d-inline">{{c.Year}}</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-
-            <div class="card-footer">
-                  <button><a href="#" class="d-block" routerLink="car-details">Read More !</a></button>
-            </div>
-          </div>
-
-
-          <div class="card mr-4">
-
-            <img class="card-img-top w-100 h-50" src="../../../assets/12.jpeg" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title c1">{{c.CarName}}</h5>
-                <h5 class="card-title c2">{{c.ClassName}}</h5>
-                <div class="row my-2">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-tint mr-1"></i>
-                            <p class="d-inline">{{c.FuelType}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-car mr-1"></i>
-                            <p class="d-inline">{{c.Manual_Automatic}}</p>
-                        </div>
-                    </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-database mr-1"></i>
-                                <p class="d-inline">{{c.Cylinders}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row my-2">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-cc-visa mr-1"></i>
-                                <p class="d-inline">{{c.Price}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-calendar mr-1"></i>
-                                <p class="d-inline">{{c.Year}}</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-
-            <div class="card-footer">
-                  <button><a href="#" class="d-block" routerLink="car-details">Read More !</a></button>
-            </div>
-          </div>
-
-      </div>
-
-
-      <div class="card-group my-4">
-
-        <div class="card mr-4">
-
-            <img class="card-img-top w-100 h-50" [src]="c.PhotoName" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title c1">{{c.CarName}}</h5>
-                <h5 class="card-title c2">{{c.ClassName}}</h5>
-                <div class="row my-2">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-tint mr-1"></i>
-                            <p class="d-inline">{{c.FuelType}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-car mr-1"></i>
-                            <p class="d-inline">{{c.Manual_Automatic}}</p>
-                        </div>
-                    </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-database mr-1"></i>
-                                <p class="d-inline">{{c.Cylinders}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row my-2">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-cc-visa mr-1"></i>
-                                <p class="d-inline">{{c.Price}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-calendar mr-1"></i>
-                                <p class="d-inline">{{c.Year}}</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-
-          <div class="card-footer">
-                <button><a href="#" class="d-block" routerLink="car-details">Read More !</a></button>
-
-          </div>
-        </div>
-
-
-        <div class="card mr-4">
-
-            <img class="card-img-top w-100 h-50" [src]="c.PhotoName" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title c1">{{c.CarName}}</h5>
-                <h5 class="card-title c2">{{c.ClassName}}</h5>
-                <div class="row my-2">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-tint mr-1"></i>
-                            <p class="d-inline">{{c.FuelType}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-car mr-1"></i>
-                            <p class="d-inline">{{c.Manual_Automatic}}</p>
-                        </div>
-                    </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-database mr-1"></i>
-                                <p class="d-inline">{{c.Cylinders}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row my-2">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-cc-visa mr-1"></i>
-                                <p class="d-inline">{{c.Price}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-calendar mr-1"></i>
-                                <p class="d-inline">{{c.Year}}</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-
-            <div class="card-footer">
-                  <button><a href="#" class="d-block" routerLink="car-details">Read More !</a></button>
-            </div>
-          </div>
-
-
-          <div class="card mr-4">
-
-            <img class="card-img-top w-100 h-50" src="../../../assets/12.jpeg" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title c1">{{c.CarName}}</h5>
-                <h5 class="card-title c2">{{c.ClassName}}</h5>
-                <div class="row my-2">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-tint mr-1"></i>
-                            <p class="d-inline">{{c.FuelType}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-car mr-1"></i>
-                            <p class="d-inline">{{c.Manual_Automatic}}</p>
-                        </div>
-                    </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-database mr-1"></i>
-                                <p class="d-inline">{{c.Cylinders}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row my-2">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-cc-visa mr-1"></i>
-                                <p class="d-inline">{{c.Price}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-calendar mr-1"></i>
-                                <p class="d-inline">{{c.Year}}</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-
-            <div class="card-footer">
-                  <button><a href="#" class="d-block" routerLink="car-details">Read More !</a></button>
-            </div>
-          </div>
-
-      </div>
-
-
-      <div class="card-group my-4">
-
-        <div class="card mr-4">
-
-            <img class="card-img-top w-100 h-50" [src]="c.PhotoName" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title c1">{{c.CarName}}</h5>
-                <h5 class="card-title c2">{{c.ClassName}}</h5>
-                <div class="row my-2">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-tint mr-1"></i>
-                            <p class="d-inline">{{c.FuelType}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-car mr-1"></i>
-                            <p class="d-inline">{{c.Manual_Automatic}}</p>
-                        </div>
-                    </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-database mr-1"></i>
-                                <p class="d-inline">{{c.Cylinders}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row my-2">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-cc-visa mr-1"></i>
-                                <p class="d-inline">{{c.Price}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-calendar mr-1"></i>
-                                <p class="d-inline">{{c.Year}}</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-
-          <div class="card-footer">
-                <button><a href="#" class="d-block" routerLink="car-details">Read More !</a></button>
-
-          </div>
-        </div>
-
-
-        <div class="card mr-4">
-
-            <img class="card-img-top w-100 h-50" [src]="c.PhotoName" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title c1">{{c.CarName}}</h5>
-                <h5 class="card-title c2">{{c.ClassName}}</h5>
-                <div class="row my-2">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-tint mr-1"></i>
-                            <p class="d-inline">{{c.FuelType}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-car mr-1"></i>
-                            <p class="d-inline">{{c.Manual_Automatic}}</p>
-                        </div>
-                    </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-database mr-1"></i>
-                                <p class="d-inline">{{c.Cylinders}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row my-2">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-cc-visa mr-1"></i>
-                                <p class="d-inline">{{c.Price}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-calendar mr-1"></i>
-                                <p class="d-inline">{{c.Year}}</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-
-            <div class="card-footer">
-                  <button><a href="#" class="d-block" routerLink="car-details">Read More !</a></button>
-            </div>
-          </div>
-
-
-          <div class="card mr-4">
-
-            <img class="card-img-top w-100 h-50" src="../../../assets/12.jpeg" alt="Card image cap">
-
-            <div class="card-body">
-                <h5 class="card-title c1">{{c.CarName}}</h5>
-                <h5 class="card-title c2">{{c.ClassName}}</h5>
-                <div class="row my-2">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-tint mr-1"></i>
-                            <p class="d-inline">{{c.FuelType}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card-text">
-                            <i class="fa fa-car mr-1"></i>
-                            <p class="d-inline">{{c.Manual_Automatic}}</p>
-                        </div>
-                    </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-database mr-1"></i>
-                                <p class="d-inline">{{c.Cylinders}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row my-2">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-cc-visa mr-1"></i>
-                                <p class="d-inline">{{c.Price}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card-text">
-                                <i class="fa fa-calendar mr-1"></i>
-                                <p class="d-inline">{{c.Year}}</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
-
-            <div class="card-footer">
-                  <button><a href="#" class="d-block" routerLink="car-details">Read More !</a></button>
-            </div>
-          </div>-->
-
 <!--End Featured Cars-->
 
 <!------------------------------------------------------------------------------------------------->
@@ -542,7 +133,7 @@
             <i class="fa fa-car"></i>
           </div>
           <div class="details">
-            <h2 class="my-4">640</h2>
+            <h2 class="my-4">{{ info.carsNo }}</h2>
             <h5 class="mt-4">Total <span class="mt-4"> Cars</span></h5>
           </div>
         </aside>
@@ -553,7 +144,7 @@
             <i class="fa fa-taxi"></i>
           </div>
           <div class="details">
-            <h2 class="my-4">252</h2>
+            <h2 class="my-4">{{ info.modelNo }}</h2>
             <h5 class="mt-4">Total <span class="mt-4"> Models</span></h5>
           </div>
         </aside>
@@ -564,7 +155,7 @@
             <i class="fa fa-car"></i>
           </div>
           <div class="details">
-            <h2 class="my-4">46</h2>
+            <h2 class="my-4">{{ info.brandNo }}</h2>
             <h5 class="mt-4">Total <span class="mt-4"> Brands</span></h5>
           </div>
         </aside>
