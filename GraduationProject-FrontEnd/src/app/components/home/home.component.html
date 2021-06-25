@@ -108,7 +108,8 @@
             <a
               href="#"
               class="d-block py-2 px-2"
-              [routerLink]="['/car-details', car.carDetailsID]"
+              [routerLink]="['/car-details']"
+              [queryParams]="{ id: car.carDetailsID }"
               >Read More !</a
             >
           </button>
