@@ -4,17 +4,20 @@ import { HttpClient } from '@angular/common/http';
 import { Registration } from '../_models/registration';
 import { Login } from '../_models/login';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthServiceService {
   private _registerUrl = 'https://localhost:44301/api/User/Register';
+
   constructor(
     private http: HttpClient,
     private jwtHelp: JwtHelperService,
     private router: Router
   ) {}
+  private username = new BehaviorSubject<string>(localStorage.getItem('user'));
 
   registerUser(user: Registration) {
     return this.http.post<any>(
@@ -37,7 +40,10 @@ export class AuthServiceService {
 
   Logout() {
     localStorage.removeItem('token');
-    // this.IsUserAuth();
     this.router.navigate(['']);
+  }
+
+  get currentUserName() {
+    return this.username.asObservable();
   }
 }

@@ -16,7 +16,6 @@ import { SellMyCarComponent } from './components/sell-my-car/sell-my-car.compone
 import { UsedCarsComponent } from './components/used-cars/used-cars.component';
 import { RentmycarComponent } from './components/rentmycar/rentmycar.component';
 
-
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -29,7 +28,7 @@ const routes: Routes = [
   { path: 'rent', component: RentComponent },
   { path: 'rentmycar', component: RentmycarComponent },
   { path: 'sell-my-car', component: SellMyCarComponent },
-  
+
   {
     path: 'profile',
     component: ProfileComponent,

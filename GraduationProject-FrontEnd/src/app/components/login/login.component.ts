@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   constructor(
     private elementRef: ElementRef,
     private registerSer: AuthServiceService,
-    private router:Router,
+    private router: Router
   ) {}
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
@@ -23,11 +23,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
   login() {
     this.registerSer.loginUser(this.user).subscribe((a) => {
-      console.log(a.token);
       localStorage.setItem('token', a.token);
+      localStorage.setItem('user', a.message);
       this.router.navigate(['/profile']);
-
     });
   }
-
 }
