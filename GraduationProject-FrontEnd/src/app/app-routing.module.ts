@@ -8,13 +8,15 @@ import { HomeComponent } from './components/home/home.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { SearchComponent } from './components/search/search.component';
 import { RentComponent } from './components/rent/rent.component';
-import { RentMyCarComponent } from './components/rent-my-car/rent-my-car.component';
+// import { RentMyCarComponent } from './components/rent-my-car/rent-my-car.component';
 
 import { SuggestionComponent } from './components/suggestion/suggestion.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SellMyCarComponent } from './components/sell-my-car/sell-my-car.component';
 import { UsedCarsComponent } from './components/used-cars/used-cars.component';
 import { ViewCarsComponent } from './components/view-cars/view-cars.component';
+import { RentmycarComponent } from './components/rentmycar/rentmycar.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -26,17 +28,17 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard],
   },
   { path: 'rent', component: RentComponent },
-  { path: 'rentmycar', component: RentMyCarComponent },
+  { path: 'rentmycar', component: RentmycarComponent },
   { path: 'sell-my-car', component: SellMyCarComponent },
   { path: 'view-cars', component: ViewCarsComponent },
   
-
   {
     path: 'profile',
     component: ProfileComponent,
     canActivate: [AuthGuardGuard],
   },
 
+  { path: 'profile', component: ProfileComponent },
   { path: 'car-details/:id', component: CarDetailsComponent },
   { path: 'used-cars', component: UsedCarsComponent },
   {

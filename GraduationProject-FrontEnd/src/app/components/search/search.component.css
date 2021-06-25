@@ -1,9 +1,10 @@
 .search{
-    width:15%;  
-    height: auto; 
+
+    /* width:15%;  */
+    /* height: auto;  */
     border: 2px solid #ddd;
     text-align: center;
- 
+    height: fit-content;
  
  }
  .tabs{
@@ -40,19 +41,36 @@
     padding: 5px;
     color: #80939e;
     position: relative;
+    
  }
-  .price{
+   .price{
    width: 100%;
    text-align: left;
    color: #80939e;
    position: relative;
-   display: flex; /* 2. display flex to the rescue */
+   display: flex; 
    flex-direction: row;
+} 
+ .from,.to{
+   display:block; 
+   /* margin-left:3px;  */
+   width:95%
+} 
+
+
+.flex-container {
+   display: flex;
 }
-.from,.to{
-   display:block;
-   margin-left:5px;
-}
+
+.flex-child {
+   flex: 1;
+  
+}  
+
+.flex-child:first-child {
+   margin-right: 1px;
+} 
+
  .toggle{
     display: inline-block;
     position:absolute;
@@ -72,7 +90,7 @@
     background-color: #ffb400;
     width: 60%;
     height: 35px;
-    display: inline-block;
+    display: block;
     margin: auto;
  
  }

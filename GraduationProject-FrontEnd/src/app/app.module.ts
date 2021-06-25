@@ -29,11 +29,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ChooseCarComponent } from './components/choose-car/choose-car.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { RentComponent } from './components/rent/rent.component';
-import { RentMyCarComponent } from './components/rent-my-car/rent-my-car.component';
-import {
-  MatRadioModule,
-  MAT_RADIO_DEFAULT_OPTIONS,
-} from '@angular/material/radio';
+//import { RentMyCarComponent } from './components/rent-my-car/rent-my-car.component';
+import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -52,6 +49,7 @@ import { ViewCarsComponent } from './components/view-cars/view-cars.component';
 export function TokenGetter() {
   return localStorage.getItem('token');
 }
+import { RentmycarComponent } from './components/rentmycar/rentmycar.component';
 
 @NgModule({
   declarations: [
@@ -67,12 +65,13 @@ export function TokenGetter() {
     GalleryComponent,
     ChooseCarComponent,
     RentComponent,
-    RentMyCarComponent,
+    // RentMyCarComponent,
     SuggestionComponent,
     ProfileComponent,
     SellMyCarComponent,
     UsedCarsComponent,
     ViewCarsComponent,
+    RentmycarComponent,
   ],
   imports: [
     BrowserModule,
