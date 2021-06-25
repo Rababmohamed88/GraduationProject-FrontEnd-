@@ -1,688 +1,295 @@
-<div class=container>
-    
-    <mat-horizontal-stepper [linear]="isLinear" #stepper>
-      <mat-step [stepControl]="safetyAndSecurityGroup">
-        <form [formGroup]="safetyAndSecurityGroup">
-          <ng-template matStepLabel>Safety & Security</ng-template>
-          <!-- <mat-form-field> -->
-            <mat-label>Name</mat-label>   
-              <div class="row"> 
-                <div class="col-lg-6 col-md-12">
-                  <table  class="table w-100">
-                    <tbody>
+<div class="container">
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="safetyAndSecurityGroup">
+      <form [formGroup]="safetyAndSecurityGroup">
+        <ng-template matStepLabel>Safety & Security</ng-template>
+        <!-- <mat-form-field> -->
+        <mat-label>Name</mat-label>
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <table class="table w-100">
+              <tbody>
+                <tr>
+                  <th scope="row">Electric Handbrake</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.electricHandbrake"
+                        type="checkbox"
+                        formControlName="electric"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
 
-                      <tr>
-                        <th scope="row">Electric Handbrake</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="electric">
-                                <span class="slider round"></span>
-                            </label>         
-                            </td>   
-                        </tr>      
-                      
-                      <tr>
-                        <th scope="row">Power Assisted Steering</th>
-                        <td class="toggle">
-                            <input matInput placeholder="Electric" formControlName="PowerAssisted" required>                              
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Active Park Assist</th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Active">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Traction Control</th>
-                        <td> 
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Traction">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Tire Pressure Monitoring (TPMS)</th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="TPMS">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Anti-Lock Braking System (ABS)</th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="ABS">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Electronic Stability Program (ESP)</th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="ESP">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Airbags</th>
-                        <td>
-                            <input type="number" name="airbags" placeholder="airbags" formControlName="Airbags">
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <table class="table w-100">
-                    <tbody>
-                      <tr>
-                        <th scope="row">Hill Assist (HLA)</th>
-                        <td> 
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="HLA">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Speed Limiter</th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Speed">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Automatic Start/Stop Function</th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="StartStop">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Immobilizer</th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Immobilizer">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Child Seats (ISOFIX)</th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="ISOFIX">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          Electronic Brake Force Distribution (EBD)
-                        </th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="EBD">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Cruise Control</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="CruiseControl">
-                                <span class="slider round"></span>
-                            </label>   
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div> 
-  
-              
-            
-          <!-- </mat-form-field> -->
-          <div>
-            <button  mat-button matStepperNext>Next</button>
+                <tr>
+                  <th scope="row">Power Assisted Steering</th>
+                  <td class="toggle">
+                    <input
+                      [(ngModel)]="details.powerAssistedSteering"
+                      matInput
+                      placeholder="Electric"
+                      formControlName="PowerAssisted"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Active Park Assist</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.activeParkAssist"
+                        type="checkbox"
+                        formControlName="Active"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Traction Control</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.tractionControl"
+                        type="checkbox"
+                        formControlName="Traction"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Tire Pressure Monitoring (TPMS)</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.tirePressureMonitoring"
+                        type="checkbox"
+                        formControlName="TPMS"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Anti-Lock Braking System (ABS)</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.antiLockBrakingSystem"
+                        type="checkbox"
+                        formControlName="ABS"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Electronic Stability Program (ESP)</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.electroncStabilityControl"
+                        type="checkbox"
+                        formControlName="ESP"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Airbags</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.airbags"
+                      type="number"
+                      min="0"
+                      name="airbags"
+                      placeholder="airbags"
+                      formControlName="Airbags"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="performanceGroup">
-        <form [formGroup]="performanceGroup">
-          <ng-template matStepLabel>Performance</ng-template>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6 col-md-12">
-                  <table class="table w-100">
-                    <tbody>
-                      <tr>
-                        <th scope="row">Cylinders</th>
-                        <td>
-                          <input type="number" placeholder="No." formControlName="Cylinders" required>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Maximum torque (N.m@RPM)</th>
-                        <td>
-                            <input type="text" placeholder="torque" formControlName="Maximumtorque" required>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Fuel Consumption (Liter/100 KM)</th>
-                        <td>
-                            <input type="number" placeholder="No." formControlName="FuelConsumption" required>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Fuel Type</th>
-                        <td>
-                            <input type="number" placeholder="No." formControlName="FuelType" required>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Maximum power (HP @ RPM)</th>
-                        <td>
-                            <input type="text" placeholder="power" formControlName="Maximumpower" required>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <table class="table w-100">
-                    <tbody>
-                      <tr>
-                        <th scope="row">Acceleration From 0-100 (Km/hr.)</th>
-                        <td>
-                            <input type="number" placeholder="No." formControlName="Acceleration" required>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Maximum Speed</th>
-                        <td>
-                            <input type="number" placeholder="No." formControlName="MaxSpeed" required>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Fuel Tank Capacity</th>
-                        <td>
-                            <input type="number" placeholder="No." formControlName="FuelTank" required>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Gear Shifts</th>
-                        <td>
-                            <input type="number" placeholder="No." formControlName="GearShift" required>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>    
-          <div>
-            <button mat-button matStepperNext>Next</button>
+          <div class="col-lg-6 col-md-12">
+            <table class="table w-100">
+              <tbody>
+                <tr>
+                  <th scope="row">Hill Assist (HLA)</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.hillAssist"
+                        type="checkbox"
+                        formControlName="HLA"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Speed Limiter</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.speedLimiter"
+                        type="checkbox"
+                        formControlName="Speed"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Automatic Start/Stop Function</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.autoStartStopFunctions"
+                        type="checkbox"
+                        formControlName="StartStop"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Immobilizer</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.immobilizer"
+                        type="checkbox"
+                        formControlName="Immobilizer"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Child Seats (ISOFIX)</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.childSeats"
+                        type="checkbox"
+                        formControlName="ISOFIX"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Electronic Brake Force Distribution (EBD)</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.electronicBrakeForceDistribution"
+                        type="checkbox"
+                        formControlName="EBD"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Cruise Control</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.cruiseControl"
+                        type="checkbox"
+                        formControlName="CruiseControl"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="interiorGroup">
-        <form [formGroup]="interiorGroup">
-          <ng-template matStepLabel>Interior</ng-template>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6 col-md-12">
-                  <table class="table w-100">
-                    <tbody>
-                      <tr>
-                        <th scope="row">Multi function steering wheel</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Multisteeringwheel">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Paddle shifters</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Paddleshifters">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Leather Steering Wheel</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="LeatherSteering">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          Variable heated driver & passenger seat
-                        </th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Variableheated">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Power Tailgate</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="PowerTailgate">
-                                <span class="slider round"></span>
-                            </label> 
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Ambient Lighting</th>
-                        <td>
-                            <input type="text" placeholder="Multi Color" formControlName="AmbientLighting" required>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Number of Seats</th>
-                        <td>
-                            <input type="number" placeholder="No." formControlName="NumberofSeats" required/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Keyless Start/Stop</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="KeylessStartStop">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Rear parking sensors</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Rearparkingsensors">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Rear View Camera</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="RearViewCamera">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Passenger Seat</th>
-                        <td>
-                            <input type="text" placeholder="Manual" formControlName="PassengerSeat">
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Center Lock</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="CenterLock">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Dashboard</th>
-                        <td>
-                            <input type="text" placeholder="Digital-Analog" formControlName="DashboardDigital" required/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Drive Mode Select</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="DriveModeSelect">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <table class="table w-100">
-                    <tbody>
-                      <tr>
-                        <th scope="row">A/C for back seats</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Ac">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Leather Transmission</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="LeatherTransmission">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Back Holder</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="BackHolder">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Keyless Entry</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="KeylessEntry">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Auto dimming mirror</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="mirror">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Air Condition</th>
-                        <td>
-                            <input type="text" placeholder="Analouge" formControlName="AirCondition"/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Auto folding for back seats</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="backseats">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Front parking sensors</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Frontparkingsensors">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Front Camera</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="FrontCamera">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Driver Seat</th>
-                        <td>
-                            <input type="text" placeholder="Manual" formControlName="DriverSeat" required/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Leather Seats</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox"  formControlName="LeatherSeats"checked>
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Electronic Window</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="ElectronicWindow">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>    
-          <div>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="exteriorGroup">
-        <form [formGroup]="exteriorGroup">
-          <ng-template matStepLabel>Exterior</ng-template>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6 col-md-12">
-                  <table class="table w-100">
-                    <tbody>
-                      <tr>
-                        <th scope="row">Rain Sensor</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox"  formControlName="RainSensor" checked>
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Fog lamps</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" formControlName="Foglamps" checked>
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Rear Lamps</th>
-                        <td>
-                            <input type="text" placeholder="LED" formControlName="Rearamps" required/>
+        </div>
 
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          Auto-lighting (Auto On-Off Headlamp)
-                        </th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" formControlName="Autolighting" checked>
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Wheels with tire size</th>
-                        <td>
-                            <input type="text" placeholder="255/55" formControlName="Wheelswithtire" required/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Panorama Roof</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="PanoramaRoof">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Auto Folding Mirrors</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="AutoFoldingMirrors">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <table class="table w-100">
-                    <tbody>
-                      <tr>
-                        <th scope="row">Privacy glass</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Privacyglass">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Headlamps</th>
-                        <td>
-                            <input type="text" placeholder="Halogan" required formControlName="HeadlampsLED"/>
-
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">LED Daytime running lamps</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="LEDDaytime">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Light Sensors</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="LightSensors">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Sun Roof</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="SunRoof">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Power mirrors</th>
-                        <td >
-                            <label class="switch">
-                                <input type="checkbox" checked formControlName="Powermirrors">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Trim Size</th>
-                        <td>
-                            <input type="text" placeholder="R17"formControlName="TrimSize" required/>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>    
-          <div>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="multimediaGroup">
-        <form [formGroup]="multimediaGroup">
-          <ng-template matStepLabel>Multimedia</ng-template>
+        <!-- </mat-form-field> -->
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="performanceGroup">
+      <form [formGroup]="performanceGroup">
+        <ng-template matStepLabel>Performance</ng-template>
+        <div class="card-body">
           <div class="row">
             <div class="col-lg-6 col-md-12">
               <table class="table w-100">
                 <tbody>
                   <tr>
-                    <th scope="row">AUX</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox" checked formControlName="AUX">
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">USB</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox" checked formControlName="USB" >
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Multifunction Steering Wheel</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox" checked formControlName="MultifunctionSteeringWheel">
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Touch screen</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox" formControlName="Touchscreen" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Wireless Charger</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox"  formControlName="WirelessCharger" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">CD Player</th>
+                    <th scope="row">Cylinders</th>
                     <td>
-                        <label class="switch">
-                            <input type="checkbox" formControlName="CDPlayer" checked>
-                            <span class="slider round"></span>
-                        </label>
+                      <input
+                        [(ngModel)]="details.cylinders"
+                        type="number"
+                        min="0"
+                        placeholder="No."
+                        formControlName="Cylinders"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Maximum torque (N.m@RPM)</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.maxToruqe"
+                        type="text"
+                        placeholder="torque"
+                        formControlName="Maximumtorque"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fuel Consumption (Liter/100 KM)</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.fuelConsumption"
+                        type="number"
+                        min="0"
+                        placeholder="No."
+                        formControlName="FuelConsumption"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fuel Type</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.fuelType"
+                        type="number"
+                        min="0"
+                        placeholder="No."
+                        formControlName="FuelType"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Maximum power (HP @ RPM)</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.maxPower"
+                        type="text"
+                        placeholder="power"
+                        formControlName="Maximumpower"
+                        required
+                      />
                     </td>
                   </tr>
                 </tbody>
@@ -692,113 +299,886 @@
               <table class="table w-100">
                 <tbody>
                   <tr>
-                    <th scope="row">Bluetooth</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox" formControlName="Bluetooth" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Head Up Display</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox" formControlName="HeadUpDisplay" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Smartphone Link Systems</th>
+                    <th scope="row">Acceleration From 0-100 (Km/hr.)</th>
                     <td>
-                        <input type="text" placeholder="Apple Car Play" formControlName="SmartphoneLink" required/>
+                      <input
+                        [(ngModel)]="details.acceleration"
+                        type="number"
+                        min="0"
+                        placeholder="No."
+                        formControlName="Acceleration"
+                        required
+                      />
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Navigation System</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox" checked formControlName="NavigationSystem">
-                            <span class="slider round"></span>
-                        </label>
+                    <th scope="row">Maximum Speed</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.maxSpeed"
+                        type="number"
+                        min="0"
+                        placeholder="No."
+                        formControlName="MaxSpeed"
+                        required
+                      />
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Speakers</th>
-                    <td >
-                        <label class="switch">
-                            <input type="checkbox" checked formControlName="Speakers">
-                            <span class="slider round"></span>
-                        </label>
+                    <th scope="row">Fuel Tank Capacity</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.fuelTankCapacity"
+                        type="number"
+                        min="0"
+                        placeholder="No."
+                        formControlName="FuelTank"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Gear Shifts</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.gearShifts"
+                        type="number"
+                        min="0"
+                        placeholder="No."
+                        formControlName="GearShift"
+                        required
+                      />
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>    
-          <div>
-            <button mat-button matStepperNext>Next</button>
           </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="dimensionsGroup">
-        <form [formGroup]="dimensionsGroup">
-          <ng-template matStepLabel>Dimensions</ng-template>
-            
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="interiorGroup">
+      <form [formGroup]="interiorGroup">
+        <ng-template matStepLabel>Interior</ng-template>
+        <div class="card-body">
           <div class="row">
             <div class="col-lg-6 col-md-12">
               <table class="table w-100">
                 <tbody>
                   <tr>
-                    <th scope="row">Luggage Box Capacity</th>
-                    <td >
-                        <input type="number" placeholder="No." formControlName="LuggageBoxCapacity" required/>
+                    <th scope="row">Multi function steering wheel</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.multifunctionSteeringWheel"
+                          type="checkbox"
+                          formControlName="Multisteeringwheel"
+                        />
+                        <span class="slider round"></span>
+                      </label>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Clearance</th>
-                    <td >
-                        <input type="number" placeholder="No." formControlName="Clearance" required/>
+                    <th scope="row">Paddle shifters</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.paddleShifters"
+                          type="checkbox"
+                          formControlName="Paddleshifters"
+                        />
+                        <span class="slider round"></span>
+                      </label>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Width</th>
-                    <td >
-                        <input type="number" placeholder="No." formControlName="Width"  required/>
+                    <th scope="row">Leather Steering Wheel</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.leatherSteeringWheel"
+                          type="checkbox"
+                          formControlName="LeatherSteering"
+                        />
+                        <span class="slider round"></span>
+                      </label>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Wheelbase</th>
-                    <td >
-                        <input type="number" placeholder="No." formControlName="Wheelbase" required/>
+                    <th scope="row">Variable heated driver & passenger seat</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="
+                            details.variableHeatedDriverPassengerSeat
+                          "
+                          type="checkbox"
+                          formControlName="Variableheated"
+                        />
+                        <span class="slider round"></span>
+                      </label>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Length</th>
-                    <td >
-                        <input type="number" placeholder="No."  formControlName="Length" required/>
+                    <th scope="row">Power Tailgate</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.powerTailgate"
+                          type="checkbox"
+                          formControlName="PowerTailgate"
+                        />
+                        <span class="slider round"></span>
+                      </label>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Height</th>
-                    <td >
-                        <input type="number" placeholder="No."formControlName="Height" required/>
+                    <th scope="row">Ambient Lighting</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.ambientLighting"
+                        type="text"
+                        placeholder="Multi Color"
+                        formControlName="AmbientLighting"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Number of Seats</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.numberOfSeats"
+                        type="number"
+                        min="0"
+                        placeholder="No."
+                        formControlName="NumberofSeats"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Keyless Start/Stop</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.keylessStartStop"
+                          type="checkbox"
+                          formControlName="KeylessStartStop"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Rear parking sensors</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.rearParkingSensors"
+                          type="checkbox"
+                          formControlName="Rearparkingsensors"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Rear View Camera</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.rearViewCamera"
+                          type="checkbox"
+                          formControlName="RearViewCamera"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Passenger Seat</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.passengerSeat"
+                        type="text"
+                        placeholder="Manual"
+                        formControlName="PassengerSeat"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Center Lock</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.centerLock"
+                          type="checkbox"
+                          formControlName="CenterLock"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Dashboard</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.dashboard"
+                        type="text"
+                        placeholder="Digital-Analog"
+                        formControlName="DashboardDigital"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Drive Mode Select</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.driveModeSelect"
+                        type="number"
+                        min="0"
+                        name="DriveModeSelect"
+                        placeholder="drive mode"
+                        formControlName="DriveModeSelect"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <table class="table w-100">
+                <tbody>
+                  <tr>
+                    <th scope="row">A/C for back seats</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.acBackSeats"
+                          type="checkbox"
+                          formControlName="Ac"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Leather Transmission</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.leatherTransmission"
+                          type="checkbox"
+                          formControlName="LeatherTransmission"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Back Holder</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.backHolder"
+                          type="checkbox"
+                          formControlName="BackHolder"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Keyless Entry</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.keylessEntry"
+                          type="checkbox"
+                          formControlName="KeylessEntry"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Auto dimming mirror</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.autoDimmingMirror"
+                          type="checkbox"
+                          formControlName="mirror"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Air Condition</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.ac"
+                        type="text"
+                        placeholder="Analouge"
+                        formControlName="AirCondition"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Auto folding for back seats</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.autoFoldingBackSeats"
+                          type="checkbox"
+                          formControlName="backseats"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Front parking sensors</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.frontParkingSensors"
+                          type="checkbox"
+                          formControlName="Frontparkingsensors"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Front Camera</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.frontCamera"
+                          type="checkbox"
+                          formControlName="FrontCamera"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Driver Seat</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.driverSeat"
+                        type="text"
+                        placeholder="Manual"
+                        formControlName="DriverSeat"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Leather Seats</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.leatherSeats"
+                          type="checkbox"
+                          formControlName="LeatherSeats"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Electronic Window</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.electronicWindow"
+                          type="checkbox"
+                          formControlName="ElectronicWindow"
+                        />
+                        <span class="slider round"></span>
+                      </label>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-                
-          <div>
-            <button (click)="submit()">Submit</button>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="exteriorGroup">
+      <form [formGroup]="exteriorGroup">
+        <ng-template matStepLabel>Exterior</ng-template>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <table class="table w-100">
+                <tbody>
+                  <tr>
+                    <th scope="row">Rain Sensor</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.rainSensor"
+                          type="checkbox"
+                          formControlName="RainSensor"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fog lamps</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.fogLambs"
+                          type="checkbox"
+                          formControlName="Foglamps"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Rear Lamps</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.rearLambs"
+                        type="text"
+                        placeholder="LED"
+                        formControlName="Rearamps"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Auto-lighting (Auto On-Off Headlamp)</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.autoLighting"
+                          type="checkbox"
+                          formControlName="Autolighting"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Wheels with tire size</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.wheelsWithTireSize"
+                        type="text"
+                        placeholder="255/55"
+                        formControlName="Wheelswithtire"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Panorama Roof</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.panoramaRoof"
+                          type="checkbox"
+                          formControlName="PanoramaRoof"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Auto Folding Mirrors</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.autoFoldingMirror"
+                          type="checkbox"
+                          formControlName="AutoFoldingMirrors"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <table class="table w-100">
+                <tbody>
+                  <tr>
+                    <th scope="row">Privacy glass</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.privacyGlass"
+                          type="checkbox"
+                          formControlName="Privacyglass"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Headlamps</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.headlamps"
+                        type="text"
+                        placeholder="Halogan"
+                        required
+                        formControlName="HeadlampsLED"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">LED Daytime running lamps</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.ledDaytimeRunningLamps"
+                          type="checkbox"
+                          formControlName="LEDDaytime"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Light Sensors</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.lightSensors"
+                          type="checkbox"
+                          formControlName="LightSensors"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Sun Roof</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.sunRoof"
+                          type="checkbox"
+                          formControlName="SunRoof"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Power mirrors</th>
+                    <td>
+                      <label class="switch">
+                        <input
+                          [(ngModel)]="details.powerMirrors"
+                          type="checkbox"
+                          formControlName="Powermirrors"
+                        />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Trim Size</th>
+                    <td>
+                      <input
+                        [(ngModel)]="details.trimSize"
+                        type="text"
+                        placeholder="R17"
+                        formControlName="TrimSize"
+                        required
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </form>
-      </mat-step>
-  
-  
-      <!-- <mat-step [stepControl]="firstFormGroup">
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="multimediaGroup">
+      <form [formGroup]="multimediaGroup">
+        <ng-template matStepLabel>Multimedia</ng-template>
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <table class="table w-100">
+              <tbody>
+                <tr>
+                  <th scope="row">AUX</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.aux"
+                        type="checkbox"
+                        formControlName="AUX"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">USB</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.usb"
+                        type="checkbox"
+                        formControlName="USB"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Multifunction Steering Wheel</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.multifunctionSteeringWheel"
+                        type="checkbox"
+                        formControlName="MultifunctionSteeringWheel"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Touch screen</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.touchscreen"
+                      type="number"
+                      min="0"
+                      formControlName="Touchscreen"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Wireless Charger</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.wirlessCharger"
+                        type="checkbox"
+                        formControlName="WirelessCharger"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">CD Player</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.cdPlayer"
+                        type="checkbox"
+                        formControlName="CDPlayer"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <table class="table w-100">
+              <tbody>
+                <tr>
+                  <th scope="row">Bluetooth</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.bluetooth"
+                        type="checkbox"
+                        formControlName="Bluetooth"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Head Up Display</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.headUpDisplay"
+                        type="checkbox"
+                        formControlName="HeadUpDisplay"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Smartphone Link Systems</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.smartphoneLinkSystem"
+                      type="text"
+                      placeholder="Apple Car Play"
+                      formControlName="SmartphoneLink"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Navigation System</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.navigationSystem"
+                        type="checkbox"
+                        formControlName="NavigationSystem"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Speakers</th>
+                  <td>
+                    <label class="switch">
+                      <input
+                        [(ngModel)]="details.speakers"
+                        type="checkbox"
+                        formControlName="Speakers"
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="dimensionsGroup">
+      <form [formGroup]="dimensionsGroup">
+        <ng-template matStepLabel>Dimensions</ng-template>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <table class="table w-100">
+              <tbody>
+                <tr>
+                  <th scope="row">Luggage Box Capacity</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.luggageBoxCapacity"
+                      type="number"
+                      min="0"
+                      placeholder="No."
+                      formControlName="LuggageBoxCapacity"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Clearance</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.clearance"
+                      type="number"
+                      min="0"
+                      placeholder="No."
+                      formControlName="Clearance"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Width</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.width"
+                      type="number"
+                      min="0"
+                      placeholder="No."
+                      formControlName="Width"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Wheelbase</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.wheelbase"
+                      type="number"
+                      min="0"
+                      placeholder="No."
+                      formControlName="Wheelbase"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Length</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.length"
+                      type="number"
+                      min="0"
+                      placeholder="No."
+                      formControlName="Length"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Height</th>
+                  <td>
+                    <input
+                      [(ngModel)]="details.height"
+                      type="number"
+                      min="0"
+                      placeholder="No."
+                      formControlName="Height"
+                      required
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <button (click)="submit()">Submit</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>Basic Details</ng-template>
           <mat-form-field>
@@ -816,7 +1196,7 @@
           </div>
         </form>
       </mat-step> -->
-      <!-- <mat-step [stepControl]="secondFormGroup">
+    <!-- <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Amount & Stock</ng-template>
           <mat-form-field>
@@ -835,22 +1215,22 @@
           </div>
         </form>
       </mat-step> -->
-      <!-- <mat-step>
+    <!-- <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
-      
+
         <mat-list>
       <mat-list-item> <strong>Name:</strong> {{ this.safetyAndSecurityGroup.value.name }}</mat-list-item>
       <mat-list-item> <strong>Description:</strong> {{ this.firstFormGroup.value.description }}</mat-list-item>
       <mat-list-item> <strong>Amount:</strong> {{ this.secondFormGroup.value.amount }}</mat-list-item>
       <mat-list-item> <strong>Stock:</strong> {{ this.secondFormGroup.value.stock }}</mat-list-item>
       </mat-list>
-      
+
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Reset</button>
           <button mat-button (click)="submit()">Submit</button>
         </div>
       </mat-step> -->
-    </mat-horizontal-stepper>
-  </div>
+  </mat-horizontal-stepper>
+</div>

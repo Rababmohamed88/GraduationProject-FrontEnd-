@@ -23,16 +23,12 @@
       </button>
     </div>
     <div class="col-lg-7 col-sm-12">
-      <div class="notFound" *ngIf="cars.length==0">
+      <div class="notFound" *ngIf="cars.length == 0">
         <p class="my-2">You don't have any car !</p>
         <img src="../../../assets/sad.png" class="w-100" />
       </div>
 
-      <div
-        class="card my-3"
-        style="max-width: 450px"
-        *ngFor="let car of cars"
-      >
+      <div class="card my-3" style="max-width: 450px" *ngFor="let car of cars">
         <div class="row no-gutters">
           <div class="col-md-4">
             <img
@@ -64,12 +60,26 @@
                       <button
                         class="dropdown-item"
                         type="button"
-                        [routerLink]="['/car-details/id']"
+                        [routerLink]="['/car-details']"
+                        [queryParams]="{ id: car.carDetailsId }"
                       >
                         Main details
                       </button>
-                      <button class="dropdown-item" type="button">
+                      <button
+                        class="dropdown-item"
+                        type="button"
+                        [routerLink]="['/car-details']"
+                        [queryParams]="{ id: car.carDetailsId, user: 'from' }"
+                      >
                         User's details
+                      </button>
+                      <button
+                        class="dropdown-item"
+                        type="button"
+                        [routerLink]="['/rentmycar']"
+                        [queryParams]="{ id: car.carDetailsId}"
+                      >
+                        Rent This Car
                       </button>
                       <button class="dropdown-item" type="button">
                         Remove

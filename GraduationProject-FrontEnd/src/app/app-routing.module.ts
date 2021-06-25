@@ -27,7 +27,11 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard],
   },
   { path: 'rent', component: RentComponent },
-  { path: 'rentmycar', component: RentmycarComponent },
+  {
+    path: 'rentmycar',
+    component: RentmycarComponent,
+    canActivate: [AuthGuardGuard],
+  },
   { path: 'sell-my-car', component: SellMyCarComponent },
 
   { path: 'view-cars', component: ViewCarsComponent },
