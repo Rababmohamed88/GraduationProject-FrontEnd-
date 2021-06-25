@@ -2,21 +2,21 @@
   <div class="row">
     <div class="col-lg-5 col-sm-12">
       <i class="fa fa-user mr-1 my-3"></i>
-      <h3 class="d-inline my-3">{{ prof.fullname }}</h3>
+      <h3 class="d-inline my-3 info">{{ prof.fullname }}</h3>
       <br />
       <i class="fa fa-mobile mr-1 my-3"></i>
-      <h5 class="d-inline my-3" *ngIf="prof.phones; else phonesBlock">
+      <h5 class="d-inline my-3 info" *ngIf="prof.phones; else phonesBlock">
         Not Available
       </h5>
       <br />
       <ng-template #phonesBlock
-        ><h5 class="d-inline my-3" *ngFor="let phone of prof.phones">
+        ><h5 class="d-inline my-3 info" *ngFor="let phone of prof.phones">
           {{ phone }}
         </h5>
         <br
       /></ng-template>
       <i class="fa fa-envelope mr-1 my-3"></i>
-      <h5 class="d-inline my-3">{{ prof.email }}</h5>
+      <h5 class="d-inline my-3 info">{{ prof.email }}</h5>
       <br />
       <button type="submit" class="btn btn-warning my-3 d-block">
         Change Information

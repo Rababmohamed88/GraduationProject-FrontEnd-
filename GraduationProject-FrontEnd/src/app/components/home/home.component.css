@@ -130,6 +130,9 @@
 .c2 {
   color: #464343;
 }
+.card-group .c1, .card-group .c2{
+  font-size: 20px;
+}
 .card img {
   border-radius: 10px !important;
   height: 250px !important;
