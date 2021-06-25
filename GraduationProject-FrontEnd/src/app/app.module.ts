@@ -47,6 +47,7 @@ import { SuggestionComponent } from './components/suggestion/suggestion.componen
 import { ProfileComponent } from './components/profile/profile.component';
 import { SellMyCarComponent } from './components/sell-my-car/sell-my-car.component';
 import { UsedCarsComponent } from './components/used-cars/used-cars.component';
+import { ViewCarsComponent } from './components/view-cars/view-cars.component';
 
 export function TokenGetter() {
   return localStorage.getItem('token');
@@ -71,6 +72,7 @@ export function TokenGetter() {
     ProfileComponent,
     SellMyCarComponent,
     UsedCarsComponent,
+    ViewCarsComponent,
   ],
   imports: [
     BrowserModule,

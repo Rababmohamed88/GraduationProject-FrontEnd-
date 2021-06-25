@@ -1,21 +1,32 @@
 i, .c1{
     color: #FFB400;
-    font-size: 25px;
+    font-size: 20px;
 }
 button{
     color: #464343;
     border: none;
     border-radius: 5px;
 }
-.info{
-    font-size: 25px;
-}
-.card {
+.card{
     border: 2px solid #858383 !important;
     border-radius: 10px !important;
+    transition: transform 0.5s;
+}
+.card:hover{
+    transform: scale(1.1);
 }
 p, .c2 {
   color: #464343;
+}
+.c1, .c2{
+    font-size: 20px;
+}
+.c3{
+    font-size: 15px;
+    color: #464343;
+}
+.c4{
+    font-size: 18px;
 }
 .notFound p{
     font-size: 40px;
