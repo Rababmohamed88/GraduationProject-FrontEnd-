@@ -1,21 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators ,FormBuilder } from '@angular/forms';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @Component({
   selector: 'app-suggestion',
   templateUrl: './suggestion.component.html',
-  styleUrls: ['./suggestion.component.css']
+  styleUrls: ['./suggestion.component.css'],
+  providers: [NgbModalConfig, NgbModal]
+
 })
 export class SuggestionComponent implements OnInit {
   public f:FormGroup;
 
 
 
-  constructor(public fb: FormBuilder) { 
-
+  constructor(public fb: FormBuilder,config: NgbModalConfig, private modalService: NgbModal) { 
+    config.backdrop = 'static';
+    config.keyboard = false;
   }
  
+  open(content) {
+    this.modalService.open(content);
+    this.ngOnInit()
+  }
+
   ngOnInit(): void {
  this.f = new FormGroup({     
   q1 : new FormControl(null, Validators.required),
