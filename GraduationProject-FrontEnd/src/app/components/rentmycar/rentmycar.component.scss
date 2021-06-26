@@ -63,18 +63,18 @@
 
 input{
     border:2px solid #FFB400;
-    border-radius: 10px;
+    border-radius: 7px;
     width:35%;
     outline: none;
 
 }
-// input:focus{
-//     border:2px solid #FFB400;
-//     border-radius: 10px;
-//     width:55%;
-//     outline: none;
+input:focus{
+    border:2px solid #FFB400;
+    border-radius: 7px;
+    width:55%;
+    outline: none;
 
-// }
+}
 button{
     border-radius: 5px;
     border: 1px solid #ffb400;
