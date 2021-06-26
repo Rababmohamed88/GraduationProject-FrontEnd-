@@ -6,6 +6,7 @@ export class CarSearchResult {
     public img: string,
     public modelClassId: number,
     public modelId: number,
-    public className: string
+    public className: string,
+    public carDetailsId:number
   ) {}
 }
