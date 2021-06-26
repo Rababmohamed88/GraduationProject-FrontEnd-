@@ -1,20 +1,19 @@
-
 <div class="container">
   <div class="row mb-3 mt-3">
     <div class="search col-lg-2 mb-2">
       <div class="tabs">
-       <span><a  routerLink="/search">New</a> </span><span><a routerLink="/used-cars">Used</a></span>
-        
-       <!-- <div class="btn-section clearfix">
+        <span><a routerLink="/search">New</a> </span
+        ><span><a routerLink="/used-cars">Used</a></span>
+
+        <!-- <div class="btn-section clearfix">
           <a
-          
+
             routerLink="/search"
             class="link-btn active btn-1 default-bg active-bg"
             >New</a
           >
           <a routerLink="/used-cars" class="link-btn btn-2">Used</a>
         </div> -->
-
       </div>
       <div class="brand pt-4 pl-2">
         <select #brandSelect (change)="brandSelectChanged(brandSelect.value)">
@@ -76,8 +75,8 @@
         </button>
       </div>
     </div>
-    <div class="col-lg-10" >
-      <div *ngFor="let car of cars" class="card cards " style="width: 16rem">
+    <div class="col-lg-10">
+      <div *ngFor="let car of cars" class="card cards" style="width: 16rem">
         <img
           class="card-img-top"
           style="height: 8rem"
@@ -86,10 +85,17 @@
         />
         <div class="card-body">
           <h5 class="card-title">{{ car.brand }}</h5>
-          <p class="card-text" >{{ car.model }}</p>
-          <p class="card-text" >{{ car.price }}</p>
+          <p class="card-text">{{ car.model }}</p>
+          <p class="card-text">{{ car.className }}</p>
+          <p class="card-text">{{ car.price | currency: "":"" }} EGP</p>
 
-          <a href="#" class="btn btn-primary">Details</a>
+          <a
+            href="#"
+            [routerLink]="['/car-details']"
+            [queryParams]="{ id: car.carDetailsId }"
+            class="btn btn-primary"
+            >Details</a
+          >
         </div>
       </div>
     </div>

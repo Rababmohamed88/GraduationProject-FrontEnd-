@@ -60,7 +60,8 @@
             </div>
             <div class="col-md-6">
               <a
-                [routerLink]="['/car-details', carCard.carDetailsId]"
+                [routerLink]="['/car-details']"
+                [queryParams]="{ id: carCard.carDetailsId }"
                 class="btn"
                 >Car Details</a
               >
