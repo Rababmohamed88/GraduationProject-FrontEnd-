@@ -19,27 +19,27 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class SuggestionComponent implements OnInit {
   public f: FormGroup;
   form: SuggestForm = new SuggestForm();
-  suggestionResult:CarSearchResult[]=[];
+  suggestionResult: CarSearchResult[] = [];
 
   constructor(
     public fb: FormBuilder,
     config: NgbModalConfig,
     private modalService: NgbModal,
-    private suggServ:SuggestionsService
+    private suggServ: SuggestionsService
   ) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
 
   open(content) {
-    this.modalService.open(content, { centered: true });
     this.setValuesOfForm();
-    this.suggServ.sendSuggestionForm(this.form).subscribe((a)=>{
+    this.suggServ.sendSuggestionForm(this.form).subscribe((a) => {
       this.suggestionResult = a;
-    })
+    });
+    this.modalService.open(content, { centered: true });
   }
 
-  setValuesOfForm(){
+  setValuesOfForm() {
     this.form.priceRange = this.f.get('q1').value;
     this.form.carState = this.f.get('q2').value;
     this.form.carUsage = this.f.get('q3').value;
