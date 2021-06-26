@@ -1,99 +1,141 @@
 .search{
-    width:15%; 
-    height: auto; 
-    border: 2px solid #ddd;
-    text-align: center;
- 
- 
- }
- .tabs{
-    height: fit-content;
-    border-bottom:1px solid #ddd;
- 
- }
- .tabs span{
-    display: inline-block;
-    text-align: center;
-    width:50%;
-    font-size: large;
-    color: #80939e;
-    font-weight: bold;
- 
- }
- .tabs span:hover{
-    border-bottom:2px solid #80939e  ;
- }
- 
- .tabs span a{
-    color: #80939e;
-    text-decoration:none;
- }
- .tabs span a:focus{
-    color: #80939e;
-    text-decoration:none;
- }
- .brand button,select,input {
-    border:1px solid #ddd;
-    border-radius: 5px;
-    width: 90%;
-    text-align: left;
-    padding: 5px;
-    color: #80939e;
-    position: relative;
- }
-  .price{
-   width: 100%;
+
+   /* width:15%;  */
+   /* height: auto;  */
+   border: 2px solid #ddd;
+   text-align: center;
+   height: fit-content;
+
+}
+.tabs{
+   height: fit-content;
+   border-bottom:1px solid #ddd;
+
+}
+.tabs span{
+   display: inline-block;
+   text-align: center;
+   width:50%;
+   font-size: large;
+   color: #80939e;
+   font-weight: bold;
+
+}
+.tabs span:hover{
+   border-bottom:2px solid #80939e  ;
+}
+
+.tabs span a{
+   color: #80939e;
+   text-decoration:none;
+}
+.tabs span a:focus{
+   color: #80939e;
+   text-decoration:none;
+}
+.brand button,select,input {
+   border:1px solid #ddd;
+   border-radius: 5px;
+   width: 90%;
    text-align: left;
+   padding: 5px;
    color: #80939e;
    position: relative;
-   display: flex; /* 2. display flex to the rescue */
-   flex-direction: row;
+   
 }
+  .price{
+  width: 100%;
+  text-align: left;
+  color: #80939e;
+  position: relative;
+  display: flex; 
+  flex-direction: row;
+} 
 .from,.to{
-   display:block;
-   margin-left:5px;
+  display:block; 
+   margin-left:3px; 
+  width:95%
+} 
+
+
+.flex-container {
+  display: flex;
 }
- .toggle{
-    display: inline-block;
-    position:absolute;
-    right: 3px;
-   
- }
+
+.flex-child {
+  flex: 1;
  
- .scroll{
- max-height: 300px;
- margin-bottom: 10px;
- overflow:scroll;
- -webkit-overflow-scrolling: touch;
- }
- button {
-    border-radius: 5px;
-    border: 1px solid #ffb400;
-    background-color: #ffb400;
-    width: 60%;
-    height: 35px;
-    display: inline-block;
-    margin: auto;
+}  
+
+.flex-child:first-child {
+  margin-right: 1px;
+} 
+
+.toggle{
+   display: inline-block;
+   position:absolute;
+   right: 3px;
+  
+}
+
+.scroll{
+max-height: 300px;
+margin-bottom: 10px;
+overflow:scroll;
+-webkit-overflow-scrolling: touch;
+}
+button {
+   border-radius: 5px;
+   border: 1px solid #ffb400;
+   background-color: #ffb400;
+   width: 60%;
+   height: 35px;
+   display: block;
+   margin: auto;
+
+}
+.btn-theme {
+  
+   color: #fff;
+   text-transform: uppercase;
+   font-weight: 500;
+   font-size: 12px;
+}
+.clearfix::after {
+   display: block;
+   clear: both;
+   content: "";
+}
+.clearfix{
+   display: flex;
+   justify-content: center;
+}
+.cards{
+   display: inline-block;
+   margin-right: 1rem;
+   margin-bottom: 1rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #ffb400;
+  border-color: #ffb400;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #ffb400;
+  border-color: #ffb400;
+}
+@media (max-width: 992px) {
  
+  .from,.to{
+     display:block; 
+     margin-left: 25px;
+     width: 44%
  }
- .btn-theme {
-   
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 12px;
+ .to{
+  display:block; 
+  margin-left:3px; 
+  width:45%
  }
- .clearfix::after {
-    display: block;
-    clear: both;
-    content: "";
- }
- .clearfix{
-    display: flex;
-    justify-content: center;
- }
- .cards{
-    display: inline-block;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
- }
+}
