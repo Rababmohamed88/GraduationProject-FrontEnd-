@@ -1,65 +1,72 @@
 <div class="container">
   <div class="row">
-
     <div class="col-lg-6 col-md-6">
-      <div class="card my-3 mr-3" style="max-width: 500px">
+      <div
+        *ngFor="let car of cars"
+        class="card my-3 mr-3"
+        style="max-width: 500px"
+      >
         <div class="row no-gutters">
-            <div class="col-md-5">
-              <img
-                src="../../../assets/9.jpg"
-                alt="..."
-                class="w-100 h-100"
-              />
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-10">
-                    <h5 class="card-title c1">Car Name</h5>
-                    <h5 class="card-title c2">class Name</h5>
-                    <i class="fa fa-cc-visa mr-1 mb-2"></i>
-                    <h5 class="c3 d-inline mb-2">Price</h5><br>
-                    <i class="fa fa-question-circle mr-1 c4 mt-2"></i>
-                    <h5 class="c3 d-inline mt-2">New</h5><br>
-                    
-                  </div>
-                  <div class="col-2">
-                    <div class="dropdown">
+          <div class="col-md-5">
+            <img
+              src="assets/CarsImages/{{ car.imageName }}"
+              alt="..."
+              class="w-100 h-100"
+            />
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-10">
+                  <h5 class="card-title c1">{{ car.brand }} {{ car.model }}</h5>
+                  <h5 class="card-title c2">{{ car.className }}</h5>
+                  <i class="fa fa-cc-visa mr-1 mb-2"></i>
+                  <h5 class="c3 d-inline mb-2">{{ car.price }}</h5>
+                  <br />
+                  <i class="fa fa-question-circle mr-1 c4 mt-2"></i>
+                  <h5 class="c3 d-inline mt-2">New</h5>
+                  <br />
+                </div>
+                <div class="col-2">
+                  <div class="dropdown">
+                    <button
+                      class="btn"
+                      type="button"
+                      id="dropdownMenu2"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                       <button
-                        class="btn"
+                        class="dropdown-item"
                         type="button"
-                        id="dropdownMenu2"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
+                        [routerLink]="['/car-details']"
+                        [queryParams]="{ id: car.carDetailsId }"
                       >
-                        <i class="fa fa-ellipsis-v"></i>
+                        Main details
                       </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button
-                          class="dropdown-item"
-                          type="button"
-                          >
-                          Main details
-                        </button>
-                        <button class="dropdown-item" type="button">
-                          User's details
-                        </button>
-                        <button 
-                        class="dropdown-item" 
+                      <button
+                        class="dropdown-item"
                         type="button"
-                        >
-                          User's profile
-                        </button>
-                      </div>
+                        [routerLink]="['/car-details']"
+                        [queryParams]="{ id: car.carDetailsId, user: 'from' }"
+                      >
+                        User's details
+                      </button>
+                      <button class="dropdown-item" type="button">
+                        User's profile
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
       </div>
     </div>
-
   </div>
 </div>

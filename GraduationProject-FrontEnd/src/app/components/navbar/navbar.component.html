@@ -26,23 +26,26 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/buy"
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/view-cars']"
+            [queryParams]="{ classification: 'buy' }"
             >Buy</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/sell"
-            >Sell</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/rent"
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/view-cars']"
+            [queryParams]="{ classification: 'rent' }"
             >Rent</a
           >
         </li>
         <li class="nav-item d-flex">
-          <a class="nav-link" routerLinkActive="active" routerLink="/rentmycar"
-            >Rent My Car
+          <a class="nav-link" routerLinkActive="active" routerLink="/profile"
+            >Manage My Cars
           </a>
         </li>
         <li class="nav-item">

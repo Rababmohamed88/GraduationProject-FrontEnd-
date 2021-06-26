@@ -1,15 +1,16 @@
-import { ViewCars } from './../_models/view-cars';
+import { CarSearchResult } from './../_models/car-search-result';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ViewCarsService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getInfoForView() {
-    return this.http.get<ViewCars[]>('https://localhost:44301/api/');
+  getInfoForView(rent: number) {
+    return this.http.get<CarSearchResult[]>(
+      'https://localhost:44301/api/cars/getcars?rent=' + rent
+    );
   }
 }
