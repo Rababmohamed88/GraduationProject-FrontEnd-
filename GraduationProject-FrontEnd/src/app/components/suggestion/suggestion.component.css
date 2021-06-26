@@ -13,3 +13,26 @@
     display: block;
     text-align: right;
 }
+
+.results{
+    border: 2px solid #858383 !important;
+    border-radius: 10px !important;
+}
+.results i, .c1, .results a{
+    color:#FFB400;
+}
+.results i{
+    font-size: 20px;
+}
+.results p, .c2{
+    color: #464343;
+}
+.results .c1, .results .c2{
+    font-size: 20px;
+}
+.results img{
+    border-radius: 10px !important;
+}
+.results img:hover{
+    opacity: 80%;
+}
