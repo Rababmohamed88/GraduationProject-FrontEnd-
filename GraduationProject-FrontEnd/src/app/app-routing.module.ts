@@ -28,11 +28,15 @@ const routes: Routes = [
   },
   { path: 'rent', component: RentComponent },
   {
-    path: 'rentmycar',
+    path: 'Basic-info',
     component: RentmycarComponent,
     canActivate: [AuthGuardGuard],
   },
-  { path: 'sell-my-car', component: SellMyCarComponent },
+  {
+    path: 'sell-my-car',
+    component: SellMyCarComponent,
+    canActivate: [AuthGuardGuard],
+  },
 
   { path: 'view-cars', component: ViewCarsComponent },
 

@@ -76,10 +76,18 @@
                       <button
                         class="dropdown-item"
                         type="button"
-                        [routerLink]="['/rentmycar']"
-                        [queryParams]="{ id: car.carDetailsId}"
+                        [routerLink]="['/Basic-info']"
+                        [queryParams]="{ id: car.carDetailsId, oper: 'rent' }"
                       >
                         Rent This Car
+                      </button>
+                      <button
+                        class="dropdown-item"
+                        type="button"
+                        [routerLink]="['/Basic-info']"
+                        [queryParams]="{ id: car.carDetailsId, oper: 'sell' }"
+                      >
+                        Sell This Car
                       </button>
                       <button class="dropdown-item" type="button">
                         Remove

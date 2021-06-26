@@ -1,3 +1,4 @@
+import { ServerResponse } from './../_models/server-response';
 import { Injectable } from '@angular/core';
 import { SellData } from './../_models/sell-data';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +11,7 @@ export class SellMyCarService {
 
   constructor(private http: HttpClient) { }
 
-  addSellData(sData: SellData) {
-    return this.http.post<SellData>('https://localhost:44301/api/cars/', sData);
+  addSellData(sData: SellData, carDetailsId:number) {
+    return this.http.post<ServerResponse>('https://localhost:44301/api/sell/addselling/'+carDetailsId, sData);
   }
 }

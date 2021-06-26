@@ -1,76 +1,177 @@
 <div class="container">
-    <h2 class="my-3">Additional information for sale</h2>
-    <div class="row">
-        <div class="col-lg-6 col-sm-12">
-            <form class="my-3">
-                <div class="form-group">
-                  <input type="text" class="form-control mt-3" id="exampleFormControlInput1" placeholder="KM">
-                </div>
-
-                  <div class="row">
-                    <div class="col-4">
-                      <label class="mt-3">Agency Maintainance</label>
-                    </div>
-                    <div class="col-8">
-                      <div class="custom-control custom-radio custom-control-inline mt-3 mr-4">
-                        <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline1">Yes</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline mt-3 mx-4">
-                        <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline2">No</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-4">
-                      <label class="mt-3">Guarntee</label>
-                    </div>
-                    <div class="col-8">
-                      <div class="custom-control custom-radio custom-control-inline mt-3 mr-4">
-                        <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline3">Yes</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline mt-3 mx-4">
-                        <input type="radio" id="customRadioInline4" name="customRadioInline" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline4">No</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-4">
-                      <label class="mt-3">Fabrique</label>
-                    </div>
-                    <div class="col-8">
-                      <div class="custom-control custom-radio custom-control-inline mt-3 mr-4">
-                        <input type="radio" id="customRadioInline5" name="customRadioInline" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline5">Yes</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline mt-3 mx-4">
-                        <input type="radio" id="customRadioInline6" name="customRadioInline" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline6">No</label>
-                      </div>
-                    </div>
-                  </div>
-                    
-                
-        
-                
-                <div class="form-group">
-                  <textarea class="form-control mt-3" placeholder="Notes" rows="7"></textarea>
-                </div>
-
-                <div>
-                    <button type="submit" class="btn btn-warning mt-3">Save</button>
-                </div>
-            </form>
-        
+  <h2 class="my-3">Additional information for sale</h2>
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <form class="my-3">
+        <div class="form-group">
+          <input
+            [(ngModel)]="selldata.km"
+            type="number"
+            min="0"
+            name="km"
+            class="form-control mt-3"
+            id="exampleFormControlInput1"
+            placeholder="KM"
+          />
         </div>
-        <div class="col-lg-6 col-sm-12">
-            <img src="../../../assets/qusetion.png" alt="" class="my-3">
+
+        <div class="row">
+          <div class="col-4">
+            <label class="mt-3">Agency Maintainance</label>
+          </div>
+          <div class="col-8">
+            <div
+              class="
+                custom-control custom-radio custom-control-inline
+                mt-3
+                mr-4
+              "
+            >
+              <input
+                [(ngModel)]="selldata.maintainance"
+                type="radio"
+                id="customRadioInline1"
+                name="maintainance"
+                class="custom-control-input"
+                [value]="true"
+              />
+              <label class="custom-control-label" for="customRadioInline1"
+                >Yes</label
+              >
+            </div>
+            <div
+              class="
+                custom-control custom-radio custom-control-inline
+                mt-3
+                mx-4
+              "
+            >
+              <input
+                [(ngModel)]="selldata.maintainance"
+                type="radio"
+                id="customRadioInline2"
+                name="maintainance"
+                class="custom-control-input"
+                [value]="false"
+              />
+              <label class="custom-control-label" for="customRadioInline2"
+                >No</label
+              >
+            </div>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-4">
+            <label class="mt-3">Guarntee</label>
+          </div>
+          <div class="col-8">
+            <div
+              class="
+                custom-control custom-radio custom-control-inline
+                mt-3
+                mr-4
+              "
+            >
+              <input
+                [(ngModel)]="selldata.guarntee"
+                type="radio"
+                id="customRadioInline3"
+                name="guarntee"
+                class="custom-control-input"
+                [value]="true"
+              />
+              <label class="custom-control-label" for="customRadioInline3"
+                >Yes</label
+              >
+            </div>
+            <div
+              class="
+                custom-control custom-radio custom-control-inline
+                mt-3
+                mx-4
+              "
+            >
+              <input
+                [(ngModel)]="selldata.guarntee"
+                type="radio"
+                id="customRadioInline4"
+                name="guarntee"
+                class="custom-control-input"
+                [value]="false"
+              />
+              <label class="custom-control-label" for="customRadioInline4"
+                >No</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <label class="mt-3">Fabrique</label>
+          </div>
+          <div class="col-8">
+            <div
+              class="
+                custom-control custom-radio custom-control-inline
+                mt-3
+                mr-4
+              "
+            >
+              <input
+                [(ngModel)]="selldata.fabrique"
+                type="radio"
+                id="customRadioInline5"
+                name="Fabrique"
+                class="custom-control-input"
+                [value]="true"
+              />
+              <label class="custom-control-label" for="customRadioInline5"
+                >Yes</label
+              >
+            </div>
+            <div
+              class="
+                custom-control custom-radio custom-control-inline
+                mt-3
+                mx-4
+              "
+            >
+              <input
+                [(ngModel)]="selldata.fabrique"
+                type="radio"
+                id="customRadioInline6"
+                name="Fabrique"
+                class="custom-control-input"
+                [value]="false"
+              />
+              <label class="custom-control-label" for="customRadioInline6"
+                >No</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <textarea
+            name="notes"
+            [(ngModel)]="selldata.notes"
+            class="form-control mt-3"
+            placeholder="Notes"
+            rows="7"
+          ></textarea>
+        </div>
+
+        <div>
+          <button (click)="save()" type="submit" class="btn btn-warning mt-3">
+            Save
+          </button>
+        </div>
+      </form>
     </div>
-    
+    <div class="col-lg-6 col-sm-12">
+      <img src="../../../assets/qusetion.png" alt="" class="my-3" />
+    </div>
+  </div>
 </div>

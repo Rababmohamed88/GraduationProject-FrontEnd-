@@ -1,3 +1,4 @@
+import { ServerResponse } from './../_models/server-response';
 import { CarDetails } from './../_models/car-details';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -22,6 +23,6 @@ export class GetCarDetailsService {
   }
 
   saveCarRentDetailsDb(carDetilsId:number, carDetails:CarDetails){
-    return this.http.put('https://localhost:44301/api/rent/saverent?cardetailsid='+carDetilsId,carDetails );
+    return this.http.put<ServerResponse>('https://localhost:44301/api/rent/saverent?cardetailsid='+carDetilsId,carDetails );
   }
 }

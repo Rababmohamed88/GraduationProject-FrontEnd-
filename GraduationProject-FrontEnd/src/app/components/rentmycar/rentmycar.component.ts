@@ -1,6 +1,6 @@
 import { CarDetails } from './../../_models/car-details';
 import { GetCarDetailsService } from './../../services/car-details.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -20,11 +20,13 @@ export class RentmycarComponent implements OnInit {
   dimensionsGroup: FormGroup;
   carDetailsId: number;
   details: CarDetails = new CarDetails();
+  operation: string;
 
   constructor(
     private _formBuilder: FormBuilder,
     private ac: ActivatedRoute,
-    private detailsServ: GetCarDetailsService
+    private detailsServ: GetCarDetailsService,
+    private router: Router
   ) {}
 
   async ngOnInit() {
@@ -36,6 +38,7 @@ export class RentmycarComponent implements OnInit {
   async readParams() {
     await this.ac.queryParams.subscribe((a) => {
       this.carDetailsId = a.id;
+      this.operation = a.oper;
     });
   }
 
@@ -47,9 +50,21 @@ export class RentmycarComponent implements OnInit {
   }
 
   submit() {
-    this.detailsServ.saveCarRentDetailsDb(this.carDetailsId,this.details).subscribe((a)=>{
-      console.log(a);
-    });
+    this.detailsServ
+      .saveCarRentDetailsDb(this.carDetailsId, this.details)
+      .subscribe((a) => {
+        if (a.isSuccess) {
+          if (this.operation == 'rent') {
+            this.router.navigate(['/profile']);
+          } else if (this.operation == 'sell') {
+            this.router.navigate(['/sell-my-car'], {queryParams: { id: this.carDetailsId }});
+          } else {
+            alert('logout :) ');
+          }
+        } else {
+          alert(a.message);
+        }
+      });
   }
 
   settingStepper() {
@@ -150,7 +165,4 @@ export class RentmycarComponent implements OnInit {
       Height: [''],
     });
   }
-
-
-
 }
