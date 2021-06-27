@@ -25,7 +25,16 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.registerSer.loginUser(this.user).subscribe((a) => {
       localStorage.setItem('token', a.token);
       localStorage.setItem('user', a.message);
+      this.getUserEmail();
       this.router.navigate(['/profile']);
+    });
+  }
+
+  getUserEmail() {
+    this.registerSer.getCurrentUserEmail().subscribe((a) => {
+      if (a.isSuccess) {
+        localStorage.setItem('email', a.message);
+      }
     });
   }
 }

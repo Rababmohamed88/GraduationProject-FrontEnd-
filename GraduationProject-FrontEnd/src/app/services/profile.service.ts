@@ -10,19 +10,27 @@ import { OwnCar } from '../_models/Profile/own-car';
 export class ProfileService {
   constructor(private http: HttpClient) {}
 
-  getUserInfo() {
+  getUserInfo(email: string) {
     return this.http.get<ProfileInfo>(
-      'https://localhost:44301/api/user/profile'
+      'https://localhost:44301/api/user/profile/' + email
     );
   }
 
-  getUserCars() {
-    return this.http.get<OwnCar[]>('https://localhost:44301/api/user/UserCars');
+  getUserCars(email: string) {
+    return this.http.get<OwnCar[]>(
+      'https://localhost:44301/api/user/UserCars/' + email
+    );
   }
 
   deleteUserCar(userCarId: number) {
     return this.http.delete<ServerResponse>(
       'https://localhost:44301/api/user/' + userCarId
+    );
+  }
+
+  isSameUser(email: string) {
+    return this.http.get<ServerResponse>(
+      'https://localhost:44301/api/user/sameuser/' + email
     );
   }
 }

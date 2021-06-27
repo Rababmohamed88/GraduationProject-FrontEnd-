@@ -7,6 +7,7 @@ export class CarSearchResult {
     public modelClassId: number,
     public modelId: number,
     public className: string,
-    public carDetailsId:number
+    public carDetailsId:number,
+    public userEmail:string
   ) {}
 }

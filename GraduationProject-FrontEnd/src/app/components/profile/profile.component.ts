@@ -12,6 +12,8 @@ import { OwnCar } from '../../_models/Profile/own-car';
 export class ProfileComponent implements OnInit {
   prof: ProfileInfo = new ProfileInfo();
   cars: OwnCar[] = [];
+  email: string;
+  same: boolean;
 
   constructor(
     private ac: ActivatedRoute,
@@ -19,18 +21,22 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.ac.queryParams.subscribe((a) => {
+      this.email = a.email;
+    });
     this.getUserData();
     this.getUserCars();
+    this.isTheSameUser();
   }
 
   getUserData() {
-    this.profileServ.getUserInfo().subscribe((a) => {
+    this.profileServ.getUserInfo(this.email).subscribe((a) => {
       this.prof = a;
     });
   }
 
   getUserCars() {
-    this.profileServ.getUserCars().subscribe((a) => {
+    this.profileServ.getUserCars(this.email).subscribe((a) => {
       this.cars = a;
     });
   }
@@ -41,6 +47,18 @@ export class ProfileComponent implements OnInit {
         this.getUserCars();
       } else {
         alert(a.message);
+      }
+    });
+  }
+
+  isTheSameUser() {
+    this.profileServ.isSameUser(this.email).subscribe((a) => {
+      if (a.isSuccess) {
+        if (a.message == 'same') {
+          this.same = true;
+        } else {
+          this.same = false;
+        }
       }
     });
   }

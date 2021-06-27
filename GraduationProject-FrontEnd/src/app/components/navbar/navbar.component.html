@@ -2,7 +2,7 @@
   <div class="container">
     <a class="navbar-brand me-5" routerLink=""
       ><span class="letter-brand">C</span>ar
-      <span class="letter-brand">C</span>ity</a
+      <span class="letter-brand">P</span>icker</a
     >
     <button
       class="navbar-toggler"
@@ -44,7 +44,11 @@
           >
         </li>
         <li class="nav-item d-flex">
-          <a class="nav-link" routerLinkActive="active" routerLink="/profile"
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/profile']"
+            [queryParams]="{ email: email$ | async }"
             >Manage My Cars
           </a>
         </li>
@@ -78,7 +82,12 @@
                 {{ username$ | async }}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" routerLink="/profile">My Profile</a>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="['/profile']"
+                  [queryParams]="{ email: email$ | async }"
+                  >My Profile</a
+                >
                 <div class="dropdown-divider"></div>
                 <a [routerLink]="" class="dropdown-item" (click)="logout()"
                   >Logout</a

@@ -1,3 +1,4 @@
+import { ServerResponse } from './../_models/server-response';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -18,6 +19,7 @@ export class AuthServiceService {
     private router: Router
   ) {}
   private username = new BehaviorSubject<string>(localStorage.getItem('user'));
+  private email = new BehaviorSubject<string>(localStorage.getItem('email'));
 
   registerUser(user: Registration) {
     return this.http.post<any>(
@@ -46,5 +48,13 @@ export class AuthServiceService {
 
   get currentUserName() {
     return this.username.asObservable();
+  }
+
+  get currentEmail(){
+    return this.email.asObservable();
+  }
+
+  getCurrentUserEmail(){
+    return this.http.get<ServerResponse>('https://localhost:44301/api/User/useremail');
   }
 }

@@ -56,7 +56,12 @@
                       >
                         User's details
                       </button>
-                      <button class="dropdown-item" type="button">
+                      <button
+                        [routerLink]="['/profile']"
+                        [queryParams]="{ email: car.userEmail}"
+                        class="dropdown-item"
+                        type="button"
+                      >
                         User's profile
                       </button>
                     </div>

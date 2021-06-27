@@ -18,7 +18,7 @@
       <i class="fa fa-envelope mr-1 my-3"></i>
       <h5 class="d-inline my-3 info">{{ prof.email }}</h5>
       <br />
-      <button type="submit" class="btn btn-warning my-3 d-block">
+      <button *ngIf="same" type="submit" class="btn btn-warning my-3 d-block">
         Change Information
       </button>
     </div>
@@ -74,6 +74,7 @@
                         User's details
                       </button>
                       <button
+                      *ngIf="same"
                         class="dropdown-item"
                         type="button"
                         [routerLink]="['/Basic-info']"
@@ -82,6 +83,7 @@
                         Rent This Car
                       </button>
                       <button
+                      *ngIf="same"
                         class="dropdown-item"
                         type="button"
                         [routerLink]="['/Basic-info']"
@@ -90,6 +92,7 @@
                         Sell This Car
                       </button>
                       <button
+                      *ngIf="same"
                         (click)="delete(car.userCarId)"
                         class="dropdown-item"
                         type="button"
@@ -109,6 +112,7 @@
         type="submit"
         class="btn btn-warning my-3"
         [routerLink]="['/choose-car']"
+        *ngIf="same"
       >
         Choose My Car Now
       </button>
