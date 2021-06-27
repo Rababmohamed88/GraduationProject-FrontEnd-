@@ -1,53 +1,112 @@
-<div class="container d-flex justify-content-center my-5 row my-2  main">
-    
-        <div class="col-md-6 d-flex justify-content-center left">
-            <!--left-column-->
-            <form class="formone">
-               <!-- <h6 class="header" >Lets do it faster!</h6>-->
-                <div class="row ro">
-                    <div class="form-group col-md-6 xyz"> <button type="button" class="btn btn-primary fb"><i class="fa fa-facebook"></i> Facebook</button> </div>
-                </div>
-                <div class="row rt">
-                    <div class="form-group col-md-6 xyz"> <button type="button" class="btn btn-primary gplus"><i class="fa fa-google"></i> Google</button> </div>
-                </div>
-                <!--<p class="foot text-muted">We don't post anything without permission</p>-->
-                <!--right-column-->
-            </form>
+<div class="container d-flex justify-content-center my-5 row my-2 main">
+  <div class="col-md-6 d-flex justify-content-center left">
+    <!--left-column-->
+    <form class="formone">
+      <!-- <h6 class="header" >Lets do it faster!</h6>-->
+      <div class="row ro">
+        <div class="form-group col-md-6 xyz">
+          <button type="button" class="btn btn-primary fb">
+            <i class="fa fa-facebook"></i> Facebook
+          </button>
         </div>
-        <div class="col-md-6 right">
-			<div class="inside_right">
-				<h2 class="title pt-5 pb-3">create an account</h2>
-				 <div class="btn-section clearfix">
-                        <a routerLink="/login" class="link-btn active btn-1 default-bg">Login</a>
-                        <a routerLink="/register" class="link-btn btn-2 active-bg">Register</a>
-                    </div>
-                    <div class="clearfix"></div>
-				<div action="#" method="GET" >
-            <div class="form-group form-box">
-              <input type="text" name="fullname" class="input-text" placeholder="Full Name" [(ngModel)]="user.fullName">
-            </div>
-            <div class="form-group form-box">
-              <input type="email" name="email" class="input-text" placeholder="Email Address" [(ngModel)]="user.email">
-            </div>
-            
-            <div class="form-group form-box">
-               <input type="text" name="nationalID" class="input-text" placeholder="National id" [(ngModel)]="user.nationalId">
-            </div>
-            <div class="form-group form-box">
-               <input type="text" name="licenseNo" class="input-text" placeholder="license no" [(ngModel)]="user.personalLicenceNo">
-            </div>
-            <div class="form-group form-box ">
-              <input type="password" name="Password" class="input-text" placeholder="Password" [(ngModel)]="user.password">
-            </div>
-            <div class="form-group form-box clearfix">
-              <input type="password" name="confirmPassword" class="input-text" placeholder="Confirm Password" [(ngModel)]="user.confirmPassword">
-            </div>
-            <div class="form-group clearfix">
-                <button type="submit" class="btn-md btn-theme float-left" (click)="register()">Register</button>
-            </div>
-          <!-- </form> --></div>
-                  </div>
-       </div>
-    
-</div>
+      </div>
+      <div class="row rt">
+        <div class="form-group col-md-6 xyz">
+          <button type="button" class="btn btn-primary gplus">
+            <i class="fa fa-google"></i> Google
+          </button>
+        </div>
+      </div>
+      <!--<p class="foot text-muted">We don't post anything without permission</p>-->
+      <!--right-column-->
+    </form>
+  </div>
+  <div class="col-md-6 right">
+    <div class="inside_right">
+      <h2 class="title pt-5 pb-3">create an account</h2>
+      <div class="btn-section clearfix">
+        <a routerLink="/login" class="link-btn active btn-1 default-bg"
+          >Login</a
+        >
+        <a routerLink="/register" class="link-btn btn-2 active-bg">Register</a>
+      </div>
+      <div class="clearfix"></div>
+      <div action="#" method="GET">
+        <div class="form-group form-box">
+          <input
+            type="text"
+            name="fullname"
+            class="input-text"
+            placeholder="Full Name"
+            [(ngModel)]="user.fullName"
+          />
+        </div>
+        <div class="form-group form-box">
+          <input
+            type="email"
+            name="email"
+            class="input-text"
+            placeholder="Email Address"
+            [(ngModel)]="user.email"
+          />
+        </div>
 
+        <div class="form-group form-box">
+          <input
+            type="text"
+            name="nationalID"
+            class="input-text"
+            placeholder="National id"
+            [(ngModel)]="user.nationalId"
+          />
+        </div>
+        <div class="form-group form-box">
+          <input
+            type="text"
+            name="licenseNo"
+            class="input-text"
+            placeholder="license no"
+            [(ngModel)]="user.personalLicenceNo"
+          />
+        </div>
+        <div class="form-group form-box">
+          <input
+            type="password"
+            name="Password"
+            class="input-text"
+            placeholder="Password"
+            [(ngModel)]="user.password"
+          />
+        </div>
+        <div class="form-group form-box clearfix">
+          <input
+            type="password"
+            name="confirmPassword"
+            class="input-text"
+            placeholder="Confirm Password"
+            [(ngModel)]="user.confirmPassword"
+          />
+        </div>
+        <div class="form-group form-box clearfix">
+          <input
+            type="text"
+            name="phone"
+            class="input-text"
+            placeholder="Phone Number"
+            [(ngModel)]="user.phoneNo"
+          />
+        </div>
+        <div class="form-group clearfix">
+          <button
+            type="submit"
+            class="btn-md btn-theme float-left"
+            (click)="register()"
+          >
+            Register
+          </button>
+        </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+</div>
