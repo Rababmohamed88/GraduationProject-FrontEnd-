@@ -4,5 +4,6 @@ export class OwnCar {
         public carName?: string,
         public className?: string,
         public carDetailsId?: number,
+        public userCarId?:number
     ){}
 }

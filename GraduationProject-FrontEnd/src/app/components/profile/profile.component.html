@@ -89,7 +89,11 @@
                       >
                         Sell This Car
                       </button>
-                      <button class="dropdown-item" type="button">
+                      <button
+                        (click)="delete(car.userCarId)"
+                        class="dropdown-item"
+                        type="button"
+                      >
                         Remove
                       </button>
                     </div>

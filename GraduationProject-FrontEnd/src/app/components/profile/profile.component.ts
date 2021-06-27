@@ -29,9 +29,19 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  getUserCars(){
-    this.profileServ.getUserCars().subscribe((a)=>{
+  getUserCars() {
+    this.profileServ.getUserCars().subscribe((a) => {
       this.cars = a;
-    })
+    });
+  }
+
+  delete(userCarId: number) {
+    this.profileServ.deleteUserCar(userCarId).subscribe((a) => {
+      if (a.isSuccess) {
+        this.getUserCars();
+      } else {
+        alert(a.message);
+      }
+    });
   }
 }
