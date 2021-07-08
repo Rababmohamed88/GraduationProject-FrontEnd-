@@ -38,7 +38,11 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard],
   },
 
-  { path: 'view-cars', component: ViewCarsComponent },
+  {
+    path: 'view-cars',
+    component: ViewCarsComponent,
+    canActivate: [AuthGuardGuard],
+  },
 
   {
     path: 'profile',

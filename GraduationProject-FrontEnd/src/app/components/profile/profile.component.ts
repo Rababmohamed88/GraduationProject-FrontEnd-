@@ -51,15 +51,26 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  isTheSameUser() {
-    this.profileServ.isSameUser(this.email).subscribe((a) => {
-      if (a.isSuccess) {
-        if (a.message == 'same') {
-          this.same = true;
-        } else {
-          this.same = false;
-        }
+  // isTheSameUser() {
+  //   this.profileServ.isSameUser(this.email).subscribe((a) => {
+  //     if (a.isSuccess) {
+  //       if (a.message == 'same') {
+  //         this.same = true;
+  //       } else {
+  //         this.same = false;
+  //       }
+  //     }
+  //   });
+  // }
+
+  async isTheSameUser() {
+    let a = await this.profileServ.isSameUser(this.email).toPromise();
+    if (a.isSuccess) {
+      if (a.message == 'same') {
+        this.same = true;
+      } else {
+        this.same = false;
       }
-    });
+    }
   }
 }

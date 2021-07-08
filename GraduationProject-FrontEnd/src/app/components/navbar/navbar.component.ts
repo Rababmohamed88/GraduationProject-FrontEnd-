@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
   username$: Observable<string>;
-  email$: Observable<string>
+  email$: Observable<string>;
 
   constructor(public auth: AuthServiceService) {}
 
@@ -17,8 +17,8 @@ export class NavbarComponent implements OnInit {
     this.auth.Logout();
   }
 
-  ngOnInit(): void {
-    this.username$ = this.auth.currentUserName;
-    this.email$ = this.auth.currentEmail;
+  async ngOnInit() {
+    this.username$ = await this.auth.currentUserName;
+    this.email$ = await this.auth.currentEmail;
   }
 }

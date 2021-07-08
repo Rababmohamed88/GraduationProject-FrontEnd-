@@ -5,13 +5,13 @@
       <h3 class="d-inline my-3 info">{{ prof.fullname }}</h3>
       <br />
       <i class="fa fa-mobile mr-1 my-3"></i>
-      <h5 class="d-inline my-3 info" *ngIf="prof.phones; else phonesBlock">
+      <h5 class="d-inline my-3 info" *ngIf="prof.phone; else phonesBlock">
         Not Available
       </h5>
       <br />
       <ng-template #phonesBlock
-        ><h5 class="d-inline my-3 info" *ngFor="let phone of prof.phones">
-          {{ phone }}
+        ><h5 class="d-inline my-3 info">
+          {{ prof.phoneNo }}
         </h5>
         <br
       /></ng-template>
@@ -74,7 +74,7 @@
                         User's details
                       </button>
                       <button
-                      *ngIf="same"
+                        *ngIf="same"
                         class="dropdown-item"
                         type="button"
                         [routerLink]="['/Basic-info']"
@@ -83,7 +83,7 @@
                         Rent This Car
                       </button>
                       <button
-                      *ngIf="same"
+                        *ngIf="same"
                         class="dropdown-item"
                         type="button"
                         [routerLink]="['/Basic-info']"
@@ -92,7 +92,7 @@
                         Sell This Car
                       </button>
                       <button
-                      *ngIf="same"
+                        *ngIf="same"
                         (click)="delete(car.userCarId)"
                         class="dropdown-item"
                         type="button"

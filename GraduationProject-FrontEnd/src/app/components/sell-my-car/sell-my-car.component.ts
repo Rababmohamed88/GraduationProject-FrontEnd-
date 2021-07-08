@@ -11,8 +11,8 @@ import { SellData } from './../../_models/sell-data';
 })
 export class SellMyCarComponent implements OnInit {
   selldata: SellData = new SellData();
-  carDetailsId:number;
-  response:ServerResponse = new ServerResponse();
+  carDetailsId: number;
+  response: ServerResponse = new ServerResponse();
 
   constructor(
     private sellSev: SellMyCarService,
@@ -21,19 +21,22 @@ export class SellMyCarComponent implements OnInit {
   ) {}
 
   save() {
-    this.sellSev.addSellData(this.selldata, this.carDetailsId).subscribe((a)=>{
-      this.response = a;
-      if(this.response.isSuccess){
-        this.router.navigate(['/profile']);
-      }else{
-        alert(this.response.message);
-      }
-
-    });
+    this.sellSev
+      .addSellData(this.selldata, this.carDetailsId)
+      .subscribe((a) => {
+        this.response = a;
+        if (this.response.isSuccess) {
+          this.router.navigate(['/profile'], {
+            queryParams: { email: localStorage.getItem('email') },
+          });
+        } else {
+          alert(this.response.message);
+        }
+      });
   }
 
   ngOnInit(): void {
-    this.ac.queryParams.subscribe((a)=>{
+    this.ac.queryParams.subscribe((a) => {
       this.carDetailsId = a.id;
     });
   }

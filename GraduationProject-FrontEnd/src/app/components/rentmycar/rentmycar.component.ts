@@ -49,24 +49,26 @@ export class RentmycarComponent implements OnInit {
     console.log(this.details);
   }
 
-  submit() {
-    this.detailsServ
+  async submit() {
+    let a = await this.detailsServ
       .saveCarRentDetailsDb(this.carDetailsId, this.details)
-      .subscribe((a) => {
-        if (a.isSuccess) {
-          if (this.operation == 'rent') {
-            this.router.navigate(['/profile']);
-          } else if (this.operation == 'sell') {
-            this.router.navigate(['/sell-my-car'], {queryParams: { id: this.carDetailsId }});
-          } else {
-            alert('logout :) ');
-          }
-        } else {
-          alert(a.message);
-        }
-      });
+      .toPromise();
+    if (a.isSuccess) {
+      if (this.operation == 'rent') {
+        this.router.navigate(['/profile'], {
+          queryParams: { email: localStorage.getItem('email') },
+        });
+      } else if (this.operation == 'sell') {
+        this.router.navigate(['/sell-my-car'], {
+          queryParams: { id: this.carDetailsId },
+        });
+      } else {
+        alert('logout :) ');
+      }
+    } else {
+      alert(a.message);
+    }
   }
-
   settingStepper() {
     this.safetyAndSecurityGroup = this._formBuilder.group({
       electric: Boolean,

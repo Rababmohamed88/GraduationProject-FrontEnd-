@@ -21,20 +21,21 @@ export class LoginComponent implements OnInit, AfterViewInit {
       '#f9f9f9';
   }
   ngOnInit(): void {}
-  login() {
-    this.registerSer.loginUser(this.user).subscribe((a) => {
-      localStorage.setItem('token', a.token);
-      localStorage.setItem('user', a.message);
-      this.getUserEmail();
-      this.router.navigate(['/profile']);
+
+  async login() {
+    let a = await this.registerSer.loginUser(this.user).toPromise();
+    await localStorage.setItem('token', a.token);
+    await localStorage.setItem('user', a.message);
+    await this.getUserEmail();
+    this.router.navigate(['/profile'], {
+      queryParams: { email: localStorage.getItem('email') },
     });
   }
 
-  getUserEmail() {
-    this.registerSer.getCurrentUserEmail().subscribe((a) => {
-      if (a.isSuccess) {
-        localStorage.setItem('email', a.message);
-      }
-    });
+  async getUserEmail() {
+    let a = await this.registerSer.getCurrentUserEmail().toPromise();
+    if(a.isSuccess){
+      await localStorage.setItem('email', a.message);
+    }
   }
 }

@@ -43,6 +43,7 @@ export class AuthServiceService {
   Logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('email');
     this.router.navigate(['']);
   }
 
@@ -50,11 +51,13 @@ export class AuthServiceService {
     return this.username.asObservable();
   }
 
-  get currentEmail(){
+  get currentEmail() {
     return this.email.asObservable();
   }
 
-  getCurrentUserEmail(){
-    return this.http.get<ServerResponse>('https://localhost:44301/api/User/useremail');
+  getCurrentUserEmail() {
+    return this.http.get<ServerResponse>(
+      'https://localhost:44301/api/User/useremail'
+    );
   }
 }

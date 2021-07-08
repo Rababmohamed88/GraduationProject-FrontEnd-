@@ -9,7 +9,9 @@
         <div class="row no-gutters">
           <div class="col-md-5">
             <img
-              src="assets/CarsImages/{{ car.imageName }}"
+              src="assets/CarsImages/{{
+                car.imageName ? car.imageName : 'Default.png'
+              }}"
               alt="..."
               class="w-100 h-100"
             />
@@ -58,7 +60,7 @@
                       </button>
                       <button
                         [routerLink]="['/profile']"
-                        [queryParams]="{ email: car.userEmail}"
+                        [queryParams]="{ email: car.userEmail }"
                         class="dropdown-item"
                         type="button"
                       >

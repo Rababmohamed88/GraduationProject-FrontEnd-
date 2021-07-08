@@ -19,6 +19,7 @@ export class ViewCarsComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     await this.readParams();
     this.cars = await this.viewServ.getInfoForView(this.navigator).toPromise();
   }
