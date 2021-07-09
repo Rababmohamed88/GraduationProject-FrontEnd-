@@ -24,18 +24,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   async login() {
     let a = await this.registerSer.loginUser(this.user).toPromise();
-    await localStorage.setItem('token', a.token);
-    await localStorage.setItem('user', a.message);
-    await this.getUserEmail();
-    this.router.navigate(['/profile'], {
-      queryParams: { email: localStorage.getItem('email') },
-    });
-  }
-
-  async getUserEmail() {
-    let a = await this.registerSer.getCurrentUserEmail().toPromise();
-    if(a.isSuccess){
-      await localStorage.setItem('email', a.message);
+    if (a.isSuccess) {
+      this.router.navigate(['/profile'], {
+        queryParams: { email: localStorage.getItem('email') },
+      });
     }
   }
 }

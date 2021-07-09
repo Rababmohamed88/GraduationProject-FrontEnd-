@@ -6,6 +6,7 @@ import { Registration } from '../_models/registration';
 import { Login } from '../_models/login';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +29,20 @@ export class AuthServiceService {
     );
   }
   loginUser(user: Login) {
-    return this.http.post<any>('https://localhost:44301/api/User/login', user);
+    return this.http
+      .post<ServerResponse>('https://localhost:44301/api/User/login', user)
+      .pipe(
+        map((result) => {
+          if (result.isSuccess) {
+            localStorage.setItem('token', result.token);
+            localStorage.setItem('user', result.fullname);
+            localStorage.setItem('email', result.email);
+            this.username.next(localStorage.getItem('user'));
+            this.email.next(localStorage.getItem('email'));
+          }
+          return result;
+        })
+      );
   }
 
   IsUserAuth() {
@@ -53,11 +67,5 @@ export class AuthServiceService {
 
   get currentEmail() {
     return this.email.asObservable();
-  }
-
-  getCurrentUserEmail() {
-    return this.http.get<ServerResponse>(
-      'https://localhost:44301/api/User/useremail'
-    );
   }
 }

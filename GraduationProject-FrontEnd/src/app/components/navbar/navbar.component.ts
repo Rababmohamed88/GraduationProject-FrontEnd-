@@ -1,6 +1,6 @@
 import { AuthServiceService } from './../../services/auth-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +8,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  loginStatus$ = new BehaviorSubject<boolean>(null);
   username$: Observable<string>;
   email$: Observable<string>;
+  un: string;
 
   constructor(public auth: AuthServiceService) {}
 
@@ -17,8 +19,8 @@ export class NavbarComponent implements OnInit {
     this.auth.Logout();
   }
 
-  async ngOnInit() {
-    this.username$ = await this.auth.currentUserName;
-    this.email$ = await this.auth.currentEmail;
+  ngOnInit() {
+    this.username$ = this.auth.currentUserName;
+    this.email$ = this.auth.currentEmail;
   }
 }
