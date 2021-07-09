@@ -1086,7 +1086,7 @@
         <ng-template matStepLabel>Dimensions</ng-template>
 
         <div class="row">
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-6 col-md-6">
             <table class="table w-100">
               <tbody>
                 <tr>
@@ -1163,6 +1163,26 @@
                       min="0"
                       placeholder="No."
                       formControlName="Height"
+                      required
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div *ngIf="operation == 'rent'" class="col-lg-6 col-md-6">
+            <table class="table w-100">
+              <tbody>
+                <tr>
+                  <th scope="row">Price Per Hour</th>
+                  <td>
+                    <input
+                      type="number"
+                      [(ngModel)]="details.price"
+                      min="0"
+                      placeholder="price"
+                      formControlName="Price"
                       required
                     />
                   </td>

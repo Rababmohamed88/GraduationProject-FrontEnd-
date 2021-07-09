@@ -24,7 +24,7 @@
                   <h5 class="card-title c2">{{ car.className }}</h5>
                   <i class="fa fa-cc-visa mr-1 mb-2"></i>
                   <h5 class="c3 d-inline mb-2">
-                    {{ car.price | currency: "":"" }} EGP
+                    {{ car.price | currency: "":"" }} EGP <span *ngIf="navigator == 1" >Per Hour</span>
                   </h5>
                   <br />
                   <i class="fa fa-question-circle mr-1 c4 mt-2"></i>

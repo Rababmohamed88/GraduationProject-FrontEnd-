@@ -165,6 +165,7 @@ export class RentmycarComponent implements OnInit {
       Wheelbase: [''],
       Length: [''],
       Height: [''],
+      Price:['']
     });
   }
 }
