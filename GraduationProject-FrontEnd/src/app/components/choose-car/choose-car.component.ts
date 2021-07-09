@@ -66,11 +66,11 @@ export class ChooseCarComponent implements OnInit {
   }
 
   getThisCar(carDetailsId: number) {
-    this.chooseServ.owingUserCar(carDetailsId).subscribe(
-      (a) => {
-        console.log(a);
-        this.router.navigate(['/profile']);
-      }
-    );
+    this.chooseServ.owingUserCar(carDetailsId).subscribe((a) => {
+      console.log(a);
+      this.router.navigate(['/profile'], {
+        queryParams: { email: localStorage.getItem('email') },
+      });
+    });
   }
 }
