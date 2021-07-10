@@ -1,3 +1,4 @@
+import { SellData } from './../../_models/sell-data';
 import { GeneralInfoService } from './../../services/general-info.service';
 import { GeneralWebInfo } from './../../_models/general-web-info';
 import { GetCarDetailsService } from './../../services/car-details.service';
@@ -12,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CarDetailsComponent implements OnInit {
   cd: CarDetails = new CarDetails();
+  carSellingData: SellData = new SellData();
   info: GeneralWebInfo = new GeneralWebInfo();
   detailsid: number;
   sentDetailsId: number;
@@ -48,6 +50,10 @@ export class CarDetailsComponent implements OnInit {
         this.cd = await this.detailsServ
           .getCarDetails(this.detailsid)
           .toPromise();
+        this.carSellingData = await this.detailsServ
+          .getSellingData(this.detailsid)
+          .toPromise();
+        console.log(this.carSellingData);
       } else {
         this.cd = await this.detailsServ
           .getOriginalCarDetails(this.detailsid)
@@ -57,13 +63,15 @@ export class CarDetailsComponent implements OnInit {
       this.sentDetailsId = this.cd.carDetailsId;
     }
     await this.settingData(this.cd);
+    if (this.carSellingData != null)
+      await this.settingData(this.carSellingData);
   }
 
   async getGeneralInfo() {
     this.info = await this.generalServ.getGeneralInfo().toPromise();
   }
 
-  async settingData(obj: CarDetails) {
+  async settingData(obj) {
     Object.keys(obj).forEach(function (key) {
       if (typeof obj[key] === 'boolean') {
         if (obj[key]) {

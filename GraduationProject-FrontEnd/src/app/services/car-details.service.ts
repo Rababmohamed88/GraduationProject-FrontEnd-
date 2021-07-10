@@ -1,3 +1,4 @@
+import { SellData } from './../_models/sell-data';
 import { ServerResponse } from './../_models/server-response';
 import { CarDetails } from './../_models/car-details';
 import { HttpClient } from '@angular/common/http';
@@ -25,6 +26,12 @@ export class GetCarDetailsService {
     return this.http.put<ServerResponse>(
       'https://localhost:44301/api/rent/saverent?cardetailsid=' + carDetilsId,
       carDetails
+    );
+  }
+
+  getSellingData(carDetilsId: number) {
+    return this.http.get<SellData>(
+      'https://localhost:44301/api/sell/getselling/' + carDetilsId
     );
   }
 }

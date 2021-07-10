@@ -46,7 +46,6 @@ export class RentmycarComponent implements OnInit {
     this.details = await this.detailsServ
       .getOriginalCarDetails(this.carDetailsId)
       .toPromise();
-    console.log(this.details);
   }
 
   async submit() {

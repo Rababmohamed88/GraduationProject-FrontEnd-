@@ -583,7 +583,7 @@
           </div>
         </div>
 
-        <div class="card" *ngIf="cd.km">
+        <div class="card" *ngIf="carSellingData.km">
           <div class="card-header" id="headingSeven">
             <h5 class="mb-0">
               <button
@@ -610,15 +610,17 @@
                     <tbody>
                       <tr>
                         <th scope="row">KM</th>
-                        <td [innerHTML]="cd.km"></td>
+                        <td>{{ carSellingData.km }}</td>
                       </tr>
                       <tr>
                         <th scope="row">Agency Maintainance</th>
-                        <td [innerHTML]="cd.agencyMaintainance"></td>
+                        <td [innerHTML]="carSellingData.maintainance"></td>
                       </tr>
                       <tr>
-                        <th scope="row">Guarntee</th>
-                        <td [innerHTML]="cd.guarntee"></td>
+                        <th scope="row">Notes</th>
+                        <td>
+                          {{ carSellingData.notes }}
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -628,11 +630,11 @@
                     <tbody>
                       <tr>
                         <th scope="row">Fabrique</th>
-                        <td [innerHTML]="cd.fabrique"></td>
+                        <td [innerHTML]="carSellingData.fabrique"></td>
                       </tr>
                       <tr>
-                        <th scope="row">Notes</th>
-                        <td [innerHTML]="cd.notes"></td>
+                        <th scope="row">Guarntee</th>
+                        <td [innerHTML]="carSellingData.guarntee"></td>
                       </tr>
                     </tbody>
                   </table>
